@@ -10,6 +10,6 @@ Videos, artículos, tutoriales consultados.
 | [QGIS uncovered](https://www.youtube.com/playlist?list=PL7HotvlLKHCs9nD1fFUjSOsZrsnctyV2R) | QGIS | Vídeo | 03/06/2015 | Steven Bernard | [QGIS-Uncovered](https://github.com/anerodata/formacion/tree/master/QGIS/QGIS-Uncovered) |
 | [Vue Routing For Dummies](https://www.youtube.com/watch?v=-uCUCmrNgeo) | Vue | Vídeo | 16/03/2020 | Program With Erik | |
 | [Vue JS Crash Course](https://www.youtube.com/watch?v=Wy9q22isx3U&) | Vue | Vídeo | 10/01/2019 |  Traversy Media | |
-| [Vuex Crash Course, State Management](https://www.youtube.com/watch?v=5lVQgZzLMHc) | Vue | Vídeo | 16/03/2019 |  Traversy Media | |
+| [Vuex Crash Course, State Management](https://www.youtube.com/watch?v=5lVQgZzLMHc) | Vue | Vídeo | 16/03/2019 |  Traversy Media | [vue-vuex](https://github.com/anerodata/formacion/tree/master/Javascript/vue-vuex) |
 | [Vuex Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9i371QO_Rtkl26MwtiJ30P2) | Vue | Vídeo | 10/08/2017 |  The Net Ninja | |
 | [D3 in Depth](https://www.d3indepth.com/) | d3.js | Artículo | 2019 | Peter Cook | |
