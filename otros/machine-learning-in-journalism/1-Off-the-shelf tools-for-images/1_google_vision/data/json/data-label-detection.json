@@ -1,0 +1,827 @@
+[
+    {
+        "responses": [
+            {
+                "labelAnnotations": [
+                    {
+                        "mid": "/m/08rrcl",
+                        "description": "Water transportation",
+                        "score": 0.948979,
+                        "topicality": 0.948979
+                    },
+                    {
+                        "mid": "/m/0ddnl",
+                        "description": "Ferry",
+                        "score": 0.92892295,
+                        "topicality": 0.92892295
+                    },
+                    {
+                        "mid": "/m/07yv9",
+                        "description": "Vehicle",
+                        "score": 0.92071724,
+                        "topicality": 0.92071724
+                    },
+                    {
+                        "mid": "/m/019jd",
+                        "description": "Boat",
+                        "score": 0.87732726,
+                        "topicality": 0.87732726
+                    },
+                    {
+                        "mid": "/m/06q74",
+                        "description": "Ship",
+                        "score": 0.8728268,
+                        "topicality": 0.8728268
+                    },
+                    {
+                        "mid": "/m/093q8j",
+                        "description": "Motor ship",
+                        "score": 0.86523795,
+                        "topicality": 0.86523795
+                    },
+                    {
+                        "mid": "/m/07bsy",
+                        "description": "Transport",
+                        "score": 0.83513474,
+                        "topicality": 0.83513474
+                    },
+                    {
+                        "mid": "/m/01rzcn",
+                        "description": "Watercraft",
+                        "score": 0.8175672,
+                        "topicality": 0.8175672
+                    },
+                    {
+                        "mid": "/m/079bkr",
+                        "description": "Mode of transport",
+                        "score": 0.80817014,
+                        "topicality": 0.80817014
+                    },
+                    {
+                        "mid": "/m/01vbb5",
+                        "description": "Ocean liner",
+                        "score": 0.7956967,
+                        "topicality": 0.7956967
+                    }
+                ]
+            }
+        ],
+        "root": "data/images/boat2.jpg"
+    },
+    {
+        "responses": [
+            {
+                "labelAnnotations": [
+                    {
+                        "mid": "/m/0dzct",
+                        "description": "Face",
+                        "score": 0.97167337,
+                        "topicality": 0.97167337
+                    },
+                    {
+                        "mid": "/m/025kyy",
+                        "description": "Forehead",
+                        "score": 0.9465342,
+                        "topicality": 0.9465342
+                    },
+                    {
+                        "mid": "/m/01k74n",
+                        "description": "Facial expression",
+                        "score": 0.9445514,
+                        "topicality": 0.9445514
+                    },
+                    {
+                        "mid": "/m/027n3_",
+                        "description": "Eyebrow",
+                        "score": 0.90452296,
+                        "topicality": 0.90452296
+                    },
+                    {
+                        "mid": "/m/0f9swq",
+                        "description": "Chin",
+                        "score": 0.88938713,
+                        "topicality": 0.88938713
+                    },
+                    {
+                        "mid": "/m/04hgtk",
+                        "description": "Head",
+                        "score": 0.88427436,
+                        "topicality": 0.88427436
+                    },
+                    {
+                        "mid": "/m/0286h_",
+                        "description": "Bow tie",
+                        "score": 0.873163,
+                        "topicality": 0.873163
+                    },
+                    {
+                        "mid": "/m/0k0pj",
+                        "description": "Nose",
+                        "score": 0.86992955,
+                        "topicality": 0.86992955
+                    },
+                    {
+                        "mid": "/m/019p5q",
+                        "description": "Gentleman",
+                        "score": 0.85609305,
+                        "topicality": 0.85609305
+                    },
+                    {
+                        "mid": "/m/019nj4",
+                        "description": "Smile",
+                        "score": 0.8463254,
+                        "topicality": 0.8463254
+                    }
+                ]
+            }
+        ],
+        "root": "data/images/chiquito.jpg"
+    },
+    {
+        "responses": [
+            {
+                "labelAnnotations": [
+                    {
+                        "mid": "/m/019sc",
+                        "description": "Black",
+                        "score": 0.94841564,
+                        "topicality": 0.94841564
+                    },
+                    {
+                        "mid": "/m/04rlf",
+                        "description": "Music",
+                        "score": 0.8710936,
+                        "topicality": 0.8710936
+                    },
+                    {
+                        "mid": "/m/071j9r",
+                        "description": "Cool",
+                        "score": 0.78802335,
+                        "topicality": 0.78802335
+                    },
+                    {
+                        "mid": "/m/0hpcdn2",
+                        "description": "Rapper",
+                        "score": 0.72368157,
+                        "topicality": 0.72368157
+                    },
+                    {
+                        "mid": "/m/0fq0t_c",
+                        "description": "Music artist",
+                        "score": 0.684764,
+                        "topicality": 0.684764
+                    },
+                    {
+                        "mid": "/m/05wkw",
+                        "description": "Photography",
+                        "score": 0.62422496,
+                        "topicality": 0.62422496
+                    },
+                    {
+                        "mid": "/m/0glt670",
+                        "description": "Hip hop music",
+                        "score": 0.60347074,
+                        "topicality": 0.60347074
+                    },
+                    {
+                        "mid": "/m/02dsz",
+                        "description": "Disc jockey",
+                        "score": 0.5805864,
+                        "topicality": 0.5805864
+                    },
+                    {
+                        "mid": "/m/01g6gs",
+                        "description": "Black-and-white",
+                        "score": 0.564079,
+                        "topicality": 0.564079
+                    },
+                    {
+                        "mid": "/m/013s93",
+                        "description": "T-shirt",
+                        "score": 0.5438827,
+                        "topicality": 0.5438827
+                    }
+                ]
+            }
+        ],
+        "root": "data/images/finesse.jpg"
+    },
+    {
+        "responses": [
+            {
+                "labelAnnotations": [
+                    {
+                        "mid": "/m/0hnnb",
+                        "description": "Umbrella",
+                        "score": 0.9870711,
+                        "topicality": 0.9870711
+                    },
+                    {
+                        "mid": "/m/0b3yr",
+                        "description": "Beach",
+                        "score": 0.95157576,
+                        "topicality": 0.95157576
+                    },
+                    {
+                        "mid": "/m/06npx",
+                        "description": "Sea",
+                        "score": 0.83577573,
+                        "topicality": 0.83577573
+                    },
+                    {
+                        "mid": "/m/05kq4",
+                        "description": "Ocean",
+                        "score": 0.8311938,
+                        "topicality": 0.8311938
+                    },
+                    {
+                        "mid": "/m/01bqvp",
+                        "description": "Sky",
+                        "score": 0.8220895,
+                        "topicality": 0.8220895
+                    },
+                    {
+                        "mid": "/m/099fz",
+                        "description": "Sand",
+                        "score": 0.8090025,
+                        "topicality": 0.8090025
+                    },
+                    {
+                        "mid": "/m/0463sg",
+                        "description": "Fashion accessory",
+                        "score": 0.7954967,
+                        "topicality": 0.7954967
+                    },
+                    {
+                        "mid": "/m/0hndl",
+                        "description": "Shade",
+                        "score": 0.7907795,
+                        "topicality": 0.7907795
+                    },
+                    {
+                        "mid": "/m/02jwqh",
+                        "description": "Vacation",
+                        "score": 0.7606969,
+                        "topicality": 0.7606969
+                    },
+                    {
+                        "mid": "/m/078qz",
+                        "description": "Summer",
+                        "score": 0.7390028,
+                        "topicality": 0.7390028
+                    }
+                ]
+            }
+        ],
+        "root": "data/images/IMG_1407.JPG"
+    },
+    {
+        "responses": [
+            {
+                "labelAnnotations": [
+                    {
+                        "mid": "/m/033qx",
+                        "description": "Fur seal",
+                        "score": 0.9387736,
+                        "topicality": 0.9387736
+                    },
+                    {
+                        "mid": "/m/01cbzq",
+                        "description": "Rock",
+                        "score": 0.918316,
+                        "topicality": 0.918316
+                    },
+                    {
+                        "mid": "/m/0838f",
+                        "description": "Water",
+                        "score": 0.91002715,
+                        "topicality": 0.91002715
+                    },
+                    {
+                        "mid": "/m/0gd3n",
+                        "description": "Seal",
+                        "score": 0.83823866,
+                        "topicality": 0.83823866
+                    },
+                    {
+                        "mid": "/m/02l8p9",
+                        "description": "Harbor seal",
+                        "score": 0.7367619,
+                        "topicality": 0.7367619
+                    },
+                    {
+                        "mid": "/m/0gd2v",
+                        "description": "Marine mammal",
+                        "score": 0.68443406,
+                        "topicality": 0.68443406
+                    },
+                    {
+                        "mid": "/m/01280g",
+                        "description": "Wildlife",
+                        "score": 0.6762316,
+                        "topicality": 0.6762316
+                    },
+                    {
+                        "mid": "/m/0ghpy",
+                        "description": "Boulder",
+                        "score": 0.656476,
+                        "topicality": 0.656476
+                    },
+                    {
+                        "mid": "/m/083vt",
+                        "description": "Wood",
+                        "score": 0.6534817,
+                        "topicality": 0.6534817
+                    },
+                    {
+                        "mid": "/m/05t0z3q",
+                        "description": "Bank",
+                        "score": 0.56536555,
+                        "topicality": 0.56536555
+                    }
+                ]
+            }
+        ],
+        "root": "data/images/IMG_1454.JPG"
+    },
+    {
+        "responses": [
+            {
+                "labelAnnotations": [
+                    {
+                        "mid": "/m/03cjrt",
+                        "description": "Highland",
+                        "score": 0.9903354,
+                        "topicality": 0.9903354
+                    },
+                    {
+                        "mid": "/g/11jxkqbpp",
+                        "description": "Mountainous landforms",
+                        "score": 0.98721474,
+                        "topicality": 0.98721474
+                    },
+                    {
+                        "mid": "/m/09d_r",
+                        "description": "Mountain",
+                        "score": 0.9751529,
+                        "topicality": 0.9751529
+                    },
+                    {
+                        "mid": "/m/040h04",
+                        "description": "Hill station",
+                        "score": 0.9248167,
+                        "topicality": 0.9248167
+                    },
+                    {
+                        "mid": "/m/015s2f",
+                        "description": "Water resources",
+                        "score": 0.92399865,
+                        "topicality": 0.92399865
+                    },
+                    {
+                        "mid": "/m/023bbt",
+                        "description": "Wilderness",
+                        "score": 0.9215108,
+                        "topicality": 0.9215108
+                    },
+                    {
+                        "mid": "/m/07yxk",
+                        "description": "Valley",
+                        "score": 0.9051068,
+                        "topicality": 0.9051068
+                    },
+                    {
+                        "mid": "/m/0by0z",
+                        "description": "Fjord",
+                        "score": 0.90069413,
+                        "topicality": 0.90069413
+                    },
+                    {
+                        "mid": "/m/03d28y3",
+                        "description": "Natural landscape",
+                        "score": 0.8855189,
+                        "topicality": 0.8855189
+                    },
+                    {
+                        "mid": "/m/0swq_",
+                        "description": "Nature reserve",
+                        "score": 0.8341527,
+                        "topicality": 0.8341527
+                    }
+                ]
+            }
+        ],
+        "root": "data/images/IMG_8027.JPG"
+    },
+    {
+        "responses": [
+            {
+                "labelAnnotations": [
+                    {
+                        "mid": "/m/0gjkl",
+                        "description": "Watch",
+                        "score": 0.9921082,
+                        "topicality": 0.9921082
+                    },
+                    {
+                        "mid": "/m/031pr7",
+                        "description": "Analog watch",
+                        "score": 0.970094,
+                        "topicality": 0.970094
+                    },
+                    {
+                        "mid": "/m/0hgnxby",
+                        "description": "Watch accessory",
+                        "score": 0.9553509,
+                        "topicality": 0.9553509
+                    },
+                    {
+                        "mid": "/m/01j48b",
+                        "description": "Wrist",
+                        "score": 0.953054,
+                        "topicality": 0.953054
+                    },
+                    {
+                        "mid": "/m/04lzmz",
+                        "description": "Strap",
+                        "score": 0.88483024,
+                        "topicality": 0.88483024
+                    },
+                    {
+                        "mid": "/m/0463sg",
+                        "description": "Fashion accessory",
+                        "score": 0.8654475,
+                        "topicality": 0.8654475
+                    },
+                    {
+                        "mid": "/m/0404d",
+                        "description": "Jewellery",
+                        "score": 0.7531579,
+                        "topicality": 0.7531579
+                    },
+                    {
+                        "mid": "/m/0457gc6",
+                        "description": "Material property",
+                        "score": 0.7066209,
+                        "topicality": 0.7066209
+                    },
+                    {
+                        "mid": "/m/05fwb",
+                        "description": "Number",
+                        "score": 0.70209056,
+                        "topicality": 0.70209056
+                    },
+                    {
+                        "mid": "/m/03gq5hm",
+                        "description": "Font",
+                        "score": 0.6857238,
+                        "topicality": 0.6857238
+                    }
+                ]
+            }
+        ],
+        "root": "data/images/IMG_8039.jpg"
+    },
+    {
+        "responses": [
+            {
+                "labelAnnotations": [
+                    {
+                        "mid": "/m/0271t",
+                        "description": "Drink",
+                        "score": 0.8969089,
+                        "topicality": 0.8969089
+                    },
+                    {
+                        "mid": "/m/039jq",
+                        "description": "Glass",
+                        "score": 0.8739749,
+                        "topicality": 0.8739749
+                    },
+                    {
+                        "mid": "/m/01bqvp",
+                        "description": "Sky",
+                        "score": 0.8220895,
+                        "topicality": 0.8220895
+                    },
+                    {
+                        "mid": "/m/050h0q",
+                        "description": "Stemware",
+                        "score": 0.8091653,
+                        "topicality": 0.8091653
+                    },
+                    {
+                        "mid": "/m/012mj",
+                        "description": "Alcoholic beverage",
+                        "score": 0.80893904,
+                        "topicality": 0.80893904
+                    },
+                    {
+                        "mid": "/m/081qc",
+                        "description": "Wine",
+                        "score": 0.789533,
+                        "topicality": 0.789533
+                    },
+                    {
+                        "mid": "/m/09tvcd",
+                        "description": "Wine glass",
+                        "score": 0.7742639,
+                        "topicality": 0.7742639
+                    },
+                    {
+                        "mid": "/m/02q68d8",
+                        "description": "Champagne stemware",
+                        "score": 0.7725739,
+                        "topicality": 0.7725739
+                    },
+                    {
+                        "mid": "/m/0f2b9",
+                        "description": "Champagne",
+                        "score": 0.66483545,
+                        "topicality": 0.66483545
+                    },
+                    {
+                        "mid": "/m/050h26",
+                        "description": "Drinkware",
+                        "score": 0.61794096,
+                        "topicality": 0.61794096
+                    }
+                ]
+            }
+        ],
+        "root": "data/images/IMG_8040.JPG"
+    },
+    {
+        "responses": [
+            {
+                "labelAnnotations": [
+                    {
+                        "mid": "/m/01bqvp",
+                        "description": "Sky",
+                        "score": 0.9905772,
+                        "topicality": 0.9905772
+                    },
+                    {
+                        "mid": "/m/0csby",
+                        "description": "Cloud",
+                        "score": 0.94109225,
+                        "topicality": 0.94109225
+                    },
+                    {
+                        "mid": "/m/0d1n2",
+                        "description": "Horizon",
+                        "score": 0.8966869,
+                        "topicality": 0.8966869
+                    },
+                    {
+                        "mid": "/m/07pw27b",
+                        "description": "Atmospheric phenomenon",
+                        "score": 0.88611656,
+                        "topicality": 0.88611656
+                    },
+                    {
+                        "mid": "/m/04mx32",
+                        "description": "Evening",
+                        "score": 0.8789277,
+                        "topicality": 0.8789277
+                    },
+                    {
+                        "mid": "/m/02_ktj",
+                        "description": "Morning",
+                        "score": 0.86693436,
+                        "topicality": 0.86693436
+                    },
+                    {
+                        "mid": "/m/01b3l7",
+                        "description": "Dusk",
+                        "score": 0.86514944,
+                        "topicality": 0.86514944
+                    },
+                    {
+                        "mid": "/m/01b2w5",
+                        "description": "Sunset",
+                        "score": 0.856402,
+                        "topicality": 0.856402
+                    },
+                    {
+                        "mid": "/m/01ctsf",
+                        "description": "Atmosphere",
+                        "score": 0.8043394,
+                        "topicality": 0.8043394
+                    },
+                    {
+                        "mid": "/m/09d_r",
+                        "description": "Mountain",
+                        "score": 0.7628964,
+                        "topicality": 0.7628964
+                    }
+                ]
+            }
+        ],
+        "root": "data/images/IMG_8098.JPG"
+    },
+    {
+        "responses": [
+            {
+                "labelAnnotations": [
+                    {
+                        "mid": "/m/01bqvp",
+                        "description": "Sky",
+                        "score": 0.95308065,
+                        "topicality": 0.95308065
+                    },
+                    {
+                        "mid": "/m/0csby",
+                        "description": "Cloud",
+                        "score": 0.90563494,
+                        "topicality": 0.90563494
+                    },
+                    {
+                        "mid": "/m/07yv9",
+                        "description": "Vehicle",
+                        "score": 0.8965829,
+                        "topicality": 0.8965829
+                    },
+                    {
+                        "mid": "/m/019jd",
+                        "description": "Boat",
+                        "score": 0.88192254,
+                        "topicality": 0.88192254
+                    },
+                    {
+                        "mid": "/m/06npx",
+                        "description": "Sea",
+                        "score": 0.8472779,
+                        "topicality": 0.8472779
+                    },
+                    {
+                        "mid": "/m/06q74",
+                        "description": "Ship",
+                        "score": 0.84497327,
+                        "topicality": 0.84497327
+                    },
+                    {
+                        "mid": "/m/07bsy",
+                        "description": "Transport",
+                        "score": 0.83513474,
+                        "topicality": 0.83513474
+                    },
+                    {
+                        "mid": "/m/01rzcn",
+                        "description": "Watercraft",
+                        "score": 0.82747346,
+                        "topicality": 0.82747346
+                    },
+                    {
+                        "mid": "/m/0d1n2",
+                        "description": "Horizon",
+                        "score": 0.79624814,
+                        "topicality": 0.79624814
+                    },
+                    {
+                        "mid": "/m/08rrcl",
+                        "description": "Water transportation",
+                        "score": 0.76218545,
+                        "topicality": 0.76218545
+                    }
+                ]
+            }
+        ],
+        "root": "data/images/IMG_8592.JPG"
+    },
+    {
+        "responses": [
+            {
+                "labelAnnotations": [
+                    {
+                        "mid": "/m/038hg",
+                        "description": "Green",
+                        "score": 0.9068462,
+                        "topicality": 0.9068462
+                    },
+                    {
+                        "mid": "/m/0jjw",
+                        "description": "Art",
+                        "score": 0.5813032,
+                        "topicality": 0.5813032
+                    }
+                ]
+            }
+        ],
+        "root": "data/images/la polla records 5.jpg"
+    },
+    {
+        "responses": [
+            {
+                "labelAnnotations": [
+                    {
+                        "mid": "/m/021v_4",
+                        "description": "Beverage can",
+                        "score": 0.93204117,
+                        "topicality": 0.93204117
+                    },
+                    {
+                        "mid": "/m/038hg",
+                        "description": "Green",
+                        "score": 0.9194969,
+                        "topicality": 0.9194969
+                    },
+                    {
+                        "mid": "/m/01jwgf",
+                        "description": "Product",
+                        "score": 0.8828333,
+                        "topicality": 0.8828333
+                    },
+                    {
+                        "mid": "/m/0271t",
+                        "description": "Drink",
+                        "score": 0.8549104,
+                        "topicality": 0.8549104
+                    },
+                    {
+                        "mid": "/m/02jnhm",
+                        "description": "Tin can",
+                        "score": 0.8285616,
+                        "topicality": 0.8285616
+                    },
+                    {
+                        "mid": "/m/01xf2l",
+                        "description": "Sports drink",
+                        "score": 0.6826966,
+                        "topicality": 0.6826966
+                    },
+                    {
+                        "mid": "/m/0gjbv4m",
+                        "description": "Aluminum can",
+                        "score": 0.65939397,
+                        "topicality": 0.65939397
+                    },
+                    {
+                        "mid": "/m/04_fs",
+                        "description": "Muscle",
+                        "score": 0.6424194,
+                        "topicality": 0.6424194
+                    },
+                    {
+                        "mid": "/m/08nmvx",
+                        "description": "S-curl",
+                        "score": 0.60046476,
+                        "topicality": 0.60046476
+                    },
+                    {
+                        "mid": "/m/0203vw",
+                        "description": "Energy drink",
+                        "score": 0.5567758,
+                        "topicality": 0.5567758
+                    }
+                ]
+            }
+        ],
+        "root": "data/images/sprite.png"
+    },
+    {
+        "responses": [
+            {
+                "labelAnnotations": [
+                    {
+                        "mid": "/m/025kyy",
+                        "description": "Forehead",
+                        "score": 0.8755422,
+                        "topicality": 0.8755422
+                    },
+                    {
+                        "mid": "/m/0f9swq",
+                        "description": "Chin",
+                        "score": 0.82750785,
+                        "topicality": 0.82750785
+                    },
+                    {
+                        "mid": "/m/01xr66",
+                        "description": "Spokesperson",
+                        "score": 0.7507562,
+                        "topicality": 0.7507562
+                    },
+                    {
+                        "mid": "/m/027v9wk",
+                        "description": "Elder",
+                        "score": 0.64685875,
+                        "topicality": 0.64685875
+                    },
+                    {
+                        "mid": "/m/02_x63",
+                        "description": "Wrinkle",
+                        "score": 0.6361672,
+                        "topicality": 0.6361672
+                    },
+                    {
+                        "mid": "/m/012t_z",
+                        "description": "Businessperson",
+                        "score": 0.63136923,
+                        "topicality": 0.63136923
+                    }
+                ]
+            }
+        ],
+        "root": "data/images/zapatero.jpg"
+    }
+]

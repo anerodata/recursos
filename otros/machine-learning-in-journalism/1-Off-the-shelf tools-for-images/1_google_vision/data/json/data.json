@@ -1,0 +1,209 @@
+[
+    {
+        "responses": [
+            {
+                "labelAnnotations": [
+                    {
+                        "mid": "/m/08rrcl",
+                        "description": "Water transportation",
+                        "score": 0.948979,
+                        "topicality": 0.948979
+                    },
+                    {
+                        "mid": "/m/0ddnl",
+                        "description": "Ferry",
+                        "score": 0.92892295,
+                        "topicality": 0.92892295
+                    },
+                    {
+                        "mid": "/m/07yv9",
+                        "description": "Vehicle",
+                        "score": 0.92071724,
+                        "topicality": 0.92071724
+                    },
+                    {
+                        "mid": "/m/019jd",
+                        "description": "Boat",
+                        "score": 0.87732726,
+                        "topicality": 0.87732726
+                    },
+                    {
+                        "mid": "/m/06q74",
+                        "description": "Ship",
+                        "score": 0.8728268,
+                        "topicality": 0.8728268
+                    },
+                    {
+                        "mid": "/m/093q8j",
+                        "description": "Motor ship",
+                        "score": 0.86523795,
+                        "topicality": 0.86523795
+                    },
+                    {
+                        "mid": "/m/07bsy",
+                        "description": "Transport",
+                        "score": 0.83513474,
+                        "topicality": 0.83513474
+                    },
+                    {
+                        "mid": "/m/01rzcn",
+                        "description": "Watercraft",
+                        "score": 0.8175672,
+                        "topicality": 0.8175672
+                    },
+                    {
+                        "mid": "/m/079bkr",
+                        "description": "Mode of transport",
+                        "score": 0.80817014,
+                        "topicality": 0.80817014
+                    },
+                    {
+                        "mid": "/m/01vbb5",
+                        "description": "Ocean liner",
+                        "score": 0.7956967,
+                        "topicality": 0.7956967
+                    }
+                ]
+            }
+        ],
+        "root": "data/images/boat2.jpg"
+    },
+    {
+        "responses": [
+            {
+                "labelAnnotations": [
+                    {
+                        "mid": "/m/0dzct",
+                        "description": "Face",
+                        "score": 0.97167337,
+                        "topicality": 0.97167337
+                    },
+                    {
+                        "mid": "/m/025kyy",
+                        "description": "Forehead",
+                        "score": 0.9465342,
+                        "topicality": 0.9465342
+                    },
+                    {
+                        "mid": "/m/01k74n",
+                        "description": "Facial expression",
+                        "score": 0.9445514,
+                        "topicality": 0.9445514
+                    },
+                    {
+                        "mid": "/m/027n3_",
+                        "description": "Eyebrow",
+                        "score": 0.90452296,
+                        "topicality": 0.90452296
+                    },
+                    {
+                        "mid": "/m/0f9swq",
+                        "description": "Chin",
+                        "score": 0.88938713,
+                        "topicality": 0.88938713
+                    },
+                    {
+                        "mid": "/m/04hgtk",
+                        "description": "Head",
+                        "score": 0.88427436,
+                        "topicality": 0.88427436
+                    },
+                    {
+                        "mid": "/m/0286h_",
+                        "description": "Bow tie",
+                        "score": 0.873163,
+                        "topicality": 0.873163
+                    },
+                    {
+                        "mid": "/m/0k0pj",
+                        "description": "Nose",
+                        "score": 0.86992955,
+                        "topicality": 0.86992955
+                    },
+                    {
+                        "mid": "/m/019p5q",
+                        "description": "Gentleman",
+                        "score": 0.85609305,
+                        "topicality": 0.85609305
+                    },
+                    {
+                        "mid": "/m/019nj4",
+                        "description": "Smile",
+                        "score": 0.8463254,
+                        "topicality": 0.8463254
+                    }
+                ]
+            }
+        ],
+        "root": "data/images/chiquito.jpg"
+    },
+    {
+        "responses": [
+            {
+                "labelAnnotations": [
+                    {
+                        "mid": "/m/019sc",
+                        "description": "Black",
+                        "score": 0.94841564,
+                        "topicality": 0.94841564
+                    },
+                    {
+                        "mid": "/m/04rlf",
+                        "description": "Music",
+                        "score": 0.8710936,
+                        "topicality": 0.8710936
+                    },
+                    {
+                        "mid": "/m/071j9r",
+                        "description": "Cool",
+                        "score": 0.78802335,
+                        "topicality": 0.78802335
+                    },
+                    {
+                        "mid": "/m/0hpcdn2",
+                        "description": "Rapper",
+                        "score": 0.72368157,
+                        "topicality": 0.72368157
+                    },
+                    {
+                        "mid": "/m/0fq0t_c",
+                        "description": "Music artist",
+                        "score": 0.684764,
+                        "topicality": 0.684764
+                    },
+                    {
+                        "mid": "/m/05wkw",
+                        "description": "Photography",
+                        "score": 0.62422496,
+                        "topicality": 0.62422496
+                    },
+                    {
+                        "mid": "/m/0glt670",
+                        "description": "Hip hop music",
+                        "score": 0.60347074,
+                        "topicality": 0.60347074
+                    },
+                    {
+                        "mid": "/m/02dsz",
+                        "description": "Disc jockey",
+                        "score": 0.5805864,
+                        "topicality": 0.5805864
+                    },
+                    {
+                        "mid": "/m/01g6gs",
+                        "description": "Black-and-white",
+                        "score": 0.564079,
+                        "topicality": 0.564079
+                    },
+                    {
+                        "mid": "/m/013s93",
+                        "description": "T-shirt",
+                        "score": 0.5438827,
+                        "topicality": 0.5438827
+                    }
+                ]
+            }
+        ],
+        "root": "data/images/finesse.jpg"
+    }
+]
