@@ -1,8 +1,8 @@
-# Recursos de formación
+# Training resources
 
-Videos, artículos, tutoriales consultados.
+Videos, articles, tutorials that I read.
 
-|  Nombre | Materia | Tipo | Fecha | Autor | Notas |
+|  Name | Matter | Type | Date | Author | Record |
 |---|---|---|---|---|---|
 | [Managing Git & GitHub Credentials](https://www.youtube.com/watch?v=mskIcsJFzcI)  | Github  | Vídeo | 02/10/2019 | Steve Griffith | |
 | [Install Terminator on Windows with WSL](https://medium.com/@bhupathy/install-terminator-on-windows-with-wsl-2826591d2156)  | WSL y Terminator  | Artículo | 30/12/2018 | @bhupathy | |
