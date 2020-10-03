@@ -8,7 +8,7 @@ Videos, articles, tutorials that I read.
 | [Install Terminator on Windows with WSL](https://medium.com/@bhupathy/install-terminator-on-windows-with-wsl-2826591d2156)  | WSL and Terminator  | Article | 30/12/2018 | @bhupathy | |
 | [Configuring a Pretty and Usable Terminal Emulator for WSL](https://blog.ropnop.com/configuring-a-pretty-and-usable-terminal-emulator-for-wsl/)  | WSL and Terminator  | Article | 29/09/2017 | ropnop | |
 | [QGIS uncovered](https://www.youtube.com/playlist?list=PL7HotvlLKHCs9nD1fFUjSOsZrsnctyV2R) | QGIS | Video | 03/06/2015 | Steven Bernard | [QGIS-Uncovered](https://github.com/anerodata/formacion/tree/master/QGIS/QGIS-Uncovered) |
-| [Vue Routing For Dummies](https://www.youtube.com/watch?v=-uCUCmrNgeo) | Vue | Video | 16/03/2020 | Program With Erik | |
+| [Vue Routing For Dummies](https://www.youtube.com/watch?v=-uCUCmrNgeo) | Vue | Video | 16/03/2020 | Program With Erik | [portfolio](https://github.com/anerodata/portfolio) |
 | [Vue JS Crash Course](https://www.youtube.com/watch?v=Wy9q22isx3U&) | Vue | Video | 10/01/2019 |  Traversy Media | [vue-cli](https://github.com/anerodata/formacion/tree/master/Javascript/vue-cli) |
 | [Vuex Crash Course, State Management](https://www.youtube.com/watch?v=5lVQgZzLMHc) | Vue | Video | 16/03/2019 |  Traversy Media | [vue-vuex](https://github.com/anerodata/formacion/tree/master/javascript/vue-vuex) |
 | [Vuex Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9i371QO_Rtkl26MwtiJ30P2) | Vue | Video | 10/08/2017 | The Net Ninja | [portfolio](https://github.com/anerodata/portfolio) |
