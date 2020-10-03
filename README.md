@@ -13,3 +13,5 @@ Videos, articles, tutorials that I read.
 | [Vuex Crash Course, State Management](https://www.youtube.com/watch?v=5lVQgZzLMHc) | Vue | Vídeo | 16/03/2019 |  Traversy Media | [vue-vuex](https://github.com/anerodata/formacion/tree/master/javascript/vue-vuex) |
 | [Vuex Tutorial](https://www.youtube.com/playlist?list=PL4cUxeGkcC9i371QO_Rtkl26MwtiJ30P2) | Vue | Vídeo | 10/08/2017 |  The Net Ninja | |
 | [D3 in Depth](https://www.d3indepth.com/) | d3.js | Artículo | 2019 | Peter Cook | |
+| [Complete Python Pandas Data Science Tutorial! (Reading CSV/Excel files, Sorting, Filtering, Groupby)](https://www.youtube.com/watch?v=vmEHCJofslg) | pandas.py | Video | 25/10/2018 | Keith Galli | [tutorial-pandas](https://github.com/anerodata/formacion/tree/master/python/apuntes-pandas) |
+| [Intro to Data Analysis / Visualization with Python, Matplotlib and Pandas | Matplotlib Tutorial](https://www.youtube.com/watch?v=a9UrKTVEeZA&t=590s) | matplotlib.py | Video | 11/06/2018 | CS Dojo | [tutorial-matplotlib](https://github.com/anerodata/formacion/tree/master/python/tutorial-matplotlib) |
