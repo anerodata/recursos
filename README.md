@@ -18,3 +18,4 @@ Videos, articles, tutorials that I read.
 | [Flexbox CSS In 20 Minutes](https://www.youtube.com/watch?v=JJSoEo8JSnc) | CSS3 | Video | 08/12/2016 | Traversy Media | [css-flexbox](https://github.com/anerodata/formacion/tree/master/html-css/css-flexbox) |
 | [Curso básico de Git y Github](https://github.com/anerodata/formacion/tree/master/otros/apuntes-github) | Github | Article | 2019 | anerodata | | 
 | [Machine Learning in Journalism, notes by anerodata](https://github.com/anerodata/formacion/tree/master/otros/machine-learning-in-journalism) | Machine Learning and Python | Notes | 2019 | anerodata | | 
+| [Python REST API Tutorial - Building a Flask REST API](https://youtu.be/GMppyAPbLYk?t=829) | flask.py | Video | 10/07/2020 | Tech With Tim | [tutorial-flask-api](https://github.com/anerodata/formacion/tree/master/python/tutorial-matplotlib) |
