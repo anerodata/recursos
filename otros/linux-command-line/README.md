@@ -41,6 +41,19 @@ Para reconfigurar comandos, [aquí](https://btholt.github.io/complete-intro-to-l
 - SIGTERM: no tiene atajo, pero es la señal que se envía cuando se usa `kill` + programa. Ocurre cuando el sistema operativo se apaga. Envía SIGTERM  a todos los programas para avisar de que se va a cerrar. Una vez que todos se cierran, cierra la terminal.
 - `kill -9` (SIGKILL): detiene un la ejecución de un programa inmediatamente.
 
+### Editores de texto
+
+Vim y Nano. Vim tiene varios modos, el modo comando y el modo de edición. Pulsando sobre `ESC` pasamos al modo de comando.
+
+Algunos comandos de vim:
+
+- `:q` - salir.
+- `:q!` - salir sin importar que no haya cambios guardados.
+- `:qa!` - salir forzadamente.
+- `:d` - borrar una línea.
+- `:d100` - desde la primera linea, borra desde la primera hasta la 100.
+- `:wq!` - escribir y salir.
+
 ### Ejercios
 
 - **Detener un programa**: `yes > /dev/null &` Ejecuta yes en el _background_. `ps aux | grep yes` muestra todos los programas que se llamen _yes_ que se están ejecutando. Con su ID lo detenemos así `kill -9 428`.
