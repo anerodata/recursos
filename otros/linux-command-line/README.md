@@ -15,8 +15,14 @@ _Shell_ tiene una lógica basada en _Read Evaluate Print Loop_ (REPL), es decir,
 - `which ls`: dónde está ese programa? está en `bin` (binary): la carpeta dónde están todos los programas ejecutables
 - `ls -l`: `-l` es una bandera. Te da información como la fecha de creación, la hora
 - `ls -l -a`: Lo anterior más los directorios y los archivos ocultos. `ls --all` es la manera larga de escribir la bandera como `-a`. Una manera comprimida de ejecutar el comando sería `ls -la`. `--all` es una bandera con dos guiones porque si fuera uno, `bash` entendería que quieres concatenar banderas como en `ls -la`.
-- `tail ~/.bash_history`: imprime las diez últimas lineas de un fichero
+- `tail -n 3 ~/.bash_history`: imprime las 3 últimas lineas de un fichero. Util para imprimir logs.
+- `head`: Imprime las diez primeras líneas de un fichero.
+- `tail -f`: Imprime las ultimas lineas del fichero en tiempo real. Útil par logs.
 - `!!`: ejecuta el último comando ejecutado
+- `less`: + el nombre del archivo, lo lee. Dentro, `/texto` busca el texto en el fichero.
+- `more`: la versión antigua de `less`.
+- `man`: es un programa que usa `less`. Muestra el manual de un programa
+- `cat`: + el nombre del fichero, lo imprime en la consola (_concatenate to the standart out_).
 
 ### Atajos
 
@@ -40,6 +46,8 @@ Para reconfigurar comandos, [aquí](https://btholt.github.io/complete-intro-to-l
 - `CTRL + D` (SIGQUIT): _quit_. Cierra la sesión del _bash_. Dentro de un programa REPL (Python), este comando lo que haría sería cerrarlo.
 - SIGTERM: no tiene atajo, pero es la señal que se envía cuando se usa `kill` + programa. Ocurre cuando el sistema operativo se apaga. Envía SIGTERM  a todos los programas para avisar de que se va a cerrar. Una vez que todos se cierran, cierra la terminal.
 - `kill -9` (SIGKILL): detiene un la ejecución de un programa inmediatamente.
+-  `echo hi >> README.md`: imprime hi en el fichero, si no existe, lo crea.
+- `mkdir -p uno/dos/tres`: anida directorios dentro del directorio uno.
 
 ### Editores de texto
 
