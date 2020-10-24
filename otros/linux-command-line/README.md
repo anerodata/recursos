@@ -23,6 +23,22 @@ _Shell_ tiene una lógica basada en _Read Evaluate Print Loop_ (REPL), es decir,
 - `more`: la versión antigua de `less`.
 - `man`: es un programa que usa `less`. Muestra el manual de un programa
 - `cat`: + el nombre del fichero, lo imprime en la consola (_concatenate to the standart out_).
+- `rm`: borra directorios
+- `rm -f`: borra directorios y su contenido recursívamente
+- `rm -rf`: igual pero con _force_. Es decir, no pregunta si estás seguro o no (para módulos de node o repositorios).
+- `trash`: [instalar](https://www.tecmint.com/trash-cli-manage-linux-trash-from-command-line/). Manda el fichero a _trash_.
+- `cp -R file directory`: lleva el fichero al directorio, lo crea si no existe.
+- `tar -cf archive.tar pepe/ README.md`: Crea un archivo sin comprimir.
+- `tar -zcf archive.tar.gz pepe/ README.md`: crea un archivo comprimido 
+- `tar -xzf archive.tar.gz -C some-folder`: extrae un fichero comprimido en `some-folder` (tiene que haber sido creada)
+- `touch file{1,2,3,pepe}.txt`: {} = _expansion_. Añade _file_ delante de cada valor y crea un fichero para cada uno. Aplica para otros programas como `rm`.
+- `ls file*.txt`: * = _wildcard_. Lista todos los ficheros que comiencen por file y terminen por .txt
+- `ls file?.txt`: Lista todos los ficheros que comiencen por file y terminen por .txt, descartando `file-1.txt` por ejemplo. `ls file-??.txt`, listaría `file-12.txt`, pero no `file-1.txt`.
+- `touch files/file-{1..50}.txt`. Dentro de `files`, crea 50 ficheros.
+- `echo {a..z..10}`: imprime `a k u`.
+- `echo {a..z}{1..2}`: imprime `a1 a2 b1 b2`...
+- `rm -r -- !(README.md)`: borra todo menos ese fichero.
+
 
 ### Atajos
 
