@@ -28,17 +28,33 @@ _Shell_ tiene una lógica basada en _Read Evaluate Print Loop_ (REPL), es decir,
 - `rm -rf`: igual pero con _force_. Es decir, no pregunta si estás seguro o no (para módulos de node o repositorios).
 - `trash`: [instalar](https://www.tecmint.com/trash-cli-manage-linux-trash-from-command-line/). Manda el fichero a _trash_.
 - `cp -R file directory`: lleva el fichero al directorio, lo crea si no existe.
+- `rm -r -- !(README.md)`: borra todo menos ese fichero.
+
+#### Archivos comprimidos
+
 - `tar -cf archive.tar pepe/ README.md`: Crea un archivo sin comprimir.
 - `tar -zcf archive.tar.gz pepe/ README.md`: crea un archivo comprimido 
 - `tar -xzf archive.tar.gz -C some-folder`: extrae un fichero comprimido en `some-folder` (tiene que haber sido creada)
+
+#### _Wildcards and replacements_
+
 - `touch file{1,2,3,pepe}.txt`: {} = _expansion_. Añade _file_ delante de cada valor y crea un fichero para cada uno. Aplica para otros programas como `rm`.
 - `ls file*.txt`: * = _wildcard_. Lista todos los ficheros que comiencen por file y terminen por .txt
 - `ls file?.txt`: Lista todos los ficheros que comiencen por file y terminen por .txt, descartando `file-1.txt` por ejemplo. `ls file-??.txt`, listaría `file-12.txt`, pero no `file-1.txt`.
 - `touch files/file-{1..50}.txt`. Dentro de `files`, crea 50 ficheros.
 - `echo {a..z..10}`: imprime `a k u`.
 - `echo {a..z}{1..2}`: imprime `a1 a2 b1 b2`...
-- `rm -r -- !(README.md)`: borra todo menos ese fichero.
 
+#### Streams
+
+_One of the Linux philosophies is the assumption that the output of a program can be the input to another program through streams and pipes, then is it possible to redirect the output to another file._
+
+- `echo 'text' 1> text.txt`: `>1` redirecciona (_standard out_). Convierte el _output_ del programa _echo_ en el _input_ del fichero `text.txt` y borra todo lo anterior. `echo 'text' 1>> text.txt`: añade el contenido, no borra lo anterior.
+- `cat text.text 1> text-2.txt`: con la filosofía anterior, estaríamos copiando un programa.
+- `ls -lash 1>> text2.txt`: lleva el output del listado a `text2.txt`.
+- `cat non-existant-file.txt 2> error.txt`: `>2` redirecciona (_standard error_). Convierte un _output_ de error en en el _input_ de otro fichero. El fichero no existe, por eso produce un error.
+- `ls -lash file.txt 1> ls.txt 2> error.txt`: Separación de _streams_. los errores iran en `error.txt`.
+- `ls -lash 1> /dev/null`. Solo imprimirá errores. El resto de mensajes, no. Para ejecutar un programa del que solo queramos saber los errores.
 
 ### Atajos
 
