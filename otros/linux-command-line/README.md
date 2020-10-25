@@ -45,9 +45,11 @@ _Shell_ tiene una lógica basada en _Read Evaluate Print Loop_ (REPL), es decir,
 - `echo {a..z..10}`: imprime `a k u`.
 - `echo {a..z}{1..2}`: imprime `a1 a2 b1 b2`...
 
-#### Streams
+#### _Streams_
 
 _One of the Linux philosophies is the assumption that the output of a program can be the input to another program through streams and pipes, then is it possible to redirect the output to another file._
+
+##### _Output streams_
 
 - `echo 'text' 1> text.txt`: `>1` redirecciona (_standard out_). Convierte el _output_ del programa _echo_ en el _input_ del fichero `text.txt` y borra todo lo anterior. `echo 'text' 1>> text.txt`: añade el contenido, no borra lo anterior.
 - `cat text.text 1> text-2.txt`: con la filosofía anterior, estaríamos copiando un programa.
@@ -55,6 +57,21 @@ _One of the Linux philosophies is the assumption that the output of a program ca
 - `cat non-existant-file.txt 2> error.txt`: `>2` redirecciona (_standard error_). Convierte un _output_ de error en en el _input_ de otro fichero. El fichero no existe, por eso produce un error.
 - `ls -lash file.txt 1> ls.txt 2> error.txt`: Separación de _streams_. los errores iran en `error.txt`.
 - `ls -lash 1> /dev/null`. Solo imprimirá errores. El resto de mensajes, no. Para ejecutar un programa del que solo queramos saber los errores.
+
+##### _Input streams_
+
+- `cat < file.txt`: `<` = _standard in_. Envia el archivo como _input_ a `cat` y este programa lo devuelve como  _output_.
+- `grep ".md\|.txt" < file.txt`: coge el conteindo del fichero y se lo lanza a grep como _input_ el _output_ que devuelve `grep` (programa que filtra) es la línea del fichero que sea `.md` o `.txt`.
+- `greap ".md" < file.txt 2> error.txt`: mandamos el error a `error.txt`. `greap` no existe con lo cual el error irá al fichero. Si el comando estuviera bien escrito se mostraría en consola la línea del `README.md` y no escribiría nada en el fichero de errores.
+- `grep .md file.txt > output.txt 2> /dev/null`: filtra el `README.md`, se lleva el resultado al `output.txt`
+
+### _Pipes_ o "conductores"
+
+_In order to move from one program to another within the command line, developers have to use pipes._
+
+- `cat output.txt | grep .md`: _`cat` takes the output of the file and pipes into `grep`_. 
+- `tasklist.exe | grep firefox`: filtra los procesos de windows en los que ponga "firefox".
+- `yes n | rm -i file*`: responde "no" a borrar todos los ficheros.
 
 ### Atajos
 
@@ -80,6 +97,25 @@ Para reconfigurar comandos, [aquí](https://btholt.github.io/complete-intro-to-l
 - `kill -9` (SIGKILL): detiene un la ejecución de un programa inmediatamente.
 -  `echo hi >> README.md`: imprime hi en el fichero, si no existe, lo crea.
 - `mkdir -p uno/dos/tres`: anida directorios dentro del directorio uno.
+
+### Usuarios
+
+- `cat /etc/passwd`: imprime los usuarios de esa máquina. Todos los que no tienen `bash` en la ruta significa que no pueden acceder a ella. Ni siquiera teniendo la credencial. Es positivo para evitar hackeos.
+
+Si intentamos hacer un directorio en `/`, no podemos. Solo el usuario `root` tiene permisos para operar ahí: borrar, crear...
+
+- `whoami`: me dice `anerodata`, pero `sudo whoami`, `root`. `sudo` nos permite operar como `root` y volver a nuestro usuario inicial tras acabar la operación.
+- `sudo su`: accedemos a `root`.
+
+Creamos un nuevo usuario para realizar una tarea determinada en un directorio, estando como registrado como `root`.
+- `useradd pepe`: crea un nuevo usuario.
+- `passwd pepe`: contraseña.
+
+### Grupos
+
+Usamos los grupos para dar x permisos a x usuarios.
+
+- `sudo usermod` -aG sudo pepe: le da permisos de `sudo` a pepe. Ahora puede usar `sudo`. `-aG`: `a` mete en el grupo, `G` indica en cuál.
 
 ### Editores de texto
 
