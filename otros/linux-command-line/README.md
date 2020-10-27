@@ -111,11 +111,27 @@ Creamos un nuevo usuario para realizar una tarea determinada en un directorio, e
 - `useradd pepe`: crea un nuevo usuario.
 - `passwd pepe`: contraseña.
 
+Al hacer `cat /etc/passwd` podemos leer los usuarios de la máquina. `pepe:x:1001:1001::/home/pepe:/bin/sh`. Las dos primeras cifras son ID de grupo, la penúltima ruta es su _home_ (directorio al que va al loggearse) y la siguiente es su _shell_.
+
 ### Grupos
 
 Usamos los grupos para dar x permisos a x usuarios.
 
 - `sudo usermod` -aG sudo pepe: le da permisos de `sudo` a pepe. Ahora puede usar `sudo`. `-aG`: `a` mete en el grupo, `G` indica en cuál.
+
+### Permisos
+
+Estando en un _Windows Subsystem Linux_ esto solo funcionará en _home_ o _root_ pero no en `/mnt/c/`.
+
+`drwxr-xr-x`: `d` indica directorio, si fuera `-` sería fichero. después `rwx` (_read_, _write_, _execute_ por el usuario en cuestión) + `rwx` (por el grupo del usuario en cuestión) + `rwx` (el resto). _Execute_ se produce al hacer un `ls` sobre el directorio por ejemplo.
+
+`sudo chown anerodata:anerodata folder/`: _change ownership_. Cambia la propiedad del directorio a `anerodata` y al grupo `anerodata`.
+
+`sudo chmod u=rwx,g=rwx,o=rwx hello/`: cambiría los permisos a _read, write and execute_ para el usuario, el grupo y los otros en ese directorio.
+
+`sudo chmod u=rwx, g=rwx, o=rwx file.txt` = `sudo chmod 777 file.txt`.
+
+`sudo chmod -x`: quita los permisos de ejecutar a todos.
 
 ### Editores de texto
 
