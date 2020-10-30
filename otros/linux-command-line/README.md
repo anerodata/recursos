@@ -45,6 +45,44 @@ _Shell_ tiene una lógica basada en _Read Evaluate Print Loop_ (REPL), es decir,
 - `echo {a..z..10}`: imprime `a k u`.
 - `echo {a..z}{1..2}`: imprime `a1 a2 b1 b2`...
 
+### Editores de texto
+
+Vim y Nano. Vim tiene varios modos, el modo comando y el modo de edición. Pulsando sobre `ESC` pasamos al modo de comando.
+
+Algunos comandos de vim:
+
+- `:q` - salir.
+- `:q!` - salir sin importar que no haya cambios guardados.
+- `:qa!` - salir forzadamente.
+- `:d` - borrar una línea.
+- `:d100` - desde la primera linea, borra desde la primera hasta la 100.
+- `:wq!` - escribir y salir.
+
+### Atajos
+
+Para reconfigurar comandos, [aquí](https://btholt.github.io/complete-intro-to-linux-and-the-cli/signals-and-the-power-of-ctrl).
+
+- `CTRL + R`: _reverse search_. Para buscar comandos.
+- `CTRL + SHIFT + C` y `CTRL + SHIFT + C`: _copy_ y _paste_ en el _bash_ cuando estamos en Windows.
+- `CTRL + A`: takes you to the beginning of the line
+- `CTRL + E`: takes you to the end of the line
+- `CTRL + K`: "yank" everything after the cursor
+- `CTRL + U`: "yank" everything before the cursor
+- `CTRL + Y`: "paste" (paste in quotes because it doesn't actually go into your system clipboard) everything you yanked
+- `CTRL + L`: clear the screen
+- `CTRL + R`: reverse search through history
+
+### Señales
+
+`kill -l` lista todas las señales. Son usadas por los procesos para comunicarse entre ellos o con _shell_, como el caso de SIGALARM.
+
+- `CTRL + C` (SIGINT): interrumpe un proceso.
+- `CTRL + D` (SIGQUIT): _quit_. Cierra la sesión del _bash_. Dentro de un programa REPL (Python), este comando lo que haría sería cerrarlo.
+- SIGTERM: no tiene atajo, pero es la señal que se envía cuando se usa `kill` + programa. Ocurre cuando el sistema operativo se apaga. Envía SIGTERM  a todos los programas para avisar de que se va a cerrar. Una vez que todos se cierran, cierra la terminal.
+- `kill -9` (SIGKILL): detiene un la ejecución de un programa inmediatamente.
+-  `echo hi >> README.md`: imprime hi en el fichero, si no existe, lo crea.
+- `mkdir -p uno/dos/tres`: anida directorios dentro del directorio uno.
+
 #### _Streams_
 
 _One of the Linux philosophies is the assumption that the output of a program can be the input to another program through streams and pipes, then is it possible to redirect the output to another file._
@@ -73,31 +111,6 @@ _In order to move from one program to another within the command line, developer
 - `tasklist.exe | grep firefox`: filtra los procesos de windows en los que ponga "firefox".
 - `yes n | rm -i file*`: responde "no" a borrar todos los ficheros.
 
-### Atajos
-
-Para reconfigurar comandos, [aquí](https://btholt.github.io/complete-intro-to-linux-and-the-cli/signals-and-the-power-of-ctrl).
-
-- `CTRL + R`: _reverse search_. Para buscar comandos.
-- `CTRL + SHIFT + C` y `CTRL + SHIFT + C`: _copy_ y _paste_ en el _bash_ cuando estamos en Windows.
-- `CTRL + A`: takes you to the beginning of the line
-- `CTRL + E`: takes you to the end of the line
-- `CTRL + K`: "yank" everything after the cursor
-- `CTRL + U`: "yank" everything before the cursor
-- `CTRL + Y`: "paste" (paste in quotes because it doesn't actually go into your system clipboard) everything you yanked
-- `CTRL + L`: clear the screen
-- `CTRL + R`: reverse search through history
-
-### Señales
-
-`kill -l` lista todas las señales. Son usadas por los procesos para comunicarse entre ellos o con _shell_, como el caso de SIGALARM.
-
-- `CTRL + C` (SIGINT): interrumpe un proceso.
-- `CTRL + D` (SIGQUIT): _quit_. Cierra la sesión del _bash_. Dentro de un programa REPL (Python), este comando lo que haría sería cerrarlo.
-- SIGTERM: no tiene atajo, pero es la señal que se envía cuando se usa `kill` + programa. Ocurre cuando el sistema operativo se apaga. Envía SIGTERM  a todos los programas para avisar de que se va a cerrar. Una vez que todos se cierran, cierra la terminal.
-- `kill -9` (SIGKILL): detiene un la ejecución de un programa inmediatamente.
--  `echo hi >> README.md`: imprime hi en el fichero, si no existe, lo crea.
-- `mkdir -p uno/dos/tres`: anida directorios dentro del directorio uno.
-
 ### Usuarios
 
 - `cat /etc/passwd`: imprime los usuarios de esa máquina. Todos los que no tienen `bash` en la ruta significa que no pueden acceder a ella. Ni siquiera teniendo la credencial. Es positivo para evitar hackeos.
@@ -123,29 +136,55 @@ Usamos los grupos para dar x permisos a x usuarios.
 
 Estando en un _Windows Subsystem Linux_ esto solo funcionará en _home_ o _root_ pero no en `/mnt/c/`.
 
-`drwxr-xr-x`: `d` indica directorio, si fuera `-` sería fichero. después `rwx` (_read_, _write_, _execute_ por el usuario en cuestión) + `rwx` (por el grupo del usuario en cuestión) + `rwx` (el resto). _Execute_ se produce al hacer un `ls` sobre el directorio por ejemplo.
+- `drwxr-xr-x`: `d` indica directorio, si fuera `-` sería fichero. después `rwx` (_read_, _write_, _execute_ por el usuario en cuestión) + `rwx` (por el grupo del usuario en cuestión) + `rwx` (el resto). _Execute_ se produce al hacer un `ls` sobre el directorio por ejemplo.
 
-`sudo chown anerodata:anerodata folder/`: _change ownership_. Cambia la propiedad del directorio a `anerodata` y al grupo `anerodata`.
+- `sudo chown anerodata:anerodata folder/`: _change ownership_. Cambia la propiedad del directorio a `anerodata` y al grupo `anerodata`.
 
-`sudo chmod u=rwx,g=rwx,o=rwx hello/`: cambiría los permisos a _read, write and execute_ para el usuario, el grupo y los otros en ese directorio.
+- `sudo chmod u=rwx,g=rwx,o=rwx hello/`: cambiría los permisos a _read, write and execute_ para el usuario, el grupo y los otros en ese directorio.
 
-`sudo chmod u=rwx, g=rwx, o=rwx file.txt` = `sudo chmod 777 file.txt`.
+- `sudo chmod u=rwx, g=rwx, o=rwx file.txt` = `sudo chmod 777 file.txt`.
 
-`sudo chmod -x`: quita los permisos de ejecutar a todos.
+- `sudo chmod -x`: quita los permisos de ejecutar a todos.
 
-### Editores de texto
+### _Environments_
 
-Vim y Nano. Vim tiene varios modos, el modo comando y el modo de edición. Pulsando sobre `ESC` pasamos al modo de comando.
+- `printenv`: imprime las variables de entorno. Las podemos imprimir diciendo `echo $NAME` por ejemplo
+- `sudo vi /etc/environment` permite añadir variables de entorno
+- `echo $VARIABLE`: la imprime
+- En `~/.bashrc` también añadimos variables de entorno. Solo que para un usuario en cuesión. En lugar de para todos.
+- `source ~/.bashrc`: corre ese script para reconocer las novedades o cambios
+- La diferencia entre `~/.bashrc` y `~/.bashrc_profile` es que el primero es un script que corre con más frecuencia. Cada vez que abres `bash`. El segundo solo corre la primera vez al abrir la consola por primera vez. Ante la duda, `.bashrc`.
 
-Algunos comandos de vim:
+### Procesos
 
-- `:q` - salir.
-- `:q!` - salir sin importar que no haya cambios guardados.
-- `:qa!` - salir forzadamente.
-- `:d` - borrar una línea.
-- `:d100` - desde la primera linea, borra desde la primera hasta la 100.
-- `:wq!` - escribir y salir.
+- Ejecutando `ps` mostramos los procesos en consola.
+- Ejecutando `sleep 10 & ps` y al acabar los 10 segundos, `ps` de nuevo, vemos como ha terminado.
+- En "ejercicios" hay un ejemplo de como se "mata" un proceso.
+- `ps aux` permite ver los procesos ejecutados por cualquier usuario en la máquina. `ps aux | less` para mostrarles poco a poco. También se pueden filrar con `grep`
+- Para poner procesos en el _background_ usamos `CTRL + Z` y luego `jobs`. Vemos el proceso parado. Decimos `bg 1` 1 sería el ID del proceso y ejecutamos `jobs` de nuevo. Podemos ver como corre ahora en el _background_. `fg 1`. Hace lo contrario. Pone el proceso en el _foreground_.
+- `tmux` divide la el bash hace un _split_. No lo recomienda. `screen` Abre otra ventana para navegar en _bash_.
+- `jobs -l` lista los procesos con el ID, para poder matarlo.
+- `sleep 10 &` manda el proceso directamente al _background_.
+- `sleep 10 & > output.txt` manda el _output_ al _background_. Evita que aparezca en la pantalla del _bash_.
+
+### Códigos de salida y operadores de proceso
+
+Cada vez que ejecutamos un programa, como `date`, podemos ver ejecutando `echo $?` como ha terminado. Si lo que aparece es 0, eso es que ha tenido éxito.
+
+Podemos hacer la prueba con `yes`, y parándolo con `CTRL + C`. [Aqúí](https://btholt.github.io/complete-intro-to-linux-and-the-cli/process-operators) Están los significados de los códigos.
+
+- `touch status.txt && date >> status.txt && uptime status.txt`. Va ejecutando procesos si el anterior tiene un código de salida = 0. `status` te dice cuanto tiempo lleva la máquina encendida.
+
+- `touch status.txt || date`, con el _OR_ operator. Si no tiene éxito a la primera, se va al siguiente comando.
+
+- `true ; false ; echo hi` ejecuta los programas sin importar el éxito o el fracaso.
+
+### Subcomandos
+
+- `echo I thing $(whoami) is a champ` = `echo I thing anerodata is a champ`. El dolar ejecuta un subcomando. Ejecuta un subcomando separado poniendo lo que devuelva al _standard out_. `echo I thing ``whoami`` is a champ` funcionaría de la misma manera.
+
+- `echo $(date +%x) - $(uptime) >> log.txt` al iniciar un trabajo, guardaría en un log la fecha y la información de la máquina.
 
 ### Ejercios
 
-- **Detener un programa**: `yes > /dev/null &` Ejecuta yes en el _background_. `ps aux | grep yes` muestra todos los programas que se llamen _yes_ que se están ejecutando. Con su ID lo detenemos así `kill -9 428`.
+- **Detener un programa**: `yes > /dev/null &` Ejecuta yes en el _background_. `ps aux | grep yes` muestra todos los programas que se llamen _yes_ que se están ejecutando. Con su ID lo detenemos así `kill -9 428` en vez de `-9` también valdría `-SIGKILL`.
