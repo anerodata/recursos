@@ -122,6 +122,7 @@ Si intentamos hacer un directorio en `/`, no podemos. Solo el usuario `root` tie
 
 Creamos un nuevo usuario para realizar una tarea determinada en un directorio, estando como registrado como `root`.
 - `useradd pepe`: crea un nuevo usuario.
+- `sudo useradd -s /bin/bash -m -g ubuntu pepe`: crea un nuevo usuario con acceso a `bash`, no `dash`. Crea un `home`. Con los mismos permisos que `ubuntu` con el nombre de `pepe`.
 - `passwd pepe`: contraseña.
 
 Al hacer `cat /etc/passwd` podemos leer los usuarios de la máquina. `pepe:x:1001:1001::/home/pepe:/bin/sh`. Las dos primeras cifras son ID de grupo, la penúltima ruta es su _home_ (directorio al que va al loggearse) y la siguiente es su _shell_.
@@ -184,6 +185,12 @@ Podemos hacer la prueba con `yes`, y parándolo con `CTRL + C`. [Aqúí](https:/
 - `echo I thing $(whoami) is a champ` = `echo I thing anerodata is a champ`. El dolar ejecuta un subcomando. Ejecuta un subcomando separado poniendo lo que devuelva al _standard out_. `echo I thing ``whoami`` is a champ` funcionaría de la misma manera.
 
 - `echo $(date +%x) - $(uptime) >> log.txt` al iniciar un trabajo, guardaría en un log la fecha y la información de la máquina.
+
+### _Secure Shell_ (SSH)
+
+Es un protocolo que permite establecer conexión con un servidor remoto para ejecutar programas desde nuestra máquina.
+
+Brian utiliza [`lasspass`](https://multipass.run/) para crear dos máquinas virtuales y conectarlas con `SSH`.
 
 ### Ejercios
 
