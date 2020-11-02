@@ -150,7 +150,7 @@ Estando en un _Windows Subsystem Linux_ esto solo funcionará en _home_ o _root_
 
 - `sudo chmod u=rwx, g=rwx, o=rwx file.txt` = `sudo chmod 777 file.txt`.
 
-- `sudo chmod -x`: quita los permisos de ejecutar a todos.
+- `sudo chmod -x`: quita los permisos de ejecutar a todos. `chmod +x` funcionaría al revés.
 
 ### _Environments_
 
@@ -201,6 +201,21 @@ ada una que la otra tiene la clave pública que dice tener. [Aquí](https://en.w
 En la segunda máquina, Brian crea el fichero `authorized_keys` en `~/.ssh`, copia el `id_rsa.pub` de la otra máquina en este fichero de la otra para comprobar que esta es la clave pública asociada a la privada. La clave privada sería como la llave y la pública el candado que enseñas al otro ordenador.
 
 Ahora necesitamos la `ip` del segundo servidor. Para que el primero se conecte al segundo. `ifconfig` muestra info de red. Entonces con la `inet` genera el siguiente comando `ssh brian@[inet]` brian es el usuario en el que ha dejado la copia de `id_rsa.pub`.
+
+### _Secure File Transfer Protocol_ (SFTP) 
+
+- `sftp brian@[inet]` Inicia el protocolo con la segunda máquina después de haber realizado lo de las claves `SSH`. Ahora si hacemos `pwd`, nos muestra la ruta de la segunda máquina.
+- `put file.txt` sube el fichero al servidor remoto. Dentro de este modo, `!echo "file text" >> file.txt`, crearía un fichero. `help` te muestra la ayuda.
+- `get file.txt getted.file.txt` descargaría el fichero de la segunda máquina.
+- `bye` abandona SFTP.
+
+### WGET
+
+Se utiliza para descargar algo de internet. Hacer `cp` en internet. No se conecta a los _pipes_, con lo cual no puedes derivar el contenido de lo que descargas a otros programas. `wget` también puede hacer POST, PUT _requests_, al igual que CURL. WGET es capaz de descargar directorios recursivamente. Por ejemplo, en una web en la que se conecten ficheros CSS con rutas relativas, el programa encontraría esas URL y descargaría los contenidos. CURL no hace esto.
+
+- `wget https://raw.githubusercontent.com/mydzor/bash2048/master/bash2048.sh` descarga el juego de internet.
+- `bash bash2048.sh` ejecutaría el fichero.
+- `chmod +x` le da permisos de ejecución a todos los usuarios y ahora el fichero es ejecutable de lam siguiente manera `. bash.sh`.
 
 ### Ejercios
 
