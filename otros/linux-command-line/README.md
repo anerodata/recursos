@@ -61,6 +61,8 @@ Algunos comandos de vim:
 - `ALT A`: va al final de la línea con `INSERT`.
 - `ALT I`: va al principio de la línea con `INSERT`. 
 
+Toda la [documentación](http://vimdoc.sourceforge.net/htmldoc/) de Vim.
+
 ### Atajos
 
 Para reconfigurar comandos, [aquí](https://btholt.github.io/complete-intro-to-linux-and-the-cli/signals-and-the-power-of-ctrl).
