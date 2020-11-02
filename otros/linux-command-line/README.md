@@ -61,7 +61,7 @@ Algunos comandos de vim:
 - `ALT A`: va al final de la línea con `INSERT`.
 - `ALT I`: va al principio de la línea con `INSERT`. 
 
-Toda la [documentación](http://vimdoc.sourceforge.net/htmldoc/) de Vim.
+Toda la [documentación](http://vimdoc.sourceforge.net/htmldoc/) de Vim. Y la [Wiki](https://vim.fandom.com/wiki/Vim_Tips_Wiki) de Vim.
 
 ### Atajos
 
@@ -168,7 +168,7 @@ Estando en un _Windows Subsystem Linux_ esto solo funcionará en _home_ o _root_
 - En "ejercicios" hay un ejemplo de como se "mata" un proceso.
 - `ps aux` permite ver los procesos ejecutados por cualquier usuario en la máquina. `ps aux | less` para mostrarles poco a poco. También se pueden filrar con `grep`
 - Para poner procesos en el _background_ usamos `CTRL + Z` y luego `jobs`. Vemos el proceso parado. Decimos `bg 1` 1 sería el ID del proceso y ejecutamos `jobs` de nuevo. Podemos ver como corre ahora en el _background_. `fg 1`. Hace lo contrario. Pone el proceso en el _foreground_.
-- `tmux` divide la el bash hace un _split_. No lo recomienda. `screen` Abre otra ventana para navegar en _bash_.
+- `tmux` divide la el bash hace un _split_. No lo recomienda. `screen` Abre otra ventana para navegar en _bash_. Información sobre [`screen`](https://linuxize.com/post/how-to-use-linux-screen/).
 - `jobs -l` lista los procesos con el ID, para poder matarlo.
 - `sleep 10 &` manda el proceso directamente al _background_.
 - `sleep 10 & > output.txt` manda el _output_ al _background_. Evita que aparezca en la pantalla del _bash_.
