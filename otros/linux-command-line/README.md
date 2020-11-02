@@ -219,6 +219,22 @@ Se utiliza para descargar algo de internet. Hacer `cp` en internet. No se conect
 - `bash bash2048.sh` ejecutaría el fichero.
 - `chmod +x` le da permisos de ejecución a todos los usuarios y ahora el fichero es ejecutable de lam siguiente manera `. bash.sh`.
 
+### CURL
+
+`curl` funciona igual que `wget`, solo que es capaz de conectarse a los `pipes`. `curl` se usa mucho para probar una API por ejemplo.
+
+- Es decir se podría hacer: `curl https://raw.githubusercontent.com/mydzor/bash2048/master/bash2048.sh >> game.sh` 
+- `python3 -m http.server 8000 --bind 0.0.0.0`, dispara un servidor web.
+- `curl http://192.168.1.46:8000/` hace una petición sin descargar el contenido. Solo imprimiéndolo en _standard out_.
+- `curl -o result.html http://192.168.1.46:8000/` se lo llevaría a ese fichero sin usar _pipes_.
+- `curl -X POST http://192.168.1.46:8000/` o `POST` o `PUT`... Cualquier verbo [`HTTP`](https://es.wikipedia.org/wiki/Protocolo_de_transferencia_de_hipertexto).
+- `curl -d "post body" http://192.168.1.46:8000` envía datos junto con la petición `POST`. `curl -X PUT -d "post body" http://192.168.1.46:8000`, haría lo mismo pero con `PUT`.
+- `curl -b "name=anerodata" -X PATCH http://192.168.1.46:8000` enviaría una petición copn _cookie_.
+- `curl -L https://bit.ly/linux-cli`: petición con redirección.
+- `curl -H "accept-language: en-US" -H "Authorization: xx" http://192.168.1.46:8000` para enviar _headers_ con la petición.
+- A través del navegador se puede copiar una petición como `curl`.
+- Hacer un pipe de `curl` a bash, es decir, descargar un programa y ejecutarlo puede ser peligroso. La confianza la otorga el dominio de donde descargas (github). En caso de que sea un sitió extraño. Descargamos el contenido en un fichero y comprobamos que se ha descargado. Ya que hay sitios que pueden cambiar el contenido por debajo de nosotros.
+
 ### Ejercios
 
 - **Detener un programa**: `yes > /dev/null &` Ejecuta yes en el _background_. `ps aux | grep yes` muestra todos los programas que se llamen _yes_ que se están ejecutando. Con su ID lo detenemos así `kill -9 428` en vez de `-9` también valdría `-SIGKILL`.
