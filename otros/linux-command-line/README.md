@@ -185,7 +185,6 @@ Podemos hacer la prueba con `yes`, y parándolo con `CTRL + C`. [Aqúí](https:/
 
 - `true ; false ; echo hi` ejecuta los programas sin importar el éxito o el fracaso.
 
-
 ### Subcomandos
 
 - `echo I thing $(whoami) is a champ` = `echo I thing anerodata is a champ`. El dolar ejecuta un subcomando. Ejecuta un subcomando separado poniendo lo que devuelva al _standard out_. `echo I thing ``whoami`` is a champ` funcionaría de la misma manera.
