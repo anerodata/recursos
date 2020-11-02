@@ -63,6 +63,8 @@ Algunos comandos de vim:
 
 Toda la [documentación](http://vimdoc.sourceforge.net/htmldoc/) de Vim. Y la [Wiki](https://vim.fandom.com/wiki/Vim_Tips_Wiki) de Vim.
 
+Para destacar las búsquedas he creado el fichero `~/.vimrc` y he he escrito `set hlsearch`. Es para que `:set hlsearch`, comando ejecutable en Vim durante una sesión, permanezca siempre.
+
 ### Atajos
 
 Para reconfigurar comandos, [aquí](https://btholt.github.io/complete-intro-to-linux-and-the-cli/signals-and-the-power-of-ctrl).
