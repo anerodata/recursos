@@ -57,6 +57,9 @@ Algunos comandos de vim:
 - `:d` - borrar una línea.
 - `:d100` - desde la primera linea, borra desde la primera hasta la 100.
 - `:wq!` - escribir y salir.
+- [_copy/paste_](https://vim.fandom.com/wiki/Copy,_cut_and_paste)
+- `ALT A`: va al final de la línea con `INSERT`.
+- `ALT I`: va al principio de la línea con `INSERT`. 
 
 ### Atajos
 
@@ -188,9 +191,14 @@ Podemos hacer la prueba con `yes`, y parándolo con `CTRL + C`. [Aqúí](https:/
 
 ### _Secure Shell_ (SSH)
 
-Es un protocolo que permite establecer conexión con un servidor remoto para ejecutar programas desde nuestra máquina.
-
 Brian utiliza [`lasspass`](https://multipass.run/) para crear dos máquinas virtuales y conectarlas con `SSH`.
+
+Es un protocolo que permite establecer conexión con un servidor remoto para ejecutar programas desde nuestra máquina. Es una clave criptográfica que crea una versión publica y una privada que no revelas a nadie. Usando ambas, permites conectar ordenadores. A ambas máquinas no les hace falta revelar las claves públicas para comprobar c
+ada una que la otra tiene la clave pública que dice tener. [Aquí](https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange) está explicado con mayor detale. `ssh-keygen -t rsa` es el comando para crear una clave SSH. Esto genera dos ficheros `id_rsa` es la privada e `id_rsa.pub` es la pública, la que se revela.
+
+En la segunda máquina, Brian crea el fichero `authorized_keys` en `~/.ssh`, copia el `id_rsa.pub` de la otra máquina en este fichero de la otra para comprobar que esta es la clave pública asociada a la privada. La clave privada sería como la llave y la pública el candado que enseñas al otro ordenador.
+
+Ahora necesitamos la `ip` del segundo servidor. Para que el primero se conecte al segundo. `ifconfig` muestra info de red. Entonces con la `inet` genera el siguiente comando `ssh brian@[inet]` brian es el usuario en el que ha dejado la copia de `id_rsa.pub`.
 
 ### Ejercios
 
