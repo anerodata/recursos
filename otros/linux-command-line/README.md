@@ -235,6 +235,37 @@ Se utiliza para descargar algo de internet. Hacer `cp` en internet. No se conect
 - A través del navegador se puede copiar una petición como `curl`.
 - Hacer un pipe de `curl` a bash, es decir, descargar un programa y ejecutarlo puede ser peligroso. La confianza la otorga el dominio de donde descargas (github). En caso de que sea un sitió extraño. Descargamos el contenido en un fichero y comprobamos que se ha descargado. Ya que hay sitios que pueden cambiar el contenido por debajo de nosotros.
 
+### Gestores de paquetes
+
+Advance Tool Package (APT) Es el gestor de paquetes de Ubuntu. DPKG es el de Debian por ejemplo.
+
+- `sudo apt install aptitude` Proporciona una interfaz gráfica de esto. `sudo apt install` es la versión nueva de `sudo apt get install`.
+- `apt search node`: todos los paquetes disponibles de node. 
+- `apt show nodejs`: muestra la información de `node`.
+- `sudo apt autoremove`: borra paquetes que no se necesitan por que no son referenciados por ningún programa.
+- `sudo apt update`: no actualiza ni instala nada, solo actualiza la lista de paquetes disponibles y sus versiones
+- `sudo apt list upgradeable`: lista los paquetes que deben ser actualizados segun la actualización anterior.
+- `sudo apt upgrade`: actualiza los programas después de haber actualizado la lista con `sudo apt update`
+- `sudo apt full-upgrade`: fusión de `autoremove`, `update` y `upgrade`.
+
+[apt-browse](https://www.apt-browse.org/) es un repositorio con todo lo que tiene `apt`.
+
+`apt` por debajo está usando `apt-get`, `apt-cache` y muchos programás más. Es una especie de envoltorio que corre en una capa superior respecto a las anteriores.
+
+### Snaps
+
+Es otro programa para gestionar paquetes como `apt`. Es más seguro que este último porque usa _sandboxing_, una manera de encapsular paquetes, de manera que cuando los instalas, si tienen codigo malicioso son incapaz de dañar el sistema operativo o de robarte información. Funcionan con independencia del sistema operativo, a diferencia de `apt`, por eso funciona en cualquier distribución de Linux.
+
+Además, las actualizaciones son más rápidas, no borra del todo la última versión apra instalar de 0 la nueva.
+
+`sudo snap install lolcat` instalaría el mismo programa, pero mejor empaquetado. `ls -lash lolcat` saca al _standard out_ el listado coloreado.
+
+`snap` funciona con _autoupdate_, es decir, el programa se actualiza solo como un navegador. Por eso se usa mucho para aplicaciones de escritorio. Al incluir todas las dependencias en un solo paquete, los prgramas suelen ocupar más que con `apt`.
+
+`snap` usa un _daemon_, un programa que corre en el _background_ sin que lo ejecutemos. Hay que instalarlo si no lo está.
+
+`snap info node` te da toda la información de `node`: versiones... etc Más actualizadas que `apt`. Cuando usamos `snap` nos conectamos a un canal que si no se explicita, es el de por defecto. `sudo snap install --channel=14/stable --classic node` `--classic` hace que no sea exactamente _sandbox_, lo que significas que tienes que confiar.
+
 ### Ejercios
 
 - **Detener un programa**: `yes > /dev/null &` Ejecuta yes en el _background_. `ps aux | grep yes` muestra todos los programas que se llamen _yes_ que se están ejecutando. Con su ID lo detenemos así `kill -9 428` en vez de `-9` también valdría `-SIGKILL`.
