@@ -1,0 +1,21 @@
+#! /bin/bash
+
+# First argument
+DESTINATION=$1
+
+#Prefix by user
+read -p "enter a file prefix: " FILE_PREFIX
+
+if [ -z $DESTINATION ]; then
+	echo "no path provided, defaulting to ~/temp"
+	DESTINATION=temp
+fi
+
+mkdir -p $DESTINATION
+
+# This is a comment
+cd $DESTINATION
+
+# Los corchetes hacen la llamada a la variable. No son imprescindibles menos este caso
+touch ${FILE_PREFIX}{1..10}.txt
+echo done # This is an echo 

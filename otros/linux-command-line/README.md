@@ -88,7 +88,7 @@ Para reconfigurar comandos, [aquí](https://btholt.github.io/complete-intro-to-l
 - SIGTERM: no tiene atajo, pero es la señal que se envía cuando se usa `kill` + programa. Ocurre cuando el sistema operativo se apaga. Envía SIGTERM  a todos los programas para avisar de que se va a cerrar. Una vez que todos se cierran, cierra la terminal.
 - `kill -9` (SIGKILL): detiene un la ejecución de un programa inmediatamente.
 -  `echo hi >> README.md`: imprime hi en el fichero, si no existe, lo crea.
-- `mkdir -p uno/dos/tres`: anida directorios dentro del directorio uno.
+- `mkdir -p uno/dos/tres`: anida directorios dentro del directorio uno. `-p` crea una carpeta con ese nombre si no existe.
 
 #### _Streams_
 
@@ -266,6 +266,57 @@ Además, las actualizaciones son más rápidas, no borra del todo la última ver
 
 `snap info node` te da toda la información de `node`: versiones... etc Más actualizadas que `apt`. Cuando usamos `snap` nos conectamos a un canal que si no se explicita, es el de por defecto. `sudo snap install --channel=14/stable --classic node` `--classic` hace que no sea exactamente _sandbox_, lo que significas que tienes que confiar.
 
+### _Scripts_
+
+Se ejecutan con `source` delante o con `. script.sh`. También con `bash` delante. Así se crearía un subproceso y no se producirían cambios de directorio. Con `source` todo sucede en el mismo proceso
+
+#### _Shebang or Hashbang_
+
+`#! /bin/bash`. En lo alto de el script, le dice `bash` que ejecute esto en la _shell_ `bash`. Después de poner esto en nuestro _script_. y cambiar los permisos del `script.sh` así `chmod +x script.sh` podemos ejecutar el fichero así `./script`, incluso quitando la extensión `.sh`. No usas ningún comando, sino que simplemente corres el fichero y a través de _shebanh_, `bash` averigua dónde ejecutarlo.
+
+`which python3` nos daría la ruta de `python3` para configurar un _shebang_ de un fichero _python_.
+
+_shebang_ posibilita compartir _scripts_ con usuarios de interpretes de comandos UNIX que no son LINUX (`zsh`, `PowerShell`).
+
+#### _Path_
+
+`echo $PATH` muestra los _paths_, las rutas donde todos los programas están. Entonces cada vez que corres `python` por ejemplo, `bash` recorre cada `path` en su búsqueda. En los ejemplos de _shebang_ ejeutabamos los prgramas así `./`, para ejecutar un programa que no está en PATH. 
+
+Ahora hemos metido el `script` de `bash` en una carpeta (my_bin) y le hemos pasado esta ruta absoluta al PATH de la siguiente manera. En `.bashrc` hemos colocado la variabla así `export PATH=/mnt/c/Users/anton/Desktop/anerodata/github/anerodata/formacion/otros/linux-command-line/bash-scripts:$PATH` con `:$PATH` para que no sobreescriba a PATH. `source ~/.bashrc` para refrescarlo. Al hacer `echo $PATH` vemos que la ruta está ahí. Ahora podemos ejecutar `gen-files` desde cualquier parte del ordenador
+
+
+#### Argumentos
+
+Podemos dar un argumento a la variable así `$DESTINATION=$1`. Para pasarle un destino en la ejeución del fichero. De manera que ahora diriamos `gen_files dir/my-dir`.
+
+```
+#Prefix by user
+read -p "enter a file prefix: " FILE_PREFIX
+```
+Con estas lineas parametrizamos `FILE_PREFIX` para que el usuario le de el prefijo que quiera al fichero.
+
+#### Condicionales
+
+```
+if [ -z $DESTINATION ]; then
+        echo "no path provided, defaulting to ~/temp"
+        DESTINATION=temp
+fi
+```
+
+Si el usuario no incluye nada en el _input_ la ruta por defecto sera `~/temp`. `-z $VAR` es igual `true` si está vacía. Los corchetes evaluan como `test`, es como ejectuar `test -z "aa" && echo $?` en la línea. Será 1 `false` porque el _string_ no está vacio. `man test` para más información.
+
+Brian lo llama _sintax sugar for testing_.
+
+- `test 15 -eq 15` Devuelve `0`. o `test 15 -eq 15 && echo is true`. Dueleve `is true`.
+- `test 15 -gt 10 && echo is true`: _greater than_.
+- `test 15 -lt 10 && echo is true`: _less than_.
+- `test 15 -ge 10 && echo is true`: _greater or equal than_.
+- `test 15 -le 10 && echo is true`: _less or equal than_.
+- `test -e gen_files && echo is true`: ¿Existe el archivo?
+- `test -w gen_files && echo is true`: ¿Existe el archivo y lo puedo escribir con mi usuario `anerodata` actual?
+
 ### Ejercios
 
 - **Detener un programa**: `yes > /dev/null &` Ejecuta yes en el _background_. `ps aux | grep yes` muestra todos los programas que se llamen _yes_ que se están ejecutando. Con su ID lo detenemos así `kill -9 428` en vez de `-9` también valdría `-SIGKILL`.
+
