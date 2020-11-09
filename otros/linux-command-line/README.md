@@ -89,6 +89,7 @@ Para reconfigurar comandos, [aquí](https://btholt.github.io/complete-intro-to-l
 - `kill -9` (SIGKILL): detiene un la ejecución de un programa inmediatamente.
 -  `echo hi >> README.md`: imprime hi en el fichero, si no existe, lo crea.
 - `mkdir -p uno/dos/tres`: anida directorios dentro del directorio uno. `-p` crea una carpeta con ese nombre si no existe.
+-  **Detener un programa**: `yes > /dev/null &` Ejecuta yes en el _background_. `ps aux | grep yes` muestra todos los programas que se llamen _yes_ que se están ejecutando. Con su ID lo detenemos así `kill -9 428` en vez de `-9` también valdría `-SIGKILL`.
 
 #### _Streams_
 
@@ -335,7 +336,12 @@ Cualquier _script_ aquí correrá periódicamente:
 
 `crontab -u root -e` instalaría un `cron` con `root`. Lo normal es hacerlo con un usario que no sea `root`. En WSL, ponemos esto `service cron start` en `~/.bashrc` para iniciar un proceso con cron. [Más info](https://scottiestech.info/2018/08/07/run-cron-jobs-in-windows-subsystem-for-linux/)
 
-### Ejercios
+### Customizar el _prompt_
 
-- **Detener un programa**: `yes > /dev/null &` Ejecuta yes en el _background_. `ps aux | grep yes` muestra todos los programas que se llamen _yes_ que se están ejecutando. Con su ID lo detenemos así `kill -9 428` en vez de `-9` también valdría `-SIGKILL`.
+Se puede ver así `echo $PS1` y cambiar de nombre así `PS1='$'`. `curl https://raw.githubusercontent.com/riobard/bash-powerline/master/bash-powerline.sh > ~/.bash-powerline.sh`. Descarga un customizador de consola de comandos. _gitbash_ o _spaceship_ para `zsh` son otros tipos de _prompt_.
 
+Para pintar de verde, por ejemplo `echo -e "\e[32mverde`. Es muy útil para destacar resultados en _bash scripts_ por ejemplo. Si no modificamos `echo` con `-e`, sacaríamos por consola exactamente esa notación porque no buscaría caracteres escapados. En [awesomebash](https://github.com/awesome-lists/awesome-bash) podemos ver un conjunto de programas muy curiosos.
+
+### Final
+
+A partir de aquí, algunos [recursos extra](https://btholt.github.io/complete-intro-to-linux-and-the-cli/conclusion). Sobre [symlinks](https://linuxize.com/post/how-to-create-symbolic-links-in-linux-using-the-ln-command/).
