@@ -1,0 +1,5 @@
+#! /bin/bash
+mkdir -p temp-files
+cd temp-files
+# Date subcomand in timestamp format
+touch file-$(date +%s).txt

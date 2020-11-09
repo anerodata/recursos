@@ -1,0 +1,8 @@
+#! /bin/bash
+FRIENDS=(Antonio "Jaime Pérez" Alicia Pepe)
+echo My  second friend is ${FRIENDS[1]}
+for FRIEND in ${FRIENDS[*]}
+do
+	echo friend: $FRIEND
+done
+echo I have ${#FRIENDS[*]} friends

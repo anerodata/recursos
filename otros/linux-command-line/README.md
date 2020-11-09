@@ -293,7 +293,7 @@ Podemos dar un argumento a la variable así `$DESTINATION=$1`. Para pasarle un d
 #Prefix by user
 read -p "enter a file prefix: " FILE_PREFIX
 ```
-Con estas lineas parametrizamos `FILE_PREFIX` para que el usuario le de el prefijo que quiera al fichero.
+Con estas lineas parametrizamos `FILE_PREFIX` para que el usuario le de el prefijo que quiera al fichero. No lleva `$` precediendo porque si lo llevara le estaríamos pasando a `read` el valor de `FILE_PREFIX`. Queremos asignar un valor con `read` para la variable, no pasarle al programa el valor que ya tenga. 
 
 #### Condicionales
 
@@ -309,12 +309,31 @@ Si el usuario no incluye nada en el _input_ la ruta por defecto sera `~/temp`. `
 Brian lo llama _sintax sugar for testing_.
 
 - `test 15 -eq 15` Devuelve `0`. o `test 15 -eq 15 && echo is true`. Dueleve `is true`.
+- `test 15 -ne 15`: _not equal than_.
 - `test 15 -gt 10 && echo is true`: _greater than_.
 - `test 15 -lt 10 && echo is true`: _less than_.
 - `test 15 -ge 10 && echo is true`: _greater or equal than_.
 - `test 15 -le 10 && echo is true`: _less or equal than_.
 - `test -e gen_files && echo is true`: ¿Existe el archivo?
 - `test -w gen_files && echo is true`: ¿Existe el archivo y lo puedo escribir con mi usuario `anerodata` actual?
+
+#### Loops
+
+En los scripts de `bash`. En uno de ellos se utiliza `NUM_TO_GUESS=$(( $RANDOM % 10 + 1 ))` para sacar un número random entre 1 y 10. Los dobles parenteis con el dolar convierten a `let`, justo como los corchetes hacían con `test`. `let` es para hacer operaciones aritméticas.
+
+
+### _Cron jobs_
+
+Cualquier _script_ aquí correrá periódicamente:
+
+- `/etc/cron.daily`
+- `/etc/cron.hourly`
+- `/etc/cron.monthly`
+- `/etc/cron.weekly`
+
+`crontab -e` abre el gestor de _cronjobs_. `* * * * * /mnt/c/Users/anton/Desktop/anerodata/github/anerodata/formacion/otros/linux-command-line/bash-scripts/make-file`. Los asteristos son minutos, horas, día del mes (21st), mes, día de la semana (lunes.). En el ejemplo, el _script_ correrá cada minuto siempre que tenga permisos de ejecución habilitados. [Esta](https://crontab.guru/) es una gran herramienta.
+
+`crontab -u root -e` instalaría un `cron` con `root`. Lo normal es hacerlo con un usario que no sea `root`. En WSL, ponemos esto `service cron start` en `~/.bashrc` para iniciar un proceso con cron. [Más info](https://scottiestech.info/2018/08/07/run-cron-jobs-in-windows-subsystem-for-linux/)
 
 ### Ejercios
 
