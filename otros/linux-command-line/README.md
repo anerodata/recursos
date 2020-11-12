@@ -348,7 +348,7 @@ A partir de aquí, algunos [recursos extra](https://btholt.github.io/complete-in
 
 ### Instalando un antivirus
 
-De entre todos los antivirus (en este artículo de [Genbeta](https://www.genbeta.com/linux/mejores-soluciones-anti-malware-para-linux) y en este otro de [Tecmint](https://www.tecmint.com/best-antivirus-programs-for-linux/) al final me decanto por `[clamav](https://www.clamav.net/documents/installing-clamav)`.
+De entre todos los antivirus (en este artículo de [Genbeta](https://www.genbeta.com/linux/mejores-soluciones-anti-malware-para-linux) y en este otro de [Tecmint](https://www.tecmint.com/best-antivirus-programs-for-linux/) al final me decanto por [ `clamav`](https://www.clamav.net/documents/installing-clamav).
 
 Es uno de los más recomendados, soporta casi todos los formatos de _mail_, trabaja desde la línea de comandos, fácil de instalar y de usar, proporciona una base de datos de virus actualizable, escanea ficheros y zips. Es un estándar en entornos UNIX.
 
