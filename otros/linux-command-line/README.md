@@ -173,6 +173,7 @@ Estando en un _Windows Subsystem Linux_ esto solo funcionará en _home_ o _root_
 - Para poner procesos en el _background_ usamos `CTRL + Z` y luego `jobs`. Vemos el proceso parado. Decimos `bg 1` 1 sería el ID del proceso y ejecutamos `jobs` de nuevo. Podemos ver como corre ahora en el _background_. `fg 1`. Hace lo contrario. Pone el proceso en el _foreground_.
 - `tmux` divide la el bash hace un _split_. No lo recomienda. `screen` Abre otra ventana para navegar en _bash_. Información sobre [`screen`](https://linuxize.com/post/how-to-use-linux-screen/).
 - `jobs -l` lista los procesos con el ID, para poder matarlo.
+- `kill $(jobs -p)` detiene todos los procesos.
 - `sleep 10 &` manda el proceso directamente al _background_.
 - `sleep 10 & > output.txt` manda el _output_ al _background_. Evita que aparezca en la pantalla del _bash_.
 
