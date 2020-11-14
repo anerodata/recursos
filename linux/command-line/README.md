@@ -220,6 +220,7 @@ Se utiliza para descargar algo de internet. Hacer `cp` en internet. No se conect
 - `wget https://raw.githubusercontent.com/mydzor/bash2048/master/bash2048.sh` descarga el juego de internet.
 - `bash bash2048.sh` ejecutaría el fichero.
 - `chmod +x` le da permisos de ejecución a todos los usuarios y ahora el fichero es ejecutable de lam siguiente manera `. bash.sh`.
+- `wget -O foo.html google.com` exporta a ese fichero y si no existe, lo crea.
 
 ## CURL
 
