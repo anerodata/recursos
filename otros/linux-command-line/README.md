@@ -359,3 +359,13 @@ Es uno de los más recomendados, soporta casi todos los formatos de _mail_, trab
 - Para escanear un fichero o directorio `clamscan file.txt`.
 
 Más info [aquí](https://linuxhint.com/install_clamav_ubuntu/) y [aquí](https://computernewage.com/2014/10/07/como-detectar-virus-en-linux-con-clamav/) y en la documentación del programa y haciendo `man clamscan`.
+
+### Instalando otros programas
+
+#### Spotify
+
+Con `snap install spotify`.
+
+#### Chrome
+
+Descargarlo de la [web](https://www.google.com/intl/es/chrome/) y `clamscan file.deb` para ver si está infectado, después `sudo dpkg -i file.deb`.
