@@ -8,7 +8,7 @@ En el caso de Linux, el _shell_ se llama _Bourne Against Shell (bash)_ en honor 
 
 _Shell_ tiene una lógica basada en _Read Evaluate Print Loop_ (REPL), es decir, envías un comando una vez y el interprete evalua, ejecuta un proceso y ocasionalmente imprime un resultado. También es posible ejecutar una linea que ejecute multiples lineas (_looping_).
 
-### Comandos
+## Comandos
 
 - `pwd --help`: Información sobre `pwd`
 - `ls anerodata`: `ls` es un comando `anerodata` sería un parámetro
@@ -30,13 +30,13 @@ _Shell_ tiene una lógica basada en _Read Evaluate Print Loop_ (REPL), es decir,
 - `cp -R file directory`: lleva el fichero al directorio, lo crea si no existe.
 - `rm -r -- !(README.md)`: borra todo menos ese fichero.
 
-#### Archivos comprimidos
+### Archivos comprimidos
 
 - `tar -cf archive.tar pepe/ README.md`: Crea un archivo sin comprimir.
 - `tar -zcf archive.tar.gz pepe/ README.md`: crea un archivo comprimido 
 - `tar -xzf archive.tar.gz -C some-folder`: extrae un fichero comprimido en `some-folder` (tiene que haber sido creada)
 
-#### _Wildcards and replacements_
+### _Wildcards and replacements_
 
 - `touch file{1,2,3,pepe}.txt`: {} = _expansion_. Añade _file_ delante de cada valor y crea un fichero para cada uno. Aplica para otros programas como `rm`.
 - `ls file*.txt`: * = _wildcard_. Lista todos los ficheros que comiencen por file y terminen por .txt
@@ -45,7 +45,7 @@ _Shell_ tiene una lógica basada en _Read Evaluate Print Loop_ (REPL), es decir,
 - `echo {a..z..10}`: imprime `a k u`.
 - `echo {a..z}{1..2}`: imprime `a1 a2 b1 b2`...
 
-### Editores de texto
+## Editores de texto
 
 Vim y Nano. Vim tiene varios modos, el modo comando y el modo de edición. Pulsando sobre `ESC` pasamos al modo de comando.
 
@@ -65,7 +65,7 @@ Toda la [documentación](http://vimdoc.sourceforge.net/htmldoc/) de Vim. Y la [W
 
 Para destacar las búsquedas he creado el fichero `~/.vimrc` y he he escrito `set hlsearch`. Es para que `:set hlsearch`, comando ejecutable en Vim durante una sesión, permanezca siempre.
 
-### Atajos
+## Atajos
 
 Para reconfigurar comandos, [aquí](https://btholt.github.io/complete-intro-to-linux-and-the-cli/signals-and-the-power-of-ctrl).
 
@@ -79,7 +79,7 @@ Para reconfigurar comandos, [aquí](https://btholt.github.io/complete-intro-to-l
 - `CTRL + L`: clear the screen
 - `CTRL + R`: reverse search through history
 
-### Señales
+## Señales
 
 `kill -l` lista todas las señales. Son usadas por los procesos para comunicarse entre ellos o con _shell_, como el caso de SIGALARM.
 
@@ -91,11 +91,11 @@ Para reconfigurar comandos, [aquí](https://btholt.github.io/complete-intro-to-l
 - `mkdir -p uno/dos/tres`: anida directorios dentro del directorio uno. `-p` crea una carpeta con ese nombre si no existe.
 -  **Detener un programa**: `yes > /dev/null &` Ejecuta yes en el _background_. `ps aux | grep yes` muestra todos los programas que se llamen _yes_ que se están ejecutando. Con su ID lo detenemos así `kill -9 428` en vez de `-9` también valdría `-SIGKILL`.
 
-#### _Streams_
+### _Streams_
 
 _One of the Linux philosophies is the assumption that the output of a program can be the input to another program through streams and pipes, then is it possible to redirect the output to another file._
 
-##### _Output streams_
+#### _Output streams_
 
 - `echo 'text' 1> text.txt`: `>1` redirecciona (_standard out_). Convierte el _output_ del programa _echo_ en el _input_ del fichero `text.txt` y borra todo lo anterior. `echo 'text' 1>> text.txt`: añade el contenido, no borra lo anterior.
 - `cat text.text 1> text-2.txt`: con la filosofía anterior, estaríamos copiando un programa.
@@ -104,14 +104,14 @@ _One of the Linux philosophies is the assumption that the output of a program ca
 - `ls -lash file.txt 1> ls.txt 2> error.txt`: Separación de _streams_. los errores iran en `error.txt`.
 - `ls -lash 1> /dev/null`. Solo imprimirá errores. El resto de mensajes, no. Para ejecutar un programa del que solo queramos saber los errores.
 
-##### _Input streams_
+#### _Input streams_
 
 - `cat < file.txt`: `<` = _standard in_. Envia el archivo como _input_ a `cat` y este programa lo devuelve como  _output_.
 - `grep ".md\|.txt" < file.txt`: coge el conteindo del fichero y se lo lanza a grep como _input_ el _output_ que devuelve `grep` (programa que filtra) es la línea del fichero que sea `.md` o `.txt`.
 - `greap ".md" < file.txt 2> error.txt`: mandamos el error a `error.txt`. `greap` no existe con lo cual el error irá al fichero. Si el comando estuviera bien escrito se mostraría en consola la línea del `README.md` y no escribiría nada en el fichero de errores.
 - `grep .md file.txt > output.txt 2> /dev/null`: filtra el `README.md`, se lleva el resultado al `output.txt`
 
-### _Pipes_ o "conductores"
+## _Pipes_ o "conductores"
 
 _In order to move from one program to another within the command line, developers have to use pipes._
 
@@ -119,7 +119,7 @@ _In order to move from one program to another within the command line, developer
 - `tasklist.exe | grep firefox`: filtra los procesos de windows en los que ponga "firefox".
 - `yes n | rm -i file*`: responde "no" a borrar todos los ficheros.
 
-### Usuarios
+## Usuarios
 
 - `cat /etc/passwd`: imprime los usuarios de esa máquina. Todos los que no tienen `bash` en la ruta significa que no pueden acceder a ella. Ni siquiera teniendo la credencial. Es positivo para evitar hackeos.
 
@@ -135,13 +135,13 @@ Creamos un nuevo usuario para realizar una tarea determinada en un directorio, e
 
 Al hacer `cat /etc/passwd` podemos leer los usuarios de la máquina. `pepe:x:1001:1001::/home/pepe:/bin/sh`. Las dos primeras cifras son ID de grupo, la penúltima ruta es su _home_ (directorio al que va al loggearse) y la siguiente es su _shell_.
 
-### Grupos
+## Grupos
 
 Usamos los grupos para dar x permisos a x usuarios.
 
 - `sudo usermod` -aG sudo pepe: le da permisos de `sudo` a pepe. Ahora puede usar `sudo`. `-aG`: `a` mete en el grupo, `G` indica en cuál.
 
-### Permisos
+## Permisos
 
 Estando en un _Windows Subsystem Linux_ esto solo funcionará en _home_ o _root_ pero no en `/mnt/c/`.
 
@@ -155,7 +155,7 @@ Estando en un _Windows Subsystem Linux_ esto solo funcionará en _home_ o _root_
 
 - `sudo chmod -x`: quita los permisos de ejecutar a todos. `chmod +x` funcionaría al revés.
 
-### _Environments_
+## _Environments_
 
 - `printenv`: imprime las variables de entorno. Las podemos imprimir diciendo `echo $NAME` por ejemplo
 - `sudo vi /etc/environment` permite añadir variables de entorno
@@ -164,7 +164,7 @@ Estando en un _Windows Subsystem Linux_ esto solo funcionará en _home_ o _root_
 - `source ~/.bashrc`: corre ese script para reconocer las novedades o cambios
 - La diferencia entre `~/.bashrc` y `~/.bashrc_profile` es que el primero es un script que corre con más frecuencia. Cada vez que abres `bash`. El segundo solo corre la primera vez al abrir la consola por primera vez. Ante la duda, `.bashrc`.
 
-### Procesos
+## Procesos
 
 - Ejecutando `ps` mostramos los procesos en consola.
 - Ejecutando `sleep 10 & ps` y al acabar los 10 segundos, `ps` de nuevo, vemos como ha terminado.
@@ -177,7 +177,7 @@ Estando en un _Windows Subsystem Linux_ esto solo funcionará en _home_ o _root_
 - `sleep 10 &` manda el proceso directamente al _background_.
 - `sleep 10 & > output.txt` manda el _output_ al _background_. Evita que aparezca en la pantalla del _bash_.
 
-### Códigos de salida y operadores de proceso
+## Códigos de salida y operadores de proceso
 
 Cada vez que ejecutamos un programa, como `date`, podemos ver ejecutando `echo $?` como ha terminado. Si lo que aparece es 0, eso es que ha tenido éxito.
 
@@ -189,13 +189,13 @@ Podemos hacer la prueba con `yes`, y parándolo con `CTRL + C`. [Aqúí](https:/
 
 - `true ; false ; echo hi` ejecuta los programas sin importar el éxito o el fracaso.
 
-### Subcomandos
+## Subcomandos
 
 - `echo I thing $(whoami) is a champ` = `echo I thing anerodata is a champ`. El dolar ejecuta un subcomando. Ejecuta un subcomando separado poniendo lo que devuelva al _standard out_. `echo I thing ``whoami`` is a champ` funcionaría de la misma manera.
 
 - `echo $(date +%x) - $(uptime) >> log.txt` al iniciar un trabajo, guardaría en un log la fecha y la información de la máquina.
 
-### _Secure Shell_ (SSH)
+## _Secure Shell_ (SSH)
 
 Brian utiliza [`lasspass`](https://multipass.run/) para crear dos máquinas virtuales y conectarlas con `SSH`.
 
@@ -206,14 +206,14 @@ En la segunda máquina, Brian crea el fichero `authorized_keys` en `~/.ssh`, cop
 
 Ahora necesitamos la `ip` del segundo servidor. Para que el primero se conecte al segundo. `ifconfig` muestra info de red. Entonces con la `inet` genera el siguiente comando `ssh brian@[inet]` brian es el usuario en el que ha dejado la copia de `id_rsa.pub`.
 
-### _Secure File Transfer Protocol_ (SFTP) 
+## _Secure File Transfer Protocol_ (SFTP) 
 
 - `sftp brian@[inet]` Inicia el protocolo con la segunda máquina después de haber realizado lo de las claves `SSH`. Ahora si hacemos `pwd`, nos muestra la ruta de la segunda máquina.
 - `put file.txt` sube el fichero al servidor remoto. Dentro de este modo, `!echo "file text" >> file.txt`, crearía un fichero. `help` te muestra la ayuda.
 - `get file.txt getted.file.txt` descargaría el fichero de la segunda máquina.
 - `bye` abandona SFTP.
 
-### WGET
+## WGET
 
 Se utiliza para descargar algo de internet. Hacer `cp` en internet. No se conecta a los _pipes_, con lo cual no puedes derivar el contenido de lo que descargas a otros programas. `wget` también puede hacer POST, PUT _requests_, al igual que CURL. WGET es capaz de descargar directorios recursivamente. Por ejemplo, en una web en la que se conecten ficheros CSS con rutas relativas, el programa encontraría esas URL y descargaría los contenidos. CURL no hace esto.
 
@@ -221,7 +221,7 @@ Se utiliza para descargar algo de internet. Hacer `cp` en internet. No se conect
 - `bash bash2048.sh` ejecutaría el fichero.
 - `chmod +x` le da permisos de ejecución a todos los usuarios y ahora el fichero es ejecutable de lam siguiente manera `. bash.sh`.
 
-### CURL
+## CURL
 
 `curl` funciona igual que `wget`, solo que es capaz de conectarse a los `pipes`. `curl` se usa mucho para probar una API por ejemplo.
 
@@ -237,7 +237,7 @@ Se utiliza para descargar algo de internet. Hacer `cp` en internet. No se conect
 - A través del navegador se puede copiar una petición como `curl`.
 - Hacer un pipe de `curl` a bash, es decir, descargar un programa y ejecutarlo puede ser peligroso. La confianza la otorga el dominio de donde descargas (github). En caso de que sea un sitió extraño. Descargamos el contenido en un fichero y comprobamos que se ha descargado. Ya que hay sitios que pueden cambiar el contenido por debajo de nosotros.
 
-### Gestores de paquetes
+## Gestores de paquetes
 
 Advance Tool Package (APT) Es el gestor de paquetes de Ubuntu. DPKG es el de Debian por ejemplo.
 
@@ -254,7 +254,7 @@ Advance Tool Package (APT) Es el gestor de paquetes de Ubuntu. DPKG es el de Deb
 
 `apt` por debajo está usando `apt-get`, `apt-cache` y muchos programás más. Es una especie de envoltorio que corre en una capa superior respecto a las anteriores.
 
-### Snaps
+## Snaps
 
 Es otro programa para gestionar paquetes como `apt`. Es más seguro que este último porque usa _sandboxing_, una manera de encapsular paquetes, de manera que cuando los instalas, si tienen codigo malicioso son incapaz de dañar el sistema operativo o de robarte información. Funcionan con independencia del sistema operativo, a diferencia de `apt`, por eso funciona en cualquier distribución de Linux.
 
@@ -268,11 +268,11 @@ Además, las actualizaciones son más rápidas, no borra del todo la última ver
 
 `snap info node` te da toda la información de `node`: versiones... etc Más actualizadas que `apt`. Cuando usamos `snap` nos conectamos a un canal que si no se explicita, es el de por defecto. `sudo snap install --channel=14/stable --classic node` `--classic` hace que no sea exactamente _sandbox_, lo que significas que tienes que confiar.
 
-### _Scripts_
+## _Scripts_
 
 Se ejecutan con `source` delante o con `. script.sh`. También con `bash` delante. Así se crearía un subproceso y no se producirían cambios de directorio. Con `source` todo sucede en el mismo proceso
 
-#### _Shebang or Hashbang_
+### _Shebang or Hashbang_
 
 `#! /bin/bash`. En lo alto de el script, le dice `bash` que ejecute esto en la _shell_ `bash`. Después de poner esto en nuestro _script_. y cambiar los permisos del `script.sh` así `chmod +x script.sh` podemos ejecutar el fichero así `./script`, incluso quitando la extensión `.sh`. No usas ningún comando, sino que simplemente corres el fichero y a través de _shebanh_, `bash` averigua dónde ejecutarlo.
 
@@ -280,14 +280,14 @@ Se ejecutan con `source` delante o con `. script.sh`. También con `bash` delant
 
 _shebang_ posibilita compartir _scripts_ con usuarios de interpretes de comandos UNIX que no son LINUX (`zsh`, `PowerShell`).
 
-#### _Path_
+### _Path_
 
 `echo $PATH` muestra los _paths_, las rutas donde todos los programas están. Entonces cada vez que corres `python` por ejemplo, `bash` recorre cada `path` en su búsqueda. En los ejemplos de _shebang_ ejeutabamos los prgramas así `./`, para ejecutar un programa que no está en PATH. 
 
 Ahora hemos metido el `script` de `bash` en una carpeta (my_bin) y le hemos pasado esta ruta absoluta al PATH de la siguiente manera. En `.bashrc` hemos colocado la variabla así `export PATH=/mnt/c/Users/anton/Desktop/anerodata/github/anerodata/formacion/otros/linux-command-line/bash-scripts:$PATH` con `:$PATH` para que no sobreescriba a PATH. `source ~/.bashrc` para refrescarlo. Al hacer `echo $PATH` vemos que la ruta está ahí. Ahora podemos ejecutar `gen-files` desde cualquier parte del ordenador
 
 
-#### Argumentos
+### Argumentos
 
 Podemos dar un argumento a la variable así `$DESTINATION=$1`. Para pasarle un destino en la ejeución del fichero. De manera que ahora diriamos `gen_files dir/my-dir`.
 
@@ -297,7 +297,7 @@ read -p "enter a file prefix: " FILE_PREFIX
 ```
 Con estas lineas parametrizamos `FILE_PREFIX` para que el usuario le de el prefijo que quiera al fichero. No lleva `$` precediendo porque si lo llevara le estaríamos pasando a `read` el valor de `FILE_PREFIX`. Queremos asignar un valor con `read` para la variable, no pasarle al programa el valor que ya tenga. 
 
-#### Condicionales
+### Condicionales
 
 ```
 if [ -z $DESTINATION ]; then
@@ -319,12 +319,12 @@ Brian lo llama _sintax sugar for testing_.
 - `test -e gen_files && echo is true`: ¿Existe el archivo?
 - `test -w gen_files && echo is true`: ¿Existe el archivo y lo puedo escribir con mi usuario `anerodata` actual?
 
-#### Loops
+### Loops
 
 En los scripts de `bash`. En uno de ellos se utiliza `NUM_TO_GUESS=$(( $RANDOM % 10 + 1 ))` para sacar un número random entre 1 y 10. Los dobles parenteis con el dolar convierten a `let`, justo como los corchetes hacían con `test`. `let` es para hacer operaciones aritméticas.
 
 
-### _Cron jobs_
+## _Cron jobs_
 
 Cualquier _script_ aquí correrá periódicamente:
 
@@ -337,12 +337,12 @@ Cualquier _script_ aquí correrá periódicamente:
 
 `crontab -u root -e` instalaría un `cron` con `root`. Lo normal es hacerlo con un usario que no sea `root`. En WSL, ponemos esto `service cron start` en `~/.bashrc` para iniciar un proceso con cron. [Más info](https://scottiestech.info/2018/08/07/run-cron-jobs-in-windows-subsystem-for-linux/)
 
-### Customizar el _prompt_
+## Customizar el _prompt_
 
 Se puede ver así `echo $PS1` y cambiar de nombre así `PS1='$'`. `curl https://raw.githubusercontent.com/riobard/bash-powerline/master/bash-powerline.sh > ~/.bash-powerline.sh`. Descarga un customizador de consola de comandos. _gitbash_ o _spaceship_ para `zsh` son otros tipos de _prompt_.
 
 Para pintar de verde, por ejemplo `echo -e "\e[32mverde`. Es muy útil para destacar resultados en _bash scripts_ por ejemplo. Si no modificamos `echo` con `-e`, sacaríamos por consola exactamente esa notación porque no buscaría caracteres escapados. En [awesomebash](https://github.com/awesome-lists/awesome-bash) podemos ver un conjunto de programas muy curiosos.
 
-### Final
+## Final
 
 A partir de aquí, algunos [recursos extra](https://btholt.github.io/complete-intro-to-linux-and-the-cli/conclusion). Sobre [symlinks](https://linuxize.com/post/how-to-create-symbolic-links-in-linux-using-the-ln-command/).
