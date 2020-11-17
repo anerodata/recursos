@@ -17,6 +17,14 @@ Es uno de los más recomendados, soporta casi todos los formatos de _mail_, trab
 
 Más info [aquí](https://linuxhint.com/install_clamav_ubuntu/) y [aquí](https://computernewage.com/2014/10/07/como-detectar-virus-en-linux-con-clamav/) y en la documentación del programa y haciendo `man clamscan`.
 
+## Autofirma
+
+Es un programa para firmar PDF con un certificado digital o firma electrónica. En la [descarga](https://firmaelectronica.gob.es/Home/Descargas.html) hay información sobre como instalarlo y [aquí](https://www.pcrednet.com/blog/10008-tutoriales/90-instalar-autofirma-en-ubuntu-18-04-y-linux-mint-19) también. En resumidas cuentas:
+
+- `sudo apt install libnss3-tools`, tal y como afirman [aquí](https://packages.debian.org/jessie/libnss3-tools): _a set of tools on top of the Network Security Service libraries_.
+- `sudo apt install openjdk-11-jre-headless` instala Java. `java --version`
+- `sudo dpkg -i AutoFirma_1_6_5.deb` instala el programa. `AutoFirma` en la terminal lo abre.
+
 ## Instalando otros programas
 
 ### Spotify

@@ -250,6 +250,7 @@ Advance Tool Package (APT) Es el gestor de paquetes de Ubuntu. DPKG es el de Deb
 - `sudo apt list upgradeable`: lista los paquetes que deben ser actualizados segun la actualización anterior.
 - `sudo apt upgrade`: actualiza los programas después de haber actualizado la lista con `sudo apt update`
 - `sudo apt full-upgrade`: fusión de `autoremove`, `update` y `upgrade`.
+- `apt list --installed | grep program` listar los programas instalados.
 
 [apt-browse](https://www.apt-browse.org/) es un repositorio con todo lo que tiene `apt`.
 
