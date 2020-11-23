@@ -1,1 +1,1 @@
-This module is inclomplete. You can check the resources in the [main page](https://github.com/anerodata/Resources/tree/master/otros/machine-learning-in-journalism) of the directory.
+Este módulo está incompleto. Puedes ver los recursos del curso en la [página principal](https://github.com/anerodata/Resources/tree/master/otros/machine-learning-in-journalism) del directorio.
