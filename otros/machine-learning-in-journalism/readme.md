@@ -18,7 +18,7 @@ Google colabs [here](https://drive.google.com/drive/folders/1oOBMiDx6QdlfFrCCO2G
 *	[**Optional Video** - "Lesson 1: Deep Learning 2019 - Image classificatio"URL](https://course.fast.ai/videos/?lesson=1)
 
 ## Video
-=
+
 *	[Hands-on machine learning solutions for journalists](https://www.youtube.com/watch?v=xLvjNb-sTmw)
 *	[Welcome to hands-on machine learning solutions for journalists](https://www.youtube.com/watch?v=Ay0ij-O3ILc&feature=emb_title)
 *	[Module 1: How you might feel when AI can help](https://www.youtube.com/watch?v=cXOQLsNfFnQ&feature=emb_title)
