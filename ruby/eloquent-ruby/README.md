@@ -6,6 +6,32 @@ Notas sobre el libro de 2011 escrito por Russ Oslen para Addison-Wesley Professi
 Olsen draws on years of experience internalizing the Ruby culture and teaching Ruby to other programmers. He guides you to the “Ah Ha!” moments when it suddenly becomes clear why Ruby works the way it does and how you can take advantage of its unique approach.
 Eloquent Ruby starts small, answering tactical questions focused on a single statement, method, test, or bug. You’ll learn how to write code that actually looks like Ruby (not Java); why Ruby has so many control structures; how to use strings, expressions, and symbols; and what dynamic typing is really good for.
 
+## 1 - Convenciones de Ruby
+
+Aquí un ejemplo de clase en Ruby:
+
+```
+# A class
+
+class Document
+  attr_accessor :title, :author, :content
+
+    def initialize(title, author, content)
+      @title = title
+      @author = author
+      @content = content
+    end
+
+    def words
+      @content.split
+    end
+
+    def word_count
+      words.size
+    end
+  end
+```
+
 Algunas convenciones de Ruby:
 
 - Código **claro y conciso**
@@ -60,25 +86,3 @@ end
 ```
 
 Estas convenciones están sometidas al principio de **fácil lectura y claridad**, por eso no son fijas y hay que aplicarlos con pragmatismo. Se pueden ver algunas de estas convenciones en el código de ruby, en la clase `set.rb` por ejemplo.
-
-```
-# A class
-
-class Document
-  attr_accessor :title, :author, :content
-
-    def initialize(title, author, content)
-      @title = title
-      @author = author
-      @content = content
-    end
-
-    def words
-      @content.split
-    end
-
-    def word_count
-      words.size
-    end
-  end
-```
