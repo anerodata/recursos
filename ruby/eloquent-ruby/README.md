@@ -86,3 +86,136 @@ end
 ```
 
 Estas convenciones están sometidas al principio de **fácil lectura y claridad**, por eso no son fijas y hay que aplicarlos con pragmatismo. Se pueden ver algunas de estas convenciones en el código de ruby, en la clase `set.rb` por ejemplo.
+
+## 2 - Estructuras de control
+
+### `If`, `if not`, `unless`, `while`, `until`
+
+Un ejemplo con `if not`:
+
+```
+def title=( new_title )
+  if not @writable
+    @title = new_title
+  end
+end
+```
+
+El mismo con `unless`, más simple. Solo se ejecuta si la sentencia es falsa:
+
+```
+def title=( new_title )
+  unless @writable
+    @title = new_title
+  end
+end
+```
+
+Existe una equivalencia para los bucles `while`
+
+```
+while ! document.printed?
+  document.print_next_page
+end
+```
+
+Y es `until`
+
+```
+until document.printed?
+  document.print_next_page
+end
+```
+
+Existe la forma _modifier_ (_Do this if that._).
+
+`@title = new_title if @writable`
+`@title = new_title unless @read_only`
+
+### `for`, `each`
+
+Existe el bucle `for`. Se parece al de Python:
+
+```
+fonts = [ 'courier', 'times roman', 'helvetica' ]
+for font in fonts
+  puts font
+end
+```
+
+Pero por debajo utiliza `each`, así que se prefiere quitar una capa y usarlo directamente así:
+
+```
+fonts.each do |font|
+  puts font
+end
+```
+
+### `case`
+
+El equivalente a `switch` en otros lenguajes.
+
+```
+case title
+when 'War And Peace'
+  puts 'Tolstoy'
+when 'Romeo And Juliet'
+  puts 'Shakespeare'
+else
+  puts "Don't know"
+end
+
+```
+
+Se puede usar para el valor que computa:
+
+```
+author = case title
+  when 'War And Peace'
+    'Tolstoy'
+  when 'Romeo And Juliet'
+    'Shakespeare'
+  else
+    'Don't know'
+end
+```
+
+Y de una manera más compacta:
+
+```
+author = case title
+  when 'War And Peace' then 'Tolstoy'
+  when 'Romeo And Juliet' then  'Shakespeare'
+  else "Don't know"
+  end
+```
+
+Podría ir sin el `end`, en cuyo caso, el valor asignado en ese caso sería `nil`. En definitiva, esta expresión se puede usar para retornar un valor. Las comparaciones equivalen a realizarlas con `===`. Se puede usar para identificar instancias de una clase. O para detectar una coincidencia con una expresión regular:
+
+```
+case title
+when /War And .*/
+  puts 'Maybe Tolstoy?'
+when /Romeo And .*/
+  puts 'Maybe Shakespeare?'
+else
+  puts 'Absolutely no idea...' 
+end
+```
+
+### Evitar problemas
+
+Solo `false` y `nil` son evaluados como _false_. Todo lo demás es tratado como _true_.
+
+Por eso este código hay que evitar:
+
+```
+if flag == true
+  # do something
+end
+```
+
+Porque es posible que sea el resultado de `flag = defined?( doc )`, cuyo resultado no es true, sino "local-variable", por lo tanto nunca se cumpliría la condición.
+
+
+
