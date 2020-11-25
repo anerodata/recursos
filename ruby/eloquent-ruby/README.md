@@ -6,7 +6,7 @@ Notas sobre el libro de 2011 escrito por Russ Oslen para Addison-Wesley Professi
 Olsen draws on years of experience internalizing the Ruby culture and teaching Ruby to other programmers. He guides you to the “Ah Ha!” moments when it suddenly becomes clear why Ruby works the way it does and how you can take advantage of its unique approach.
 Eloquent Ruby starts small, answering tactical questions focused on a single statement, method, test, or bug. You’ll learn how to write code that actually looks like Ruby (not Java); why Ruby has so many control structures; how to use strings, expressions, and symbols; and what dynamic typing is really good for.
 
-## 1 - Convenciones de Ruby
+## 1. Convenciones de Ruby
 
 Aquí un ejemplo de clase en Ruby:
 
@@ -87,7 +87,7 @@ end
 
 Estas convenciones están sometidas al principio de **fácil lectura y claridad**, por eso no son fijas y hay que aplicarlos con pragmatismo. Se pueden ver algunas de estas convenciones en el código de ruby, en la clase `set.rb` por ejemplo.
 
-## 2 - Estructuras de control
+## 2. Estructuras de control
 
 ### `If`, `if not`, `unless`, `while`, `until`
 
@@ -203,6 +203,36 @@ else
 end
 ```
 
+El caracter de expresión directa que tiene Ruby hace que se utilice hasta para asignarle valor a una variable
+
+```
+pass? = if grade >= 5
+  true
+else
+  false
+```
+
+Y el operador ternario (bastante usado en Ruby):
+
+```
+pass? = grade >= 5 ? true : false
+```
+
+Otra expresión muy usada para asignar un valor por defecto a una variable si es igual a `nil`:
+
+```
+@first_name = '' unless @first_name
+```
+
+Escrita abreviadamente:
+
+```
+@first_name ||= ''
+```
+
+_Don’t try to use ||= to initialize things to booleans_ porque si `@first_name` es `false` reseteará su valor a ''.
+   
+
 ### Evitar problemas
 
 Solo `false` y `nil` son evaluados como _false_. Todo lo demás es tratado como _true_.
@@ -217,5 +247,66 @@ end
 
 Porque es posible que sea el resultado de `flag = defined?( doc )`, cuyo resultado no es true, sino "local-variable", por lo tanto nunca se cumpliría la condición.
 
+
+## 3. Ruby data structures, the array and the hash
+
+- Esto sería un ejemplo de **_array_** literal en Ruby:
+
+`poem_words = [ 'twinkle', 'little', 'star', 'how', 'I', 'wonder' ]`
+
+Pero con un _array_ como este, sin espacios, se podría simplificar con esta sintaxis:
+
+`poem_words = %w{ twinkle little star how I wonder }`
+
+- Esto sería un ejemplo de **_hash_** con _hash rocket_.
+
+`freq = { "I" => 1, "don't" => 1, "like" => 1, "spam" => 963 }`
+
+Otro _hash_ con símbolos como llaves.
+
+`book_info = { :first_name => 'Russ', :last_name => 'Olsen' }`
+
+Que se podría simplificar así:
+
+`book_info = { first_name: 'Russ', last_name: 'Olsen' }`
+
+### Arrays "fabricados" por Ruby
+
+En este ejemplo Ruby estaría creando un Array en base a unos argumentos en el método para después imprimirlos:
+
+```
+def echo_all( *args )
+  args.each { |arg| puts arg }
+end
+```
+
+Siguiendo la misma lógica el siguiente método concatenaría elementos de un _array_ para hacer un _String_ con `+=`
+
+```
+class Document
+  # Most of the class omitted...
+  def add_authors( *names )
+    @author += " #{names.join(' ')}"
+  end
+end
+```
+
+También se puede pasar un _hash_ como parámetro
+
+```
+def load_font( specification_hash )
+  # Load a font according to specification_hash[:name] etc.
+end
+
+load_font( { :name => 'times roman', :size => 12 })
+```
+
+En este caso en el que el argumento es solo un _hash_, se puede simplificar así la llamada:
+
+`load_font( :name => 'times roman', :size => 12 )`
+
+Y más aun, sin paréntesis. Como si fuera un comando de consola.
+
+`load_font :name => 'times roman', :size => 12`
 
 
