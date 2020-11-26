@@ -248,7 +248,7 @@ end
 Porque es posible que sea el resultado de `flag = defined?( doc )`, cuyo resultado no es true, sino "local-variable", por lo tanto nunca se cumpliría la condición.
 
 
-## 3. Ruby data structures, the array and the hash
+## 3. Estructuras de datos con Ruby, el _array_ y el _hash_
 
 - Esto sería un ejemplo de **_array_** literal en Ruby:
 
@@ -309,4 +309,248 @@ Y más aun, sin paréntesis. Como si fuera un comando de consola.
 
 `load_font :name => 'times roman', :size => 12`
 
+
+### Recorriendo un _array_ y un _hash_
+
+#### _Array_
+
+Un ejemplo con bucle `for` a través de un índice sería:
+
+```
+words = %w{ Mary had a little lamb }
+for i in 0..words.size
+  puts words[i]
+end
+```
+
+Con un bucle `each`:
+
+`words.each { |word, i| puts word }`
+
+El mismo bucle `each` pero mostrando el índice:
+
+`words.each_with_index {|word, i| puts i}`
+
+#### _Hash_
+
+En un bucle `each` como este:
+
+```
+movie = { title: '2001', genre: 'sci fi', rating: 10 }
+movie.each { |entry| pp entry }
+```
+
+Devolvería el siguiente `output`:
+
+```
+[:title, "2001"]
+[:genre, "sci fi"]
+[:rating, 10]
+```
+
+Se puede utilizar el mismo bucle con un solo bloque _key - value_ así:
+
+```
+movie.each { |name, value| puts "#{name} => #{value}"}
+```
+
+Si quisieramos hacer un método que retornase el índice de una palabra en cuestión haríamos esto:
+
+```
+def index_for( word )
+  i= 0
+  words.each do |this_word|
+    return i if word == this_word
+    i += 1
+  end
+  nil
+end
+```
+
+Aunque se podría simplificar mucho con el método `find_index` de `array`:
+
+```
+def index_for( word )
+  words.find_index { |this_word| word == this_word }
+end
+```
+
+Otros métodos como `map` devuelven un array transformado en función de condiciones. Por ejemplo, el siguiente código retorna un array con la longitud de cada elemento:
+
+```
+words = %{Antonio Hernández}
+pp words.map { |word| word.size }
+=> [7, 9]
+```
+Este, un array con las palabras en minúscula
+
+```
+lower_case_words = doc.words.map { |word| word.downcase }
+```
+
+Si quisieramos contar el número total de letras podríamos hacer el clásico bucle que autoincrementa un total desde 0:
+
+```
+total = 0.0
+words.each { |word| total += word.size }
+```
+
+No obstante, el método `inject` proporciona una manera más sencilla de hacer esto, cotejando un bloque con cada elemento del array como `map` pero pasando dos argumentos, el elemento del array y una variable que se autoincrementa. Cada vez que `inject` hace una llamada al bloque, el valor de `total` se sustituye por el último que se ha calculado hasta que se queda sin elementos y `each` retorna el resultado final:
+
+```
+total = words.inject(0.0){ |result, word| word.size + result}
+```
+
+El argumen `0.0` Es el valor de `result` la primera vez.
+
+Hay más de 100 métodos de _array_ y más de 80 de `hash`.
+
+#### ¿Qué métodos transforman un _array_ en el acto?
+
+Depende, `reverse` y `sort`, no: 
+
+```
+a = [1, 2, 3]
+
+pp a.reverse
+=> [3, 2, 1]
+
+pp a
+=> [1, 2, 3]
+```
+
+En ambos casos habría que usar `reverse!`:
+
+```
+a.reverse!
+
+pp a
+=> [3, 2, 1]
+```
+Esta regla no siempre funciona así y metodos como `push`, `pop`, `delete` y `shift` operarían igual que `reverse!`
+
+Los _arrays_ y _hashes_ están ordenados según hayan sido creados. Y un elemento introducido dentro de ellos se añade al final
+
+#### Tener en cuenta...
+
+Que 
+```
+array = []
+array[24601] = "Jean Valjean"
+```
+Creará un _array_ de 24602 elementos `nil`.
+
+Existe un riesgo de usar un array cuando en realidad no es necesario como en esta situación en la que queremos un array de elementos no duplicados. `<< == push`:
+
+```
+unique = []
+words.each { |word| unique << word unless unique.include?(word)
+```
+
+Será mejor en este caso crear un `set`, es decir, una colección que no elimina los elementos duplicados
+
+```
+require 'set'
+word_set = Set.new( words )
+```
+
+## 4. _Strings_ inteligentes
+
+En ruby tenemos los **_single quotes_** que solo muestran texto, hay que utilizar _backslash_ para escapar la comilla. (`pp` imprimiría el _baclslash_ no así `puts`).
+
+`single_quote = 'Say it ain\'t so!'`
+
+Los **_double quotes_** son un poco más complejos. Permiten añadir tabulaciones, retornos de carro etc.
+
+`double_quoted = "I have a tab: \t and a newline: \n"`
+
+Estos últimos se puden embeber fácilmente con `#{}`:
+
+```
+author = "Ben Bova"
+title = "Mars"
+puts "#{title} is written by #{author}"
+```
+
+En determinados conextos, combinar ambos _strings_ nos permitirá ahorrar en _backslash_:
+
+```
+str = '"Stop", she said, "I cannot deal with the backslashes."'
+```
+
+El problema viene cuando en el mensaje conviven '' y "":
+
+`str = '"Stop", she said, "I can\'t live without \'s and "s."'`
+
+Para estos casos existe el _arbitrary quote strings_:
+
+`str = %q{"Stop", she said, "I can't live without 's and "s."}`
+
+En el ejemplo delimitan `{}`, pero también valdrían `[]`, `()`, `<>` p `$$`. La letra `q` importa. La minúscula declara un _single quote_. La mayuscula, un _double quote_.
+
+Una carácteristica de todos los strings es que se pueden separar por líneas:
+
+```
+another_one = %q{another multi-line
+string}
+```
+
+Si queremos partirlo solo en el código:
+
+```
+yet_another = %Q{another multi-line string with \
+no newline}
+```
+
+Aunque si vamos a tener muchas lineas de string, quizá lo más adecuado sea usar _document_:
+
+```
+heres_one = <<EOF
+This is the beginning 
+of my here document. 
+And this is the end.
+EOF
+```
+
+### Métodos de _String_
+
+- `' hello'.lstrip` retorna una copia del _string_ sin espacios.
+- `' hello'.rstrip` retorna el mismo _string_ ya que este método elimina los espacios del final.
+- `"It was a dark and stormy night\n".chomp` hace lo mismo que `rstrip` pero con los espacios. Solo funciona con una línea cada vez, a diferencia de los `strip`
+- No confundir con `chop`: `"hello".chop` retorna "hell".
+- `upcase` y `downcase` para hacer mayúsculas / minuúsculas.
+
+- `sub` reemplaza la primera coincidencia pot otra: `'It is warm outside warm'.sub( 'warm', 'cold' )`
+- `'yes yes'.gsub( 'yes', 'no' )` reemplzaría todas las coincidencias.
+- `split` retorna un _array_ con todas las partes del _string_ separadas por espacios: `'It was a dark and stormy  night'.split`
+Se le puede pasar un parámetro al método que determine otro separador distinto al espacio.
+
+Muchos de estos métodos pueden transformar la variable si van acompañados de `!` como hemos visto con _arrays_ y _hashes_:
+
+```
+title = 'It was a dark and stormy night'
+title.sub!( 'dark', 'bright' )
+title.sub!( 'stormy', 'clear' )
+```
+
+### Líneas, caracteres, _bytes_
+
+`"Antonio".each_char {|c| puts c}` sería la manera de recorrer un _string_ en un bucle. Y para descubrir los _bytes_ que hay detrás `"Antonio".each_byte {|c| puts c}`.
+
+Si el _string_ tiene más de una línea, se puede recorrer así `string.each_line { |line| puts line}`.
+
+### Atención
+
+**_Ruby strings are mutable_**. Es decir, si igualamos dos variables con un _string_ al cambiar una, cambia la otra:
+
+```
+first_name = 'Karen'
+given_name = first_name
+first_name[0] = 'D'
+```
+cambiará `given_name`
+
+Ruby nos da cierta flexibilidad con el tema de los índices `first_name[first_name.size - 1]` retorna el último caracter. Es igual que `first_name[- 1]`
+
+También se pueden usar los rangos `"abcde"[3..4]` evalua "de".
 
