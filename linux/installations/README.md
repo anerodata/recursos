@@ -33,6 +33,8 @@ Es un gestor de paquetes de Ruby. Para instalarlo hay que instalar previamente `
 
 Después instalamos Ruby 2.6.5 con `rvm install 2.6`. Con `rvm list` listamos los paquetes instalados y con `ruby --version` chequeamos la versión actual de Ruby. Estos programas se han instalado coyunturalmente: `gawk, g++, gcc, autoconf, automake, bison, libc6-dev, libffi-dev, libgdbm-dev, libncurses5-dev, libsqlite3-dev, libtool, libyaml-dev, make, sqlite3, zlib1g-dev, libgmp-dev, libreadline-dev, libssl-dev`.
 
+Cada vez que entremos en Terminal habrá que ejecutar `source /home/anerodata/.rvm/scripts/rvm` para usar Ruby.
+
 ## Instalando otros programas
 
 ### Spotify
