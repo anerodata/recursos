@@ -25,6 +25,14 @@ Es un programa para firmar PDF con un certificado digital o firma electrónica. 
 - `sudo apt install openjdk-11-jre-headless` instala Java. `java --version`
 - `sudo dpkg -i AutoFirma_1_6_5.deb` instala el programa. `AutoFirma` en la terminal lo abre.
 
+## Entorno de desarrollo
+
+### [RVM](https://rvm.io/) y Ruby
+
+Es un gestor de paquetes de Ruby. Para instalarlo hay que instalar previamente `gpg2`. GnuPG es la versión libre de PGP (_Pretty Good Privacy_). Sirve para cifrar un archivo que se podrá mandar con la seguridad de que nadie lo podrá leer excepto el que tenga la clave pública.
+
+Después instalamos Ruby 2.6.5 con `rvm install 2.6`. Con `rvm list` listamos los paquetes instalados y con `ruby --version` chequeamos la versión actual de Ruby. Estos programas se han instalado coyunturalmente: `gawk, g++, gcc, autoconf, automake, bison, libc6-dev, libffi-dev, libgdbm-dev, libncurses5-dev, libsqlite3-dev, libtool, libyaml-dev, make, sqlite3, zlib1g-dev, libgmp-dev, libreadline-dev, libssl-dev`.
+
 ## Instalando otros programas
 
 ### Spotify
