@@ -29,6 +29,7 @@ _Shell_ tiene una lógica basada en _Read Evaluate Print Loop_ (REPL), es decir,
 - `trash`: [instalar](https://www.tecmint.com/trash-cli-manage-linux-trash-from-command-line/). Manda el fichero a _trash_.
 - `cp -R file directory`: lleva el fichero al directorio, lo crea si no existe.
 - `rm -r -- !(README.md)`: borra todo menos ese fichero.
+- `xdg-open file.pdf`: abre un fichero con la aplicación por defecto
 
 ### Archivos comprimidos
 
