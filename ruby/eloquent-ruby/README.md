@@ -554,3 +554,6 @@ Ruby nos da cierta flexibilidad con el tema de los índices `first_name[first_na
 
 También se pueden usar los rangos `"abcde"[3..4]` evalua "de".
 
+## 5. Expresiones regulares
+
+[Aquí](https://github.com/anerodata/Resources/tree/master/linux/regex) hablo de esto de manera genérica en distribuciones de tipo Linux.
