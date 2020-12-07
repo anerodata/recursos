@@ -83,20 +83,27 @@ El índice de caracteres básicos de la web de [RegexOne](https://regexone.com/l
 |[^abc]|Not a, b, nor c|
 |[a-z]|Characters a to z|
 |[0-9]|Numbers 0 to 9|
-|\w|Any Alphanumeric character|
+|\w|Where the w stands for “word character,” will match any letter, number or the
+underscore.|
 |\W|Any Non-alphanumeric character|
 |{m}|m Repetitions|
 |{m,n}|m to n Repetitions|
 |*|Zero or more repetitions|
 |+|One or more repetitions|
 |?|Optional character|
-|\s|Any Whitespace|
+|\s|Will match any white space character including the vanilla space, the tab, and
+the newline|
 |\S|Any Non-whitespace character|
 |^…$|Starts and ends|
-|(…)|Capture Group|
+|(…)|Capture Group. Set characters off from the rest of the pattern|
 |(a(bc))|Capture Sub-group|
 |(.*)|Capture all|
-|(abc|def)|Matches abc or def|
+|(abc\|def)|Matches abc or def|
+|\||Alternatives: A\|B will match either A or B|
+
+\d\d:\d\d (AM|PM)
+
+`Any string that starts with two digits, followed by a colon, followed by two more digits, followed by a space, followed by either AM or PM .`
 
 - `\d` busca un dígito del 0 al 9.
 - `.` coincide con cualquier caracter. Si quisiéramos omitirlo tendríamos que escaparlo como he comentado arriba.
