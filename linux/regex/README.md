@@ -110,3 +110,5 @@ the newline|
 - `[]` sirve para buscar coincidencias con unos caracteres determinados `[cmf]` por ejemplo ligaría con can, man y fan. Pero no con dan, ran o pan, porque no tiene ni un caracter-
 - `[^bog]`. El corcherte con el circunflejo sirve para descartar. Es decir, esa expresión regular ligaría con cualquier texto que no tuviera ninguno de esos caracteres
 - `[A-C]` ligaría con Abc pero no con abc ya que tiene una A. Es una forma'de secuenciar caracteres. Con el guión expresamos series. `[A-Za-z0-9ñ]` Coincidiría con cualquier caracter alfanumérico. es igual que hacer `\w`.
+- `z{3,5}`: repeticiones. En el ejemplo, una z entre 3 y 5 veces. Matchearía con "wazzzzzup", o "wazzzup", pero no con wazzup. Se puede usar en combinación con cualquier otro caracter especial. `For example w{3} (three w's), [wxy]{5} (five characters, each of which can be a w, x, or y) and .{2,6} (between two and six of any character)`.
+- `a*[bc]+`: _Kleene Star and Kleene Plus_. La estrella busca la "a" 0 o infintias veces a continuación. El más, 1 o infinitas veces a continuación. `\d+` Coincidiría con un número e infinitas veces a continuación (25 o 25000).
