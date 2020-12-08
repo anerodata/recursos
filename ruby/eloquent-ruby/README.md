@@ -557,3 +557,36 @@ También se pueden usar los rangos `"abcde"[3..4]` evalua "de".
 ## 5. Expresiones regulares
 
 [Aquí](https://github.com/anerodata/Resources/tree/master/linux/regex) hablo de esto de manera genérica en distribuciones de tipo Linux.
+
+En Ruby son un tipo de dato con su sintaxis determinada y va entre _forware slash_:
+
+`/\d\d:\d\d (AM|PM)/`
+
+Además, usamos `=~` para ver si una regexp coincide con un _string_:
+
+`puts /\d\d:\d\d (AM|PM)/ =~ '10:25 PM'` retornaría 0.
+
+_That zero is trying to tell us a couple of things. First, it is saying that the regular expression matched, starting at index zero. Second, the zero is telling us is that when you match a regular expression, Ruby scans along the string, searching for a match anywhere in the string._
+
+Si no hay match en ninguna parte, retornará `nil`.
+
+También se pueden usar como si retornaran un valor boleano así:
+
+```
+the_time = '10:24 AM'
+puts "It's morning!" if /AM/ =~ the_time
+```
+
+Usamos `i` después de la expresión para evitar el _case sensitive_: `puts "It matches!" if /AM/i =~ 'am'`
+
+También podemos usar expresiones regulares con `gsub` de esta manera `str.gsub!( /\d\d:\d\d (AM|PM)/, '**:** **' )`. En este caso estaríamos ocultando las horas sobre el mismo `str`.
+
+**Principios y finales**
+
+- `/\AOnce upon a time/`: Buscaría la expresión al principio de un _string_. _Note that the \A doesn’t match
+the first character. Instead, it matches the unseen leading edge of the string_.
+- `/and they all lived happily ever after\z/`: Igual pero al final.
+
+Tendríamos problemas con `/\AOnce upon a time/` si lo primero en el _string_ fuese el título del cuento. Aquí es donde aparece el acento circunflejo `/^Once upon a time/`, que busca el _string_ al principio del texto o de cualquier línea dentro de él. El opuesto a esto, es el dolar: `/and they all lived happily ever after$/`, que busca la coincidencia al final del texto o de cualquier línea dentro de él.
+
+Si quisieramos econtrar la apertura y el cierre del cuento nos encontraríamos con un _handicap_ ya que `/^Once upon a time.*happily ever after\.$/` no funcionaría porque `.*` encuentra todos los caracteres menos el salto de línea. Salvamos esto añadiendo `/m` al final de la expresión: `/^Once upon a time.*happily ever after\.$/m`.
