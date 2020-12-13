@@ -134,8 +134,31 @@ Lo que hay fuera del paréntesis determina el final de la coincidencía y lo que
 
 - `(a(bc))`: subgrupos. En ocasiones puede ser necesario extraer diferentes capas dentro de un patrón en concreto. Generalmente van el orden de extracción es el siguiente: la primera parte en ser capturada es la más amplia y dentro de sus paréntesis se define de nuevo una segunda parte con otros dos paréntesis. 
 
-Por ejemplo `(\D*(\d*))` capturaría dentro de la fecha `Jan 2019` los dos siguientes grupos `Jan 2019` y `2019` de cara a extraer ambos datos de manera independiente dentro de una lista de fechas o dentro de un texto. Dentro de un texto, la expresión coincidiría con `Jan 2019`
+Por ejemplo `(\w+(\d+))` capturaría dentro de la fecha `Jan 2019` los dos siguientes grupos `Jan 2019` y `2019` de cara a extraer ambos datos de manera independiente dentro de una lista de fechas o dentro de un texto. Dentro de un texto, la expresión coincidiría con `Jan 2019`
 
->_If I knew that a phone number may or may not contain an area code, the right pattern would test for the existence of the whole group of digits (\d{3})? and not the individual characters themselves (which would be wrong)._
+>_If I knew that a phone number may or may not contain an area code, the right pattern would test for the existence of the whole group of digits (\d{3})? and not the individual characters themselves (which would be wrong). Depending on the regular expression engine you are using, you can also use non-capturing groups which will allow you to match the group but not have it show up in the results._
 
 En un supuesto en el que quisieramos el número de telefóno sin ningún prefijo.
+
+- `(cats|dogs)`: el caracter _pipe_ se utiliza como un _OR_ en una condición. Por ejemplo `I love (cats|dogs)` coincidiría con _"I love cats"_ y _"I love dogs"_ capturando perros o gatos gracias al grupo. A veces si la condición se vuelve muy complea quizá conviene usar varias expresiones.
+
+### Algunas cuestiones extra
+
+los metacaracteres `\s` (espacios) `\d` (números) `\w` (alfanúmericos) pueden excribirse en mayúsculas para expresar lo opuesto `\S` (sin espacios)...
+
+El metacaracter `\b` sirve para coincidir con la frontera entre un caracter susceptible de conformar una palabra y con otro que no. Es más potente cuando se conjuga así para coincidir con una palabra `\w+\b`.
+
+No entra muy a fondo en el tema del _back referending_ porque depende de la implementación. Pero muchos sistemas permiten acceder a las capturas de una expresión regular así _\0 (usually the full matched text), \1 (group 1), \2 (group 2), etc_.
+
+>_This is useful for example when you are in a text editor and doing a search and replace using regular expressions to swap two numbers, you can search for "(\d+)-(\d+)" and replace it with "\2-\1" to put the second captured number first, and the first captured number second for example._
+
+### Algunos ejemplos prácticos
+
+- `^-?\d+(,\d+)*(\.\d+(e\d+)?)?$`: Captura los siguientes casos: la coma, el punto y el punto más "e" como subgrupo.
+
+	- 3.14529 	Success
+	- 255.34 	Success
+	- 128 	Success
+	- 1.9e10 	Success
+	- 123,340.00 	Success
+	- 720p
