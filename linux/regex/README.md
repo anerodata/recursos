@@ -112,3 +112,30 @@ the newline|
 - `[A-C]` ligaría con Abc pero no con abc ya que tiene una A. Es una forma'de secuenciar caracteres. Con el guión expresamos series. `[A-Za-z0-9ñ]` Coincidiría con cualquier caracter alfanumérico. es igual que hacer `\w`.
 - `z{3,5}`: repeticiones. En el ejemplo, una z entre 3 y 5 veces. Matchearía con "wazzzzzup", o "wazzzup", pero no con wazzup. Se puede usar en combinación con cualquier otro caracter especial. _For example `w{3}` (three w's), `[wxy]{5}` (five characters, each of which can be a w, x, or y) and `.{2,6}` (between two and six of any character)_.
 - `a*[bc]+`: _Kleene Star and Kleene Plus_. La estrella busca la "a" 0 o infintias veces a continuación. El más, 1 o infinitas veces a continuación. `\d+` Coincidiría con un número e infinitas veces a continuación (25 o 25000).
+- `?`: Busca opcionalmente un caracter.
+
+>_This metacharacter allows you to match either zero or one of the preceding character or group_.
+
+Por ejemplo `found\??` coincidiría con found? y con found. _`ab?c` will match either the strings "abc" or "ac"_.
+
+- `\s`: Espacios.
+
+>_The most common forms of whitespace you will use with regular expressions are the space ( ), the tab (\t), the new line (\n) and the carriage return (\r) (useful in Windows environments), and these special characters match each of their respective whitespaces. In addition, a whitespace special character `\s` will match any of the specific whitespaces above and is extremely useful when dealing with raw input text._
+
+- `^...$`: Comienzo y final. Se usa mucho para evitar falsos positivos. Combinados los dos se puede hacer una expresión regular que coincida con una línea entera o parrafo de principio a final.
+
+Por ejemplo: `^Mission. successful$` puede servir para encontrar un párrafo o línea que empiece y acabe por ambas palabras con cualquier caracter entre medias.
+
+- `(...)`: grupos. Sirve para capturar una información dentro de un patrón. Cuándo introduces una parte de la expersión entre paréntesis, la aíslas del resto de la expresión. 
+
+Por ejemplo `^(file.*)\.pdf$`. Lo que hay dentro de los paréntesis captura todo lo que empiece con "file" hasta el ".pdf". Es decir:  `file_record_transcript` o ` file_20200312`. 
+
+Lo que hay fuera del paréntesis determina el final de la coincidencía y lo que no quedaría capturado: `.pdf`. `testfile_fake.pdf.tmp` quedaría fuera del patrón y por lo tanto de la captura.
+
+- `(a(bc))`: subgrupos. En ocasiones puede ser necesario extraer diferentes capas dentro de un patrón en concreto. Generalmente van el orden de extracción es el siguiente: la primera parte en ser capturada es la más amplia y dentro de sus paréntesis se define de nuevo una segunda parte con otros dos paréntesis. 
+
+Por ejemplo `(\D*(\d*))` capturaría dentro de la fecha `Jan 2019` los dos siguientes grupos `Jan 2019` y `2019` de cara a extraer ambos datos de manera independiente dentro de una lista de fechas o dentro de un texto. Dentro de un texto, la expresión coincidiría con `Jan 2019`
+
+>_If I knew that a phone number may or may not contain an area code, the right pattern would test for the existence of the whole group of digits (\d{3})? and not the individual characters themselves (which would be wrong)._
+
+En un supuesto en el que quisieramos el número de telefóno sin ningún prefijo.
