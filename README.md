@@ -1,4 +1,4 @@
-# Training resources
+# 📚 Training resources
 
 Videos, articles, tutorials that I read.
 
