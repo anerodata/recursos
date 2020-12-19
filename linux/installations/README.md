@@ -35,6 +35,22 @@ Después instalamos Ruby 2.6.5 con `rvm install 2.6`. Con `rvm list` listamos lo
 
 Cada vez que entremos en Terminal habrá que ejecutar `source /home/anerodata/.rvm/scripts/rvm` para usar Ruby.
 
+## Editores de texto
+
+### Vim
+
+`sudo apt install vim`
+
+Versión renovada de Vi:
+
+- Está instalado en casi todas las distribuciones de tipo Unix. Por lo tanto se puede utilizar para editar ficheros en un servidor remoto mediante SSH.
+- No necesita un _desktop environment_.
+- Tiene características chulas y permite rápidamente editar un fichero.
+
+### Sublime
+
+`sudo snap install sublime-text`
+
 ## Instalando otros programas
 
 ### Spotify
