@@ -4,7 +4,7 @@ Un sistema operativo instalado en casi todas las distribuciones de tipo UNIX. A 
 Un recurso chulo para aprender Vim es https://vim-adventures.com.
 En el Terminal introduciendo `vimtutor` vamos al tutorial de vim.
 
-Las teclas para mover el cursor tradicionalmente son h(izquierda)j(abajo)k(arriba)l(derecha).
+Las teclas para mover el cursor tradicionalmente son h(izquierda)j(abajo)k(arriba)l(derecha). Estas teclas mueven el cursor a través de las líneas lógicas que existen, que a veces ocupan más de dos renglones. Si quisieramos desplazarnos a través de las líneas visuales tendríamos que hacer "g + j" (para abajo), y así sucesivamente.
 
 Para salir pulsamos ":" para llevarnos al modo comando e introducimos `quit` o `q` para salir. Si hemos hecho cambios `:wq` para salir y guardar o `:q!` para salir sin guardar. Una manera chula de hacer un `:wq` es el atajo "ZZ"
 
@@ -28,7 +28,11 @@ Vim es un editor de texto modal. Tiene modos:
 - "p" o _put_. Coloca lo que hayamos "borrado" con "d" en donde estemos. Esto es como hacer _copy/paste_.
 - "r + caracter" reemplaza el caracter en el que estemos con el cursor por otro.
 - "c" es _change_. "c + e" borra todos los caracteres desde el cursor hasta el final de la palabra y nos mete en el modo insertar para reemplazar la palabra
-- "c + $" para cambiar toda la línea
+- "c + $" para cambiar toda la línea.
 
+Tanto la "b" como la "w", o la "e" tienen su versión "SHIFT + b/w" para no tomar caracteres como , o paréntesis como si fueran palabras
+
+- la "f" es como _for to..._: avanza hasta el caracter introducido después de la "f" en una misma línea.
+ 
 2. **Modo insertar**: con el atajo "i" se entra y con el atajo "esc" se sale. Mucha gente cambia este comando por la tecla "Bloq Mayus" o por "ii".
 3. **Modo visual**: con el atajo "v".
