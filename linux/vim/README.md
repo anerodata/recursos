@@ -82,3 +82,7 @@ Instalamos `vim-plug` siguiendo [las instrucciones](https://github.com/junegunn/
 Al final de `.vimrc` tengo inicializado el _plugin_ así `colorscheme monokai`.
 
 El resto de comandos están en el README, pero destacan `PlugUpgrade` para actualizar el gestor y `PlugUpdate` para actualizar los _plugins_ instalados.
+
+### _vimtutor_
+
+En la Terminal, abre el tutor del editor. Una de las primeras recomendaciones es desactivar la tecla "Bloq Mayus". [Aquí](https://superuser.com/questions/775785/how-to-disable-a-keyboard-key-in-linux-ubuntu) te dicen cómo se hace en Linux.
