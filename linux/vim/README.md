@@ -86,3 +86,5 @@ El resto de comandos están en el README, pero destacan `PlugUpgrade` para actua
 ### _vimtutor_
 
 En la Terminal, abre el tutor del editor. Una de las primeras recomendaciones es desactivar la tecla "Bloq Mayus". [Aquí](https://superuser.com/questions/775785/how-to-disable-a-keyboard-key-in-linux-ubuntu) te dicen cómo se hace en Linux.
+
+Ubico este comando en `~/.bashrc` para que corra cada vez que abra Terminal. Lo suyo sería que corriese [_on startup_](https://linuxconfig.org/how-to-run-script-on-startup-on-ubuntu-20-04-focal-fossa-server-desktop). De momento no está así.
