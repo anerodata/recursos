@@ -28,6 +28,7 @@ Vim es un editor de texto modal. Tiene modos:
 - `b` es el contrario, nos desplaza al primer caracter de la palabra anterior. `3 + b`, igual pero con tres palabras
 - Este incremento también funciona con las teclas `hjkl`.
 - `p` o _put_. Coloca lo que hayamos `borrado` con `d` en donde estemos. Esto es como hacer _copy/paste_. Es igual que `C`.
+- `ddp` Estando en una línea la corta y la pega una línea debajo
 - `r + caracter` reemplaza el caracter en el que estemos con el cursor por otro.
 - `c` es _change_. `c + e` borra todos los caracteres desde el cursor hasta el final de la palabra y nos mete en el modo insertar para reemplazar la palabra
 - `c + $` para cambiar toda la línea. Es como hacer `SHIFT + c`
@@ -54,18 +55,31 @@ El comando _yank_ es igual a hacer un _copy_:
 
 Para puscar pulsamos `/` introducimos el término y pulsamos intro. Nos lleva a la primera ocurrencia. Luego pulsando `n`, vamos a las siguientes ocurrencias. `SHIFT + n` busca para atrás. Con `?` también se puede buscar, `n` y `N` funciona de manera cambiada aquí. Si quisieramos volver a la posición anterior una vez nos desplazamos con `n` podemos hacerlo con `CTRL + o` que retrocede el cursor a la posición anterior. `CTRL + i` después de haber hecho `CTRL o` nos devuelve a la posición más reciente.
 
+- Podemos utilizar el operador de búsqueda para mover líneas `:/secondtextline/m$` movería el texto de la segunda línea al final del documento.
+- `/juan/+1m-1`: buscaría una línea más abajo de juan, y cogería esa línea y restaría su posición en 1. Es decir, la subiría 3 líneas.
+
 Para reemplazar: 
 
 - `:s/oldstring/newstring/g`: en el documento entero. 
 - `:%s/oldstring/newstring/gc`: en el documento entero, pero con un prompt. 
 - `:3,9s/oldstring/newstring/g`: en el documento entero.
 
+Identaciones en masa:
+
+- `:10,15>`: identa las líneas desde la 10 a la 15
+
 Para cerrar, ejecutando `!ls` podemos listar el directorio en el que estamos desde la línea de comandos sin salirnos de Vim. Funcionaría para el resto de comandos de la Terminal.
 
 Una pequeña documentación aparece para conocer qué comandos empiezan por una letra en cuestión cuando hacemos `:w CTRL + d`.
 
+**Grabar comandos en macros**
+
+Es una funcionalidad muy chula ya que nos permite repetir acciones. [Aquí](https://vim.fandom.com/wiki/Macros) está bastante bien explicado. `qa` en modo normal empieza a grabar una acción de nombre "a". Ejecutamos la acción: copiar, pegar, reemnplazar... y pulsamos `q`. Acaba el grabado y podemos ejecutar la macro una vez con `@1`. A continuación `20@@` para ejecutarla 20 veces 
+
 2. **Modo insertar**: con el atajo `i` se entra y con el atajo `esc` se sale. Mucha gente cambia este comando por la tecla `Bloq Mayus` o por `ii`.
 3. **Modo visual**: con el atajo `v`.
+Una vez estamos en el modo visual podemos editar bloques de texto. 
+- `CTRL + v` nos sitúa en el modo visual en el primer caracter. podemos seleccionar todos los primeros caracteres de cada línea y borrarlos con `d`.
 
 ## Instalando _plugins_
 
@@ -88,3 +102,4 @@ El resto de comandos están en el README, pero destacan `PlugUpgrade` para actua
 En la Terminal, abre el tutor del editor. Una de las primeras recomendaciones es desactivar la tecla "Bloq Mayus". [Aquí](https://superuser.com/questions/775785/how-to-disable-a-keyboard-key-in-linux-ubuntu) te dicen cómo se hace en Linux.
 
 Ubico este comando en `~/.bashrc` para que corra cada vez que abra Terminal. Lo suyo sería que corriese [_on startup_](https://linuxconfig.org/how-to-run-script-on-startup-on-ubuntu-20-04-focal-fossa-server-desktop). De momento no está así.
+
