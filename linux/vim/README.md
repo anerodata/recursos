@@ -1,5 +1,5 @@
 # Vim	
-Se siguen [este tutorial de DistroTube](https://www.youtube.com/watch?v=ER5JYFKkYDg&ab_channel=DistroTube) y [este](https://www.youtube.com/watch?v=bshMXXX40_4&t=630s&ab_channel=DistroTube).
+Se siguen [este tutorial de DistroTube](https://www.youtube.com/watch?v=ER5JYFKkYDg&ab_channel=DistroTube), [este](https://www.youtube.com/watch?v=bshMXXX40_4&t=630s&ab_channel=DistroTube) y [este](https://www.youtube.com/watch?v=Zir28KFCSQw&t=175s&ab_channel=DistroTube).
 
 Un sistema operativo instalado en casi todas las distribuciones de tipo UNIX. A veces viene Vi, su versión antigua.
 Un recurso chulo para aprender Vim es https://vim-adventures.com.
@@ -116,4 +116,13 @@ En la Terminal, abre el tutor del editor. Una de las primeras recomendaciones es
 
 Ubico este comando en `~/.bashrc` para que corra cada vez que abra Terminal. Lo suyo sería que corriese [_on startup_](https://linuxconfig.org/how-to-run-script-on-startup-on-ubuntu-20-04-focal-fossa-server-desktop). De momento no está así.
 
+## _Splits_
+Sirven para dividir la pabtalla:
+- `split` hace uno horizontal. `sp` abreviado. `10sp filename` abre el fichero en un split horizontal de 10 líneas.
+- `vsplit` hace uno vertical, `vs` abreviado. 
+- `CTRL +w` dos veces nos desplaza por los _splits_.
+- Teniendo un _split_ horizontal abierto, si quisieramos hacer más grande en el que estamos: `CTRL + w + _`.
+- `CTRL +w =` las hace iguales de nuevo en un 50/50.
+- En _splits_ verticales. `CTRL + w + |` la hace totalmente grande
+- `CTRL + w + R` cambia los _splits_ de lugar.
 
