@@ -1,5 +1,6 @@
 # Vim	
-Se sigue [este tutorial de DistroTube](https://www.youtube.com/watch?v=ER5JYFKkYDg&ab_channel=DistroTube)
+Se siguen [este tutorial de DistroTube](https://www.youtube.com/watch?v=ER5JYFKkYDg&ab_channel=DistroTube) y [este](https://www.youtube.com/watch?v=bshMXXX40_4&t=630s&ab_channel=DistroTube).
+
 Un sistema operativo instalado en casi todas las distribuciones de tipo UNIX. A veces viene Vi, su versión antigua.
 Un recurso chulo para aprender Vim es https://vim-adventures.com.
 En el Terminal introduciendo `vimtutor` vamos al tutorial de vim.
@@ -68,18 +69,30 @@ Identaciones en masa:
 
 - `:10,15>`: identa las líneas desde la 10 a la 15
 
-Para cerrar, ejecutando `!ls` podemos listar el directorio en el que estamos desde la línea de comandos sin salirnos de Vim. Funcionaría para el resto de comandos de la Terminal.
+Para cerrar, ejecutando `!ls` podemos listar el directorio en el que estamos desde la línea de comandos sin salirnos de Vim. Funcionaría para el resto de comandos de la Terminal. Podríamos utilizar está funcionalidad para poder darnos permisos de escritura sobre ficheros de otros usuarios así `:w !sudo tee %` `tee` redirige el output del `sudo`anterior al fichero que estamos editando (`%`).
 
 Una pequeña documentación aparece para conocer qué comandos empiezan por una letra en cuestión cuando hacemos `:w CTRL + d`.
 
-**Grabar comandos en macros**
+Para reemplzar _strings_ podemos usar `dw` pero una forma chula de hacerlo es pulsar `/` introducir el caracter que queremos buscar, desplazarnos hasta el y pulsar `cgn` se borra el _string_ buscado, introducimos el cambio, `esc` y pulsamos `.`, que lo que hace es ejecutar el último comando. Si lo grabamos como comentamos a continuación es más rápido.
+
+## Grabar comandos en macros
 
 Es una funcionalidad muy chula ya que nos permite repetir acciones. [Aquí](https://vim.fandom.com/wiki/Macros) está bastante bien explicado. `qa` en modo normal empieza a grabar una acción de nombre "a". Ejecutamos la acción: copiar, pegar, reemnplazar... y pulsamos `q`. Acaba el grabado y podemos ejecutar la macro una vez con `@1`. A continuación `20@@` para ejecutarla 20 veces 
+
+Para ejecutar macros desde una línea hasta el final o entre dos líneas se puede usar el [_normal command_](https://stackoverflow.com/questions/390174/in-vim-how-do-i-apply-a-macro-to-a-set-of-lines)
 
 2. **Modo insertar**: con el atajo `i` se entra y con el atajo `esc` se sale. Mucha gente cambia este comando por la tecla `Bloq Mayus` o por `ii`.
 3. **Modo visual**: con el atajo `v`.
 Una vez estamos en el modo visual podemos editar bloques de texto. 
 - `CTRL + v` nos sitúa en el modo visual en el primer caracter. podemos seleccionar todos los primeros caracteres de cada línea y borrarlos con `d`.
+- Estando en el modo visual podemos seleccionar 20 líneas asi `20j`
+- Para entrar en el modo comando pulsamos `:` y aparece `'<,'>`, `'<` es la primera línea selecionada `'>` es la última línea seleccionada. Sentenciamos así `norm I"` que es como usar en modo normal el comando `I` para ir situar el cursor en el primer caracter de la línea e introducir una comilla.
+
+Para meter una última comilla haríamos lo mismo pero esta vez el comando sería `norm $a"`.
+
+## Abreviaciones
+
+si pulsamos lo siguiente `:ab FCB Fútbol Club Barcelona`, cada vez que pulsemos `FCB ` se escribirá el nombre completo. Para detener puntualmente la abreviación, si quisieramos escribir "FCB" haríamos "FCB CTRL + v".
 
 ## Instalando _plugins_
 
@@ -102,4 +115,5 @@ El resto de comandos están en el README, pero destacan `PlugUpgrade` para actua
 En la Terminal, abre el tutor del editor. Una de las primeras recomendaciones es desactivar la tecla "Bloq Mayus". [Aquí](https://superuser.com/questions/775785/how-to-disable-a-keyboard-key-in-linux-ubuntu) te dicen cómo se hace en Linux.
 
 Ubico este comando en `~/.bashrc` para que corra cada vez que abra Terminal. Lo suyo sería que corriese [_on startup_](https://linuxconfig.org/how-to-run-script-on-startup-on-ubuntu-20-04-focal-fossa-server-desktop). De momento no está así.
+
 
