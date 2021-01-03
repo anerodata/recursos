@@ -23,3 +23,4 @@ Videos, articles, tutorials that I read.
 | [RegexOne](https://regexone.com/) | Various | Tutorial | 2019 | RegexOne | [regex](https://github.com/anerodata/formacion/tree/master/linux/regex) |
 | [Regular expressions in grep ( regex ) with examples](https://www.cyberciti.biz/faq/grep-regular-expressions/) | Linux | Article | 27/08/2020 | Vivek Gite | [regex](https://github.com/anerodata/formacion/tree/master/linux/regex) |
 | [The Vim Tutorial](https://www.youtube.com/watch?v=ER5JYFKkYDg&ab_channel=DistroTube) | Vim | Video | 11/12/2018 | DistroTube | [vim](https://github.com/anerodata/formacion/tree/master/linux/vim) |
+|[Vim Can Save You Hours Of Work](https://www.youtube.com/watch?v=bshMXXX40_4&t=630s&ab_channel=DistroTube) | Vim | Vídeo  | 30/12/2020 | | DistroTube | [vim](https://github.com/anerodata/formacion/tree/master/linux/vim) |
