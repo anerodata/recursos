@@ -24,3 +24,5 @@ Videos, articles, tutorials that I read.
 | [Regular expressions in grep ( regex ) with examples](https://www.cyberciti.biz/faq/grep-regular-expressions/) | Linux | Article | 27/08/2020 | Vivek Gite | [regex](https://github.com/anerodata/formacion/tree/master/linux/regex) |
 | [The Vim Tutorial](https://www.youtube.com/watch?v=ER5JYFKkYDg&ab_channel=DistroTube) | Vim | Video | 11/12/2018 | DistroTube | [vim](https://github.com/anerodata/formacion/tree/master/linux/vim) |
 |[Vim Can Save You Hours Of Work](https://www.youtube.com/watch?v=bshMXXX40_4&t=630s&ab_channel=DistroTube) | Vim | Vídeo | 30/12/2020 | DistroTube | [vim](https://github.com/anerodata/formacion/tree/master/linux/vim) |
+| [Deploying Vue apps to heroku - the right way](https://medium.com/binarcode/deploying-vue-apps-to-heroku-the-right-way-26b11c1ae5cd) | Vue and Heroku | Article | 06/06/2018 | BinarCode | |
+| [How to Deploy a Vue CLI 3 Application to Heroku](https://www.youtube.com/watch?v=yfW9knTBR90&ab_channel=edutechional) | Vue and Heroku | Video | 26/05/2018 | edutechional | |
