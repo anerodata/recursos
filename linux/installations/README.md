@@ -35,6 +35,35 @@ Después instalamos Ruby 2.6.5 con `rvm install 2.6`. Con `rvm list` listamos lo
 
 Cada vez que entremos en Terminal habrá que ejecutar `source /home/anerodata/.rvm/scripts/rvm` para usar Ruby.
 
+### [NVM](https://github.com/nvm-sh/nvm) y Node
+
+Tal y como lo tenemos en [Civio](https://github.com/civio/infra-management/wiki/Development-environment#python):
+
+```
+$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
+```
+
+Si en `.bashrc` no tenemos ya esto escrito, debemos escribirlo:
+
+```
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+```
+
+Ahora, en la terminal:
+
+```
+$ source ~/.bashrc
+$ nvm install 14.15
+```
+
+Instalamos la 14.15 porque tiene _Long Term Support_. Si todo está instalado correctamente, cerramos la terminal y en una nueva veríamos:
+
+```
+$ node --version
+v14.15.3
+```
+
 ## Editores de texto
 
 ### Vim
