@@ -89,3 +89,7 @@ Con `snap install spotify`.
 ### Chrome
 
 Descargarlo de la [web](https://www.google.com/intl/es/chrome/) y `clamscan file.deb` para ver si está infectado, después `sudo dpkg -i file.deb`.
+
+## Otros
+
+- Sincronizar Ubuntu con Google Drive es [bastante sencillo](https://cambiatealinux.com/instalar-google-drive-en-ubuntu).
