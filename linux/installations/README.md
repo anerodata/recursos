@@ -64,6 +64,47 @@ $ node --version
 v14.15.3
 ```
 
+### [pyenv](https://github.com/pyenv/pyenv-installer#installation--update--uninstallation)
+
+Uso `pyenv` como gestor de paquetes de Python. Para instalar ejecutamos en la terminal:
+
+```
+$ curl https://pyenv.run | bash
+```
+
+Después añadimos a `~/.bashrc`
+
+```
+# Load pyenv
+export PATH="/home/anerodata/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+```
+
+Instalo la versión de Python 3.7.5:
+
+```
+$ pyenv install 3.7.5
+```
+
+Para poder verla instalada:
+
+```
+$ pyenv versions
+3.7.5
+```
+
+Para hacerla global:
+
+```
+$ pyenv global 3.7.5
+```
+
+`$ pyenv help global` para más información sobre esto.
+
+Ya podemos usar esa versión de python ejecutando en la terminal `python`.
+
+
 ## Editores de texto
 
 ### Vim
