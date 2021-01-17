@@ -126,3 +126,5 @@ Sirven para dividir la pabtalla:
 - En _splits_ verticales. `CTRL + w + |` la hace totalmente grande
 - `CTRL + w + R` cambia los _splits_ de lugar.
 
+Tengo configurado el atajo `CTRL + k` para desplazarme para el _split_ de arriba, lo mismo con el resto de teclas de dirección. 
+
