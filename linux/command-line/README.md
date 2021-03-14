@@ -35,7 +35,8 @@ _Shell_ tiene una lógica basada en _Read Evaluate Print Loop_ (REPL), es decir,
 
 - `tar -cf archive.tar pepe/ README.md`: Crea un archivo sin comprimir.
 - `tar -zcf archive.tar.gz pepe/ README.md`: crea un archivo comprimido 
-- `tar -xzf archive.tar.gz -C some-folder`: extrae un fichero comprimido en `some-folder` (tiene que haber sido creada)
+- `tar -xzf archive.tar.gz -C some-folder`: extrae un fichero comprimido en `some-folder` (tiene que haber sido creada).
+- Para descomprimir archivos en un directorio "x": `unzip -p file.zip folder`.
 
 ### _Wildcards and replacements_
 
