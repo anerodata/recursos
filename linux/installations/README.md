@@ -104,6 +104,12 @@ $ pyenv global 3.7.5
 
 Ya podemos usar esa versión de python ejecutando en la terminal `python`.
 
+Conviene actualizar `pip` y sus paquetes ejecutando:
+
+```
+$ pip install --upgrade pip
+```
+
 
 ## Editores de texto
 
