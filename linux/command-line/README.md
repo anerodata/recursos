@@ -341,6 +341,20 @@ Cualquier _script_ aquí correrá periódicamente:
 
 `crontab -u root -e` instalaría un `cron` con `root`. Lo normal es hacerlo con un usario que no sea `root`. En WSL, ponemos esto `service cron start` en `~/.bashrc` para iniciar un proceso con cron. [Más info](https://scottiestech.info/2018/08/07/run-cron-jobs-in-windows-subsystem-for-linux/)
 
+## _Anacron jobs_
+
+Otra forma de definir procesos es a través de Anacron. En este caso, los trabajos los ejecuta _root_. Abrimops el fichero de ordenes de `anacron` con el comando `sudo nano /etc/anacron`. En este fichero están los ficheros de la lista de arriba: cron.daily, cron.hourly... Las instrucciones para definir una tarea y las características de Anacron están detalladas [aquí](https://geekland.eu/planificar-tareas-con-cron-y-anacron-en-linux/) pero son basicamente estas:
+
+`periodo_tarea retardo_ejecucion identificador comando`.
+
+Tendiendo Anacron instalado, no existe diferencia entre programar una tarea semanal desde `/etc/anacron` o desde `/etc/cron.weekly`. En los dos casos la tarea se ejecutara transucurridos 7 días y teniendo el ordenador encendido. Si este programa no está instalado, la tarea se ejecutará según la hora y la fecha especificada en `etc/crontab`.
+
+`ll /var/spool/anacron/` contiene un fichero para cada `anacron` definido y nos sirve para ver si las tareas se están ejecutando.
+
+Si queremos ejecutar `anacron` por la fuerza: `sudo anacron -fn`. Con n para evitar el retraso en la ejecución.
+
+Para comprobar como se está ejecutando, podemos ver el _log_ del sistema mediante `cat var/log/syslog`.
+
 ## Customizar el _prompt_
 
 Se puede ver así `echo $PS1` y cambiar de nombre así `PS1='$'`. `curl https://raw.githubusercontent.com/riobard/bash-powerline/master/bash-powerline.sh > ~/.bash-powerline.sh`. Descarga un customizador de consola de comandos. _gitbash_ o _spaceship_ para `zsh` son otros tipos de _prompt_.
