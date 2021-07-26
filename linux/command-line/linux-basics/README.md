@@ -357,6 +357,8 @@ Para comprobar como se está ejecutando, podemos ver el _log_ del sistema median
 
 En portatiles (Linux Ubuntu 20): hay una línea en el fichero `/etc/cron.daily/apt-compat` al final que impide ejecutar `cron.daily` a no ser que el dispositivo se encuentre cargando: `check_power || exit 0`.
 
+Para evitar que `anacron` se ejecute solo con el portatil enchufado a la luz y pueda tambien correr sólo con la batería, hay que editar `etc/default/anacron` ([askubuntu.com](https://askubuntu.com/questions/94155/run-anacron-even-when-on-battery-laptop)).
+
 ## Customizar el _prompt_
 
 Se puede ver así `echo $PS1` y cambiar de nombre así `PS1='$'`. `curl https://raw.githubusercontent.com/riobard/bash-powerline/master/bash-powerline.sh > ~/.bash-powerline.sh`. Descarga un customizador de consola de comandos. _gitbash_ o _spaceship_ para `zsh` son otros tipos de _prompt_.
