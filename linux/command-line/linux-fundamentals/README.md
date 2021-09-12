@@ -14,3 +14,41 @@ En Linux todos los elementos son considerados ficheros: directorios, programas, 
 Tenemos información sobre su tipo con el comando `file`.ç
 
 En Ubuntu podemos usar el programa `rename` para renombrar muchos ficheros utilizando expresiones regulares: `rename 's/conf/backup/' *.conf` sustituye `.conf` por `.backup` en todos los ficheros con la extensión `.conf`.
+
+## 10 - El contenido de ficheros
+
+1. Display the first 12 lines of `/etc/services`.
+
+`head -12 /etc/services`
+
+2. Display the last line of `/etc/passwd`.
+
+`tail -1 /etc/passwd`
+
+3. Use cat to create a file named count.txt that looks like this:
+
+`echo -e "one\ntwo" > count.txt`
+
+4. Use cp to make a backup of this file to cnt.txt.
+
+`cp count-txt count-backup.txt`
+
+5. Use cat to make a backup of this file to catcnt.txt.
+
+`cat count-backup.txt > catcnt.txt`
+
+6. Display catcnt.txt, but with all lines in reverse order (the last line first).
+
+`tac count-backup.txt`
+
+7. Use more to display /etc/services.
+
+`more /etc/services`
+
+8. Display the readable character strings from the /usr/bin/passwd command.
+
+`strings /usr/bin/passwd`
+
+9. Use ls to find the biggest file in /etc.
+
+`ls -lS /etc/ | head`
