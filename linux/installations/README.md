@@ -115,7 +115,7 @@ $ pip install --upgrade pip
 
 ### Vim
 
-`sudo apt install vim`
+`$ sudo apt install vim`
 
 Versión renovada de Vi:
 
@@ -125,7 +125,7 @@ Versión renovada de Vi:
 
 ### Sublime
 
-`sudo snap install sublime-text`
+`$ sudo snap install sublime-text`
 
 ## Instalando otros programas
 
@@ -139,4 +139,70 @@ Descargarlo de la [web](https://www.google.com/intl/es/chrome/) y `clamscan file
 
 ## Otros
 
+### Google Drive
+
 - Sincronizar Ubuntu con Google Drive es [bastante sencillo](https://cambiatealinux.com/instalar-google-drive-en-ubuntu).
+
+### `weasyprint`
+
+Lo instalo dentro de un entorno, como detallan en su [documentación](https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#linux). Teniendo `Python 3.7.5` definido desde `pyenv` (`python -V`), ejecutamos en `bash` desde el directorio en cuestión:
+
+```
+$ python -m . venv
+$ source venv/bin/activate
+$ pip install weasyprint
+$ weasyprint --info
+```
+
+Al instalar `weasyprint`, todas sus dependencias se instalaron correctamente excepto `Pillow`, problamente porque intenta instalar una versión anterior, que no funciona en `Python 3.7.5`. La instalo aparte, como detallan en su [documentación](https://pillow.readthedocs.io/en/stable/installation.html) ejecutando en `bash`:
+
+```
+$ python3 -m pip install --upgrade pip
+$ python3 -m pip install --upgrade Pillow
+```
+
+Si todo sale bien:
+
+```
+$ pip install weasyprint
+
+```
+
+### _Environments_
+
+Installar un _environment_ con `python` es bastante sencillo.
+
+Con `Python 3.7.5` definido desde `pyenv` (`python -V`):
+
+1. Crear el _environment_ dentro del directorio, corriendo el modulo de `python`, [`venv`](https://docs.python.org/3/library/venv.html) como un _script_.
+```
+python -m venv .
+
+```
+
+2. Correr el script que activa el entorno
+```
+source bin/activate
+
+```
+
+3. Instalar paquetes con `pip`:
+```
+pip install requests
+
+```
+
+4. Salir del entorno y continuar con el del sistema. Ya no podemos usar `requests`, a no ser que lo tengamos instalado en el `pip` de mi usuario `anerodata`:
+```
+deactivate
+
+```
+
+Una vez creado el entorno y el projecto, podemos facilitar al usuario la instalación de sus dependencias mediante un fichero `requirements.txt`. Instalaremos estas dependencias mediante el comando:
+
+```
+pip install -r requirements.txt
+
+```
+
+Más sobre entornos [aquí](https://jarroba.com/virtual-environments-venv-in-python/) y [aquí](https://j2logo.com/virtualenv-pip-librerias-python/). Y "la diferencia entre venv, pyvenv, pyenv, virtualenv, virtualenvwrapper, pipenv, etc" explicada [aquí](https://stackoverflow.com/questions/41573587/what-is-the-difference-between-venv-pyvenv-pyenv-virtualenv-virtualenvwrappe). **Recomiendan** empezar usando `virtualenv`.
