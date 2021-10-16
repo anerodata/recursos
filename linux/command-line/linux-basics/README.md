@@ -105,6 +105,7 @@ _One of the Linux philosophies is the assumption that the output of a program ca
 - `cat non-existant-file.txt 2> error.txt`: `>2` redirecciona (_standard error_). Convierte un _output_ de error en en el _input_ de otro fichero. El fichero no existe, por eso produce un error.
 - `ls -lash file.txt 1> ls.txt 2> error.txt`: Separación de _streams_. los errores iran en `error.txt`.
 - `ls -lash 1> /dev/null`. Solo imprimirá errores. El resto de mensajes, no. Para ejecutar un programa del que solo queramos saber los errores.
+- `firefox &> /dev/null` deriva tanto _standart error_ como _standart out_ a `/dev/null`.
 
 #### _Input streams_
 
