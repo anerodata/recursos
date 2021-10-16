@@ -52,3 +52,13 @@ En Ubuntu podemos usar el programa `rename` para renombrar muchos ficheros utili
 9. Use ls to find the biggest file in /etc.
 
 `ls -lS /etc/ | head`
+
+11. Use cat to create a file named tailing.txt that contains the contents of tailing.txt followed
+by the contents of /etc/passwd.
+
+`cat /etc/passwd >> tailing.txt`
+
+12. Use cat to create a file named tailing.txt that contains the contents of tailing.txt preceded
+by the contents of /etc/passwd.
+
+`mv tailing.txt tmp.txt ; cat /etc/passwd tmp.txt > tailing.txt `
