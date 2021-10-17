@@ -148,7 +148,7 @@ Descargarlo de la [web](https://www.google.com/intl/es/chrome/) y `clamscan file
 Lo instalo dentro de un entorno, como detallan en su [documentación](https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#linux). Teniendo `Python 3.7.5` definido desde `pyenv` (`python -V`), ejecutamos en `bash` desde el directorio en cuestión:
 
 ```
-$ python -m . venv
+$ python -m venv .
 $ source venv/bin/activate
 $ pip install weasyprint
 $ weasyprint --info
