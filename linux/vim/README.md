@@ -1,4 +1,4 @@
-# Vim	
+# Vim
 Se siguen [este tutorial de DistroTube](https://www.youtube.com/watch?v=ER5JYFKkYDg&ab_channel=DistroTube), [este](https://www.youtube.com/watch?v=bshMXXX40_4&t=630s&ab_channel=DistroTube) y [este](https://www.youtube.com/watch?v=Zir28KFCSQw&t=175s&ab_channel=DistroTube).
 
 Un sistema operativo instalado en casi todas las distribuciones de tipo UNIX. A veces viene Vi, su versión antigua.
@@ -28,13 +28,15 @@ Vim es un editor de texto modal. Tiene modos:
 - `3 + w` nos desplazamos tres palabras más allá
 - `b` es el contrario, nos desplaza al primer caracter de la palabra anterior. `3 + b`, igual pero con tres palabras
 - Este incremento también funciona con las teclas `hjkl`.
-- `p` o _put_. Coloca lo que hayamos `borrado` con `d` en donde estemos. Esto es como hacer _copy/paste_. Es igual que `C`.
-- `ddp` Estando en una línea la corta y la pega una línea debajo
+- `p` o _put_. Coloca lo que hayamos `borrado` con `d` en donde estemos. Esto es como hacer _copy/paste_. Es igual que `C`. Coloca lo que hay en el _clipboard_ justo antes del cursor. Si es una línea, arriba.
+- `SHIFT + p`. Coloca lo que hay en el _clipboard_ justo después del cursor. Si es una línea, abajo.
+- `ddp` Estando en una línea la corta y la pega una línea abajo.
 - `r + caracter` reemplaza el caracter en el que estemos con el cursor por otro.
 - `c` es _change_. `c + e` borra todos los caracteres desde el cursor hasta el final de la palabra y nos mete en el modo insertar para reemplazar la palabra
 - `c + $` para cambiar toda la línea. Es como hacer `SHIFT + c`
 - `c + w` borra la palabra y te introude en el modo insertar es igual que `c + e`.
-
+- `g + d` estando sobre una función, nos lleva a su definición.
+- `g + f` estandp sobre un _string_ de importación, nos lleva al fichero en donde se encuentra esa dependencia. Retrocedemos en el _buffer_ con `CTRL + o`. Avanzamos en el _buffer_ con `CTRL + i`.
 
 Tanto la `b` como la `w`, o la `e` tienen su versión `SHIFT + b/w` para no tomar caracteres como , o paréntesis como si fueran palabras
 
@@ -46,7 +48,7 @@ Tanto la `b` como la `w`, o la `e` tienen su versión `SHIFT + b/w` para no toma
 - `s` borra el caracter del cursor y te mete en el modo insertar.
 - `SHIFT + s` borra toda la línea y te mete en el modo insertar.
 - `o` crea una línea nueva siguiente a la que estamos y te introduce en insertar. `SHIFT + o` hace lo mismo, solo que en una línea anterior
-
+- `d` se puede usar en combinación con `b`, `w` y `e` y también con números para multiplicar su efecto.
 El comando _yank_ es igual a hacer un _copy_:
 
 - `y + w` copia la palabra y la pegamos con `p`.
