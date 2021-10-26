@@ -55,7 +55,7 @@ El comando _yank_ es igual a hacer un _copy_:
 - `y + y` copia una línea entera. Es como hacer `SHIFT + y`.
 - `y + $` copia desde el cursor hasta el final de la línea.
 - `%` Encuentra los parénteisis en una línea. Cualquier elemento de cierre: corchete, llave... Combinado con el modo visual es muy potente ya que por ejemplo permite borrar toda una función y escribirla de nuevo. 
-
+- `CTRL + r`: reemplaza cada letra a medida que vas escribiendo.
 Para buscar desde el cursor para atrás, pulsamos `/` introducimos el término y pulsamos intro. Nos lleva a la primera ocurrencia. Luego pulsando `n`, vamos a las siguientes ocurrencias. `SHIFT + n` se va a la ocurrencia anterior. Con `?` también se puede buscar, solo que empieza del cursor para atrás. `n` y `N` funciona de manera cambiada aquí.
 
 Si quisieramos volver a la posición anterior una vez nos desplazamos con `n` podemos hacerlo con `CTRL + o` que retrocede el cursor a la posición anterior. `CTRL + i` después de haber hecho `CTRL o` nos devuelve a la posición más reciente.
@@ -92,7 +92,7 @@ Una vez estamos en el modo visual podemos editar bloques de texto.
 - `CTRL + v` nos sitúa en el modo visual en el primer caracter. podemos seleccionar todos los primeros caracteres de cada línea y borrarlos con `d`.
 - Estando en el modo visual podemos seleccionar 20 líneas asi `20j`
 - Para entrar en el modo comando pulsamos `:` y aparece `'<,'>`, `'<` es la primera línea selecionada `'>` es la última línea seleccionada. Sentenciamos así `norm I"` que es como usar en modo normal el comando `I` para ir situar el cursor en el primer caracter de la línea e introducir una comilla.
-
+- En el modo visual se puede copiar. Estando en el modo visual y con texto seleccionado: pulsamos `y` y luego `p`.
 Para meter una última comilla haríamos lo mismo pero esta vez el comando sería `norm $a"`.
 
 ## Abreviaciones
