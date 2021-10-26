@@ -34,12 +34,12 @@ Vim es un editor de texto modal. Tiene modos:
 - `r + caracter` reemplaza el caracter en el que estemos con el cursor por otro.
 - `c` es _change_. `c + e` borra todos los caracteres desde el cursor hasta el final de la palabra y nos mete en el modo insertar para reemplazar la palabra
 - `c + $` para cambiar toda la línea. Es como hacer `SHIFT + c`
-- `c + w` borra la palabra y te introude en el modo insertar es igual que `c + e`.
+- `c + w` borra el texto a partir de donde tengas el cursor y te introude en el modo insertar es igual que `c + e`.
+- `c + i + w` borra una palabra estés donde estés para llevarte al modo insertar
 - `g + d` estando sobre una función, nos lleva a su definición.
 - `g + f` estandp sobre un _string_ de importación, nos lleva al fichero en donde se encuentra esa dependencia. Retrocedemos en el _buffer_ con `CTRL + o`. Avanzamos en el _buffer_ con `CTRL + i`.
-
-Tanto la `b` como la `w`, o la `e` tienen su versión `SHIFT + b/w` para no tomar caracteres como , o paréntesis como si fueran palabras
-
+- `16 + SHIFT + g` nos lleva a la línea 16.
+- Tanto la `b` como la `w`, o la `e` tienen su versión `SHIFT + b/w` para no tomar caracteres como , o paréntesis como si fueran palabras
 - la `f` es como _for to..._: avanza hasta el caracter introducido después de la `f` en una misma línea. `SHIFT + f` hace lo mismo, pero para atrás.
 - `t` y `SHIFT + T` se parecen mucho, solo que en vez se situarte sobre el próximo caracter, te situan en el caracter que precede
 - `SHIFT + i` te lleva al principio de la línea y te mete en el modo insertar.
@@ -54,18 +54,21 @@ El comando _yank_ es igual a hacer un _copy_:
 - `y + w` copia la palabra y la pegamos con `p`.
 - `y + y` copia una línea entera. Es como hacer `SHIFT + y`.
 - `y + $` copia desde el cursor hasta el final de la línea.
-- `%` Encuentra los parénteisis en una línea. 
+- `%` Encuentra los parénteisis en una línea. Cualquier elemento de cierre: corchete, llave... Combinado con el modo visual es muy potente ya que por ejemplo permite borrar toda una función y escribirla de nuevo. 
 
-Para puscar pulsamos `/` introducimos el término y pulsamos intro. Nos lleva a la primera ocurrencia. Luego pulsando `n`, vamos a las siguientes ocurrencias. `SHIFT + n` busca para atrás. Con `?` también se puede buscar, `n` y `N` funciona de manera cambiada aquí. Si quisieramos volver a la posición anterior una vez nos desplazamos con `n` podemos hacerlo con `CTRL + o` que retrocede el cursor a la posición anterior. `CTRL + i` después de haber hecho `CTRL o` nos devuelve a la posición más reciente.
+Para buscar desde el cursor para atrás, pulsamos `/` introducimos el término y pulsamos intro. Nos lleva a la primera ocurrencia. Luego pulsando `n`, vamos a las siguientes ocurrencias. `SHIFT + n` se va a la ocurrencia anterior. Con `?` también se puede buscar, solo que empieza del cursor para atrás. `n` y `N` funciona de manera cambiada aquí.
+
+Si quisieramos volver a la posición anterior una vez nos desplazamos con `n` podemos hacerlo con `CTRL + o` que retrocede el cursor a la posición anterior. `CTRL + i` después de haber hecho `CTRL o` nos devuelve a la posición más reciente.
 
 - Podemos utilizar el operador de búsqueda para mover líneas `:/secondtextline/m$` movería el texto de la segunda línea al final del documento.
 - `/juan/+1m-1`: buscaría una línea más abajo de juan, y cogería esa línea y restaría su posición en 1. Es decir, la subiría 3 líneas.
 
 Para reemplazar: 
 
-- `:s/oldstring/newstring/g`: en el documento entero. 
+- `:s/oldstring/newstring/`: reemplaza la primera ocurrencia en la línea. 
+- `:s/oldstring/newstring/g`: reemplaza todas las ocurrencias en la línea. 
+- `:%s/oldstring/newstring/g`: en el documento entero.
 - `:%s/oldstring/newstring/gc`: en el documento entero, pero con un prompt. 
-- `:3,9s/oldstring/newstring/g`: en el documento entero.
 
 Identaciones en masa:
 
