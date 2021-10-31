@@ -115,6 +115,20 @@ Al final de `.vimrc` tengo inicializado el _plugin_ así `colorscheme monokai`.
 
 El resto de comandos están en el README, pero destacan `PlugUpgrade` para actualizar el gestor y `PlugUpdate` para actualizar los _plugins_ instalados.
 
+#### Easymotion
+
+Con el atajo `espacio + s` podemos buscar dos caracteres y desplazarnos mediante distintas letras por las distintas ocurrencias.
+
+#### Nerdtree
+
+Lo tengo configurado para que se abra con la combinación `Espacio nt`. Esto ejecuta `:NERDTreeFind`. Lo tengo confiurado para que al abrir un fichero, se ciere.
+
+Estando sobre el nombre del fichero, pulsamos `s` para abrirlo paralelamente.
+
+### `vim-tmux-navigator`
+
+Lo instalamos y ahora podemos navegar entre las diferentes partes del terminal, desde el árbol de ficheros hasta el fichero y de fichero a fichero. El atajo para cambiar la vista es `CTRL hjkl`.
+
 ### _vimtutor_
 
 En la Terminal, abre el tutor del editor. Una de las primeras recomendaciones es desactivar la tecla "Bloq Mayus". [Aquí](https://superuser.com/questions/775785/how-to-disable-a-keyboard-key-in-linux-ubuntu) te dicen cómo se hace en Linux.
