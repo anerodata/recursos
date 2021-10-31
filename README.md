@@ -27,3 +27,4 @@ Videos, articles, tutorials that I read.
 | [Deploying Vue apps to heroku - the right way](https://medium.com/binarcode/deploying-vue-apps-to-heroku-the-right-way-26b11c1ae5cd) | Vue and Heroku | Article | 06/06/2018 | BinarCode | |
 | [How to Deploy a Vue CLI 3 Application to Heroku](https://www.youtube.com/watch?v=yfW9knTBR90&ab_channel=edutechional) | Vue and Heroku | Video | 26/05/2018 | edutechional | |
 | [Como planificar tareas con Cron y Anacron en Linux](https://geekland.eu/planificar-tareas-con-cron-y-anacron-en-linux/) | Linux | Article | 22/01/2022 | geekland.eu | |
+| [Vim, aumenta tu velocidad de desarrollo](https://www.udemy.com/course/vim-aumenta-tu-velocidad-de-desarrollo/learn/lecture/15495998#overview) | Vim | Video | | Nicolas Schurmann |[vim](https://github.com/anerodata/formacion/tree/master/linux/vim) |
