@@ -1,8 +1,7 @@
 # Vim
-Se siguen [este tutorial de DistroTube](https://www.youtube.com/watch?v=ER5JYFKkYDg&ab_channel=DistroTube), [este](https://www.youtube.com/watch?v=bshMXXX40_4&t=630s&ab_channel=DistroTube) y [este](https://www.youtube.com/watch?v=Zir28KFCSQw&t=175s&ab_channel=DistroTube).
-
+Se siguen [este tutorial de DistroTube](https://www.youtube.com/watch?v=ER5JYFKkYDg&ab_channel=DistroTube), [este](https://www.youtube.com/watch?v=bshMXXX40_4&t=630s&ab_channel=DistroTube), [este](https://www.youtube.com/watch?v=Zir28KFCSQw&t=175s&ab_channel=DistroTube) y [este](https://www.udemy.com/course/vim-aumenta-tu-velocidad-de-desarrollo/learn/lecture/)
 Un sistema operativo instalado en casi todas las distribuciones de tipo UNIX. A veces viene Vi, su versión antigua.
-Un recurso chulo para aprender Vim es https://vim-adventures.com.
+Un recurso chulo para aprender Vim es [este](https://vim-adventures.com).
 En el Terminal introduciendo `vimtutor` vamos al tutorial de vim.
 
 Las teclas para mover el cursor tradicionalmente son h(izquierda)j(abajo)k(arriba)l(derecha). Estas teclas mueven el cursor a través de las líneas lógicas que existen, que a veces ocupan más de dos renglones. Si quisieramos desplazarnos a través de las líneas visuales tendríamos que hacer `g + j` (para abajo), y así sucesivamente.
@@ -11,64 +10,81 @@ Para salir pulsamos `:` para llevarnos al modo comando e introducimos `quit` o `
 
 Vim es un editor de texto modal. Tiene modos:
 
-1. **Modo normal**: puedes navegar con las teclas de cursor, copiar, pegar, marcar comandos como el `ZZ`, el `gg` que te lleva a lo alto del fichero, el `SHIFT+g` que te lleva a la última línea. Otros atajos:
+## Modo normal
+
+Puedes navegar con las teclas de cursor, copiar, pegar, marcar comandos. Con los comandos se pueden hacer diferentes acciones.
+
+### Entrar en _insert_
+
+- `i` te sitúa en el modo insertar en el caracter dek cursor
+- `a` te situa en el modo insertar en el caracter posterior al cursor
+- `SHIFT + i` te lleva al principio de la línea y te mete en el modo insertar.
+- `SHIFT + a` te lleva al final de la línea y te mete en el modo insertar.
+- `o` te sitúa en el modo insertar una línea debajo. `SHIFT + o` hace lo mismo, solo que en una línea anterior
+### Movimientos
 
 - `$` te lleva al final de una línea
 - `0` te lleva al principio de una línea.
-- `2 + SHIFT G` te lleva a la segunda línea.
-- `u` es _undo_. `3 + u` hace 3 undos seguidos.
-- `CTRL + r`, _redo_.
+- `w` nos deplazamos rápidamente, palabra por palabra hacia el primer caracter. `3 + w` nos desplazamos tres palabras más allá
+- `e` nos desplazamos palabra por palabra hacia el último caracter
+- `b` es el contrario, nos desplaza al primer caracter de la palabra anterior. `3 + b`, igual pero con tres palabras
+- Tanto la `b` como la `w`, o la `e` tienen su versión `SHIFT + b/w` para no tomar caracteres como , o paréntesis como si fueran palabras
+- `SHIFT + g`: Vas a la última línea. `gg`: vas a la primera línea. `2 + SHIFT + g` te lleva a la segunda línea.
+- `f` es como _for to..._: avanza hasta el caracter introducido después de la `f` en una misma línea. `SHIFT + f` hace lo mismo, pero para atrás.
+### Borrar, copiar y pegar
+
 - `d + w` borra la palabra
 - `d + $` borra desde el cursor hasta el final. Es como hacer `SHIFT +d`
-- `x` es como `ins`. Borra el caracter detrás del cursor.
-- `2 + x` borra 2s caracteres.
-- `d + d` borra la línea entera. `3 + d` borra las tres siguientes lineas
-- `w` nos deplazamos rápidamente, palabra por palabra hacia el primer caracter
-- `e` nos desplazamos palabra por palabra hacia el último caracter
-- `3 + w` nos desplazamos tres palabras más allá
-- `b` es el contrario, nos desplaza al primer caracter de la palabra anterior. `3 + b`, igual pero con tres palabras
-- Este incremento también funciona con las teclas `hjkl`.
-- `p` o _put_. Coloca lo que hayamos `borrado` con `d` en donde estemos. Esto es como hacer _copy/paste_. Es igual que `C`. Coloca lo que hay en el _clipboard_ justo antes del cursor. Si es una línea, arriba.
-- `SHIFT + p`. Coloca lo que hay en el _clipboard_ justo después del cursor. Si es una línea, abajo.
-- `ddp` Estando en una línea la corta y la pega una línea abajo.
-- `r + caracter` reemplaza el caracter en el que estemos con el cursor por otro.
-- `c` es _change_. `c + e` borra todos los caracteres desde el cursor hasta el final de la palabra y nos mete en el modo insertar para reemplazar la palabra
-- `c + $` para cambiar toda la línea. Es como hacer `SHIFT + c`
-- `c + w` borra el texto a partir de donde tengas el cursor y te introude en el modo insertar es igual que `c + e`.
-- `c + i + w` borra una palabra estés donde estés para llevarte al modo insertar
-- `g + d` estando sobre una función, nos lleva a su definición.
-- `g + f` estandp sobre un _string_ de importación, nos lleva al fichero en donde se encuentra esa dependencia. Retrocedemos en el _buffer_ con `CTRL + o`. Avanzamos en el _buffer_ con `CTRL + i`.
-- `16 + SHIFT + g` nos lleva a la línea 16.
-- Tanto la `b` como la `w`, o la `e` tienen su versión `SHIFT + b/w` para no tomar caracteres como , o paréntesis como si fueran palabras
-- la `f` es como _for to..._: avanza hasta el caracter introducido después de la `f` en una misma línea. `SHIFT + f` hace lo mismo, pero para atrás.
-- `t` y `SHIFT + T` se parecen mucho, solo que en vez se situarte sobre el próximo caracter, te situan en el caracter que precede
-- `SHIFT + i` te lleva al principio de la línea y te mete en el modo insertar.
-- `SHIFT + a` te lleva al final de la línea y te mete en el modo insertar.
-- `a` te situa en el modo insertar en el caracter posterior al cursor
-- `s` borra el caracter del cursor y te mete en el modo insertar.
-- `SHIFT + s` borra toda la línea y te mete en el modo insertar.
-- `o` crea una línea nueva siguiente a la que estamos y te introduce en insertar. `SHIFT + o` hace lo mismo, solo que en una línea anterior
+- `d + d` borra la línea entera. `4 + d` borra las tres siguientes lineas. Este incremento también funciona con las teclas `hjkl`.
 - `d` se puede usar en combinación con `b`, `w` y `e` y también con números para multiplicar su efecto.
-El comando _yank_ es igual a hacer un _copy_:
-
+- `x` es como `ins`. Borra el caracter detrás del cursor. `2 + x` borra 2 caracteres.
+- `p` o _put_. Coloca lo que hayamos `borrado` con `d` en donde estemos. Esto es como hacer _copy/paste_.
+- `SHIFT + p`. Coloca lo que hay en el _clipboard_ justo después del cursor. Si es una línea, abajo.
+- `yy` copia una línea.
 - `y + w` copia la palabra y la pegamos con `p`.
 - `y + y` copia una línea entera. Es como hacer `SHIFT + y`.
 - `y + $` copia desde el cursor hasta el final de la línea.
-- `%` Encuentra los parénteisis en una línea. Cualquier elemento de cierre: corchete, llave... Combinado con el modo visual es muy potente ya que por ejemplo permite borrar toda una función y escribirla de nuevo. 
-- `CTRL + r`: reemplaza cada letra a medida que vas escribiendo.
-Para buscar desde el cursor para atrás, pulsamos `/` introducimos el término y pulsamos intro. Nos lleva a la primera ocurrencia. Luego pulsando `n`, vamos a las siguientes ocurrencias. `SHIFT + n` se va a la ocurrencia anterior. Con `?` también se puede buscar, solo que empieza del cursor para atrás. `n` y `N` funciona de manera cambiada aquí.
+### Borrar + insertar
 
-Si quisieramos volver a la posición anterior una vez nos desplazamos con `n` podemos hacerlo con `CTRL + o` que retrocede el cursor a la posición anterior. `CTRL + i` después de haber hecho `CTRL o` nos devuelve a la posición más reciente.
+- `s` borra el caracter del cursor y te mete en el modo insertar.
+- `c` es _change_. `c + e` borra todos los caracteres desde el cursor hasta el final de la palabra y nos mete en el modo insertar para reemplazar la palabra
+- `c + $` para cambiar toda la línea. Es como hacer `SHIFT + c` o `cc`.
+- `c + w` borra el texto a partir de donde tengas el cursor y te introude en el modo insertar es igual que `c + e`.
+- `c + i + w` borra una palabra estés donde estés para llevarte al modo insertar
+- `s` borrar una letra e insertar. `SHIFT + s` borra toda la línea y te mete en el modo insertar.
+- `r + caracter` reemplaza el caracter en el que estemos con el cursor por otro.
+- `CTRL + r`: reemplaza cada letra a medida que vas escribiendo.
+
+### _undo_ y _redo_
+- `u` es _undo_. `3 + u` hace 3 _undos_ seguidos.
+- `CTRL + r`, _redo_.
+- `g + d` estando sobre una función, nos lleva a su definición.
+- `g + f` estandp sobre un _string_ de importación, nos lleva al fichero en donde se encuentra esa dependencia. Retrocedemos en el _buffer_ con `CTRL + o`. Avanzamos en el _buffer_ con `CTRL + i`.
+
+## Modo visual
+- `CTRL + v` nos sitúa en el modo visual en el primer caracter. podemos seleccionar todos los primeros caracteres de cada línea y borrarlos con `d`.
+- Estando en el modo visual podemos seleccionar 20 líneas asi `20j`
+- `%` Encuentra los parénteisis en una línea. Cualquier elemento de cierre: corchete, llave... Combinado con el modo visual es muy potente ya que por ejemplo permite borrar toda una función y escribirla de nuevo. 
+
+## Búsqueda
+Para buscar desde el cursor para adelante, pulsamos `/` introducimos el término y pulsamos intro. Nos lleva a la primera ocurrencia. Luego pulsando `n`, vamos a las siguientes ocurrencias. `SHIFT + n` se va a la ocurrencia anterior. Con `?` también se puede buscar, solo que empieza del cursor para atrás. `n` y `N` funciona de manera cambiada aquí.
+
+Si quisieramos volver a la posición anterior una vez nos desplazamos con `n` podemos hacerlo con `CTRL + o` que retrocede el cursor a la posición anterior. `CTRL + i` después de haber hecho `CTRL + o` nos devuelve a la posición más reciente.
 
 - Podemos utilizar el operador de búsqueda para mover líneas `:/secondtextline/m$` movería el texto de la segunda línea al final del documento.
 - `/juan/+1m-1`: buscaría una línea más abajo de juan, y cogería esa línea y restaría su posición en 1. Es decir, la subiría 3 líneas.
 
+## Reemplazar
 Para reemplazar: 
 
 - `:s/oldstring/newstring/`: reemplaza la primera ocurrencia en la línea. 
 - `:s/oldstring/newstring/g`: reemplaza todas las ocurrencias en la línea. 
 - `:%s/oldstring/newstring/g`: en el documento entero.
 - `:%s/oldstring/newstring/gc`: en el documento entero, pero con un prompt. 
+
+## Vim avanzado
+
+
 
 Identaciones en masa:
 
@@ -86,11 +102,6 @@ Es una funcionalidad muy chula ya que nos permite repetir acciones. [Aquí](http
 
 Para ejecutar macros desde una línea hasta el final o entre dos líneas se puede usar el [_normal command_](https://stackoverflow.com/questions/390174/in-vim-how-do-i-apply-a-macro-to-a-set-of-lines)
 
-2. **Modo insertar**: con el atajo `i` se entra y con el atajo `esc` se sale. Mucha gente cambia este comando por la tecla `Bloq Mayus` o por `ii`.
-3. **Modo visual**: con el atajo `v`.
-Una vez estamos en el modo visual podemos editar bloques de texto. 
-- `CTRL + v` nos sitúa en el modo visual en el primer caracter. podemos seleccionar todos los primeros caracteres de cada línea y borrarlos con `d`.
-- Estando en el modo visual podemos seleccionar 20 líneas asi `20j`
 - Para entrar en el modo comando pulsamos `:` y aparece `'<,'>`, `'<` es la primera línea selecionada `'>` es la última línea seleccionada. Sentenciamos así `norm I"` que es como usar en modo normal el comando `I` para ir situar el cursor en el primer caracter de la línea e introducir una comilla.
 - En el modo visual se puede copiar. Estando en el modo visual y con texto seleccionado: pulsamos `y` y luego `p`.
 Para meter una última comilla haríamos lo mismo pero esta vez el comando sería `norm $a"`.
