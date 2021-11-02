@@ -61,6 +61,9 @@ Puedes navegar con las teclas de cursor, copiar, pegar, marcar comandos. Con los
 - `g + d` estando sobre una función, nos lleva a su definición.
 - `g + f` estandp sobre un _string_ de importación, nos lleva al fichero en donde se encuentra esa dependencia. Retrocedemos en el _buffer_ con `CTRL + o`. Avanzamos en el _buffer_ con `CTRL + i`.
 
+### Otros
+- `>` inserta tabulaciones. Más [aquí](https://stackoverflow.com/questions/235839/indent-multiple-lines-quickly-in-vi/235841).
+
 ## Modo visual
 - `CTRL + v` nos sitúa en el modo visual en el primer caracter. podemos seleccionar todos los primeros caracteres de cada línea y borrarlos con `d`.
 - Estando en el modo visual podemos seleccionar 20 líneas asi `20j`
@@ -71,7 +74,7 @@ Para buscar desde el cursor para adelante, pulsamos `/` introducimos el término
 
 Si quisieramos volver a la posición anterior una vez nos desplazamos con `n` podemos hacerlo con `CTRL + o` que retrocede el cursor a la posición anterior. `CTRL + i` después de haber hecho `CTRL + o` nos devuelve a la posición más reciente.
 
-- Podemos utilizar el operador de búsqueda para mover líneas `:/secondtextline/m$` movería el texto de la segunda línea al final del documento.
+- Podemos utilizar el operador de búsqueda para mover líneas `:/secondtextline/m$` movería la línea donde está ese texto al final del documento.
 - `/juan/+1m-1`: buscaría una línea más abajo de juan, y cogería esa línea y restaría su posición en 1. Es decir, la subiría 3 líneas.
 
 ## Reemplazar
@@ -83,8 +86,6 @@ Para reemplazar:
 - `:%s/oldstring/newstring/gc`: en el documento entero, pero con un prompt. 
 
 ## Vim avanzado
-
-
 
 Identaciones en masa:
 
@@ -114,9 +115,9 @@ si pulsamos lo siguiente `:ab FCB Fútbol Club Barcelona`, cada vez que pulsemos
 
 Desde la versión 8 de Vim, no es necesario instalar un gestor de _plugins_. Basta con seguir [estos pasos](https://coolaj86.com/articles/vim-8-plugins/) para activar el gestor de paquetes por defecto de Vim. El primer paso no ha sido necesario hacerlo en Ubuntu 20. Una vez hecho esto podemos instalar paquetes:
 
-- [vim-colorscheme](https://github.com/flazz/vim-colorschemes): En el fichero `.vimrc` dentro de HOME. configuro `molokai` como el esquema de color por defecto así `colorscheme molokai`. Podría meter esta configuración en `/etc/vim/.vimrc` pero prefiero que solo este activo para mi usuario.
-
 Sin embargo, es recomendable instalar un gestor de _plugins_. Uno de los [más recomendados](https://www.slant.co/topics/1224/~best-plugin-managers-for-vim) es [`vim-plug`](https://github.com/junegunn/vim-plug).
+
+- [vim-colorscheme](https://github.com/flazz/vim-colorschemes): En el fichero `.vimrc` dentro de HOME. configuro `molokai` como el esquema de color por defecto así `colorscheme molokai`. Podría meter esta configuración en `/etc/vim/.vimrc` pero prefiero que solo este activo para mi usuario.
 
 ### Instalando el gestor de _plugins_ `vim-plug`
 
@@ -132,7 +133,7 @@ Con el atajo `espacio + s` podemos buscar dos caracteres y desplazarnos mediante
 
 #### Nerdtree
 
-Lo tengo configurado para que se abra con la combinación `Espacio nt`. Esto ejecuta `:NERDTreeFind`. Lo tengo confiurado para que al abrir un fichero, se ciere.
+Lo tengo configurado para que se abra con la combinación `Espacio nt`. Esto ejecuta `:NERDTreeFind`. Lo tengo configurado para que al abrir un fichero, se cierre.
 
 Estando sobre el nombre del fichero, pulsamos `s` para abrirlo paralelamente.
 
