@@ -66,13 +66,18 @@ Puedes navegar con las teclas de cursor, copiar, pegar, marcar comandos. Con los
 - Estando en el modo visual podemos seleccionar 20 líneas asi `20j`
 - `%` Encuentra los parénteisis en una línea. Cualquier elemento de cierre: corchete, llave... Combinado con el modo visual es muy potente ya que por ejemplo permite borrar toda una función y escribirla de nuevo. 
 
+## Clipboard
+`"+y` copia en el clipboard del sistema. 
+`"*y` copia en el clipboard de Vim.
+
 ## Búsqueda
 Para buscar desde el cursor para adelante, pulsamos `/` introducimos el término y pulsamos intro. Nos lleva a la primera ocurrencia. Luego pulsando `n`, vamos a las siguientes ocurrencias. `SHIFT + n` se va a la ocurrencia anterior. Con `?` también se puede buscar, solo que empieza del cursor para atrás. `n` y `N` funciona de manera cambiada aquí.
 
 Si quisieramos volver a la posición anterior una vez nos desplazamos con `n` podemos hacerlo con `CTRL + o` que retrocede el cursor a la posición anterior. `CTRL + i` después de haber hecho `CTRL + o` nos devuelve a la posición más reciente.
 
-- Podemos utilizar el operador de búsqueda para mover líneas `:/secondtextline/m$` movería el texto de la segunda línea al final del documento.
-- `/juan/+1m-1`: buscaría una línea más abajo de juan, y cogería esa línea y restaría su posición en 1. Es decir, la subiría 3 líneas.
+- Podemos utilizar el operador de búsqueda para mover líneas `:/secondtextline/m$` movería el texto de la segunda línea al final del documento. `/juan/+1m-1`: buscaría una línea más abajo de juan, y cogería esa línea y restaría su posición en 1. Es decir, la subiría 3 líneas.
+
+En Nerd Tree podemos buscar sí un texto está en cualquier fichero dentro de una estructura de directorios [así](https://stackoverflow.com/a/13321520/17320847). Estando en la raíz del proyecto: `:vim foo **/*.js | copen`, busca "foo" en todos los ficheros `.js`. `**` implica recursividad.
 
 ## Reemplazar
 Para reemplazar: 
@@ -84,13 +89,8 @@ Para reemplazar:
 
 ## Vim avanzado
 
-
-
-Identaciones en masa:
-
 - `:10,15>`: identa las líneas desde la 10 a la 15
-
-Para cerrar, ejecutando `!ls` podemos listar el directorio en el que estamos desde la línea de comandos sin salirnos de Vim. Funcionaría para el resto de comandos de la Terminal. Podríamos utilizar está funcionalidad para poder darnos permisos de escritura sobre ficheros de otros usuarios así `:w !sudo tee %` `tee` redirige el output del `sudo`anterior al fichero que estamos editando (`%`).
+- Ejecutando `!ls` podemos listar el directorio en el que estamos desde la línea de comandos sin salirnos de Vim. Funcionaría para el resto de comandos de la Terminal. Podríamos utilizar está funcionalidad para poder darnos permisos de escritura sobre ficheros de otros usuarios así `:w !sudo tee %` `tee` redirige el output del `sudo`anterior al fichero que estamos editando (`%`).
 
 Una pequeña documentación aparece para conocer qué comandos empiezan por una letra en cuestión cuando hacemos `:w CTRL + d`.
 
