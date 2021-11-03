@@ -103,13 +103,11 @@ Para reemplzar _strings_ podemos usar `dw` pero una forma chula de hacerlo es pu
 
 ### Grabar comandos en macros
 
-Es una funcionalidad muy chula ya que nos permite repetir acciones. [Aquí](https://vim.fandom.com/wiki/Macros) está bastante bien explicado. `qa` en modo normal empieza a grabar una acción de nombre "a". Ejecutamos la acción: copiar, pegar, reemnplazar... y pulsamos `q`. Acaba el grabado y podemos ejecutar la macro una vez con `@1`. A continuación `20@@` para ejecutarla 20 veces 
+Es una funcionalidad muy chula ya que nos permite repetir acciones. [Aquí](https://vim.fandom.com/wiki/Macros) está bastante bien explicado. `qa` en modo normal empieza a grabar una acción de nombre "a". Ejecutamos la acción: copiar, pegar, reemnplazar... y pulsamos `q`. Acaba el grabado y podemos ejecutar la macro una vez con `1@a`. A continuación `20@a` para ejecutarla 20 veces 
 
 Para ejecutar macros desde una línea hasta el final o entre dos líneas se puede usar el [_normal command_](https://stackoverflow.com/questions/390174/in-vim-how-do-i-apply-a-macro-to-a-set-of-lines)
 
-- Para entrar en el modo comando pulsamos `:` y aparece `'<,'>`, `'<` es la primera línea selecionada `'>` es la última línea seleccionada. Sentenciamos así `norm I"` que es como usar en modo normal el comando `I` para ir situar el cursor en el primer caracter de la línea e introducir una comilla.
-- En el modo visual se puede copiar. Estando en el modo visual y con texto seleccionado: pulsamos `y` y luego `p`.
-Para meter una última comilla haríamos lo mismo pero esta vez el comando sería `norm $a"`.
+- Para entrar en el modo comando pulsamos `:` y aparece `'<,'>`, `'<` es la primera línea selecionada `'>` es la última línea seleccionada. Sentenciamos así `norm I"` que es como usar en modo normal el comando `I` para ir situar el cursor en el primer caracter de la línea e introducir una comilla. Para meter una última comilla haríamos lo mismo pero esta vez el comando sería `norm $a"`.
 
 ### Abreviaciones
 
@@ -121,13 +119,13 @@ Desde la versión 8 de Vim, no es necesario instalar un gestor de _plugins_. Bas
 
 Sin embargo, es recomendable instalar un gestor de _plugins_. Uno de los [más recomendados](https://www.slant.co/topics/1224/~best-plugin-managers-for-vim) es [`vim-plug`](https://github.com/junegunn/vim-plug).
 
-- [vim-colorscheme](https://github.com/flazz/vim-colorschemes): En el fichero `.vimrc` dentro de HOME. configuro `molokai` como el esquema de color por defecto así `colorscheme molokai`. Podría meter esta configuración en `/etc/vim/.vimrc` pero prefiero que solo este activo para mi usuario.
+- [vim-colorscheme](https://github.com/flazz/vim-colorschemes): En el fichero `.vimrc` dentro de HOME. configuro `molokai` como el esquema de color por defecto así `colorscheme molokai`. 
 
 ### Instalando el gestor de _plugins_ `vim-plug`
 
 Instalamos `vim-plug` siguiendo [las instrucciones](https://github.com/junegunn/vim-plug#vim). Después, pegamos [estas líneas](https://github.com/junegunn/vim-plug#example) en `~/.vimrc`. Previamente hay que crear la carpeta `~/.vim/plugged` que es en donde se van a instalar los _plugins_. A continuación, pegamos el _plugin_ que queramos instalar. En mi caso [`Plug 'sickill/vim-monokai'`](https://github.com/sickill/vim-monokai). Después, introducimos en el mismo _script_ `:source%` para correrlo y `:PlugInstall` para instalar toda la lista. En el caso de que queramos instalar uno en concreto `:PlugInstall sickill/vim-monokai`.
 
-Al final de `.vimrc` tengo inicializado el _plugin_ así `colorscheme monokai`.
+Al final de `.vimrc` tengo inicializado el _plugin_ así `colorscheme monokai`. Podría meter esta configuración en `/etc/vim/.vimrc` pero prefiero que solo este activo para mi usuario.
 
 El resto de comandos están en el README, pero destacan `PlugUpgrade` para actualizar el gestor y `PlugUpdate` para actualizar los _plugins_ instalados.
 
