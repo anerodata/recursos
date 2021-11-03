@@ -61,6 +61,9 @@ Puedes navegar con las teclas de cursor, copiar, pegar, marcar comandos. Con los
 - `g + d` estando sobre una función, nos lleva a su definición.
 - `g + f` estandp sobre un _string_ de importación, nos lleva al fichero en donde se encuentra esa dependencia. Retrocedemos en el _buffer_ con `CTRL + o`. Avanzamos en el _buffer_ con `CTRL + i`.
 
+### Otros
+- `>` inserta tabulaciones. Más [aquí](https://stackoverflow.com/questions/235839/indent-multiple-lines-quickly-in-vi/235841).
+
 ## Modo visual
 - `CTRL + v` nos sitúa en el modo visual en el primer caracter. podemos seleccionar todos los primeros caracteres de cada línea y borrarlos con `d`.
 - Estando en el modo visual podemos seleccionar 20 líneas asi `20j`
@@ -89,6 +92,8 @@ Para reemplazar:
 
 ## Vim avanzado
 
+### Identaciones en masa:
+
 - `:10,15>`: identa las líneas desde la 10 a la 15
 - Ejecutando `!ls` podemos listar el directorio en el que estamos desde la línea de comandos sin salirnos de Vim. Funcionaría para el resto de comandos de la Terminal. Podríamos utilizar está funcionalidad para poder darnos permisos de escritura sobre ficheros de otros usuarios así `:w !sudo tee %` `tee` redirige el output del `sudo`anterior al fichero que estamos editando (`%`).
 
@@ -96,7 +101,7 @@ Una pequeña documentación aparece para conocer qué comandos empiezan por una 
 
 Para reemplzar _strings_ podemos usar `dw` pero una forma chula de hacerlo es pulsar `/` introducir el caracter que queremos buscar, desplazarnos hasta el y pulsar `cgn` se borra el _string_ buscado, introducimos el cambio, `esc` y pulsamos `.`, que lo que hace es ejecutar el último comando. Si lo grabamos como comentamos a continuación es más rápido.
 
-## Grabar comandos en macros
+### Grabar comandos en macros
 
 Es una funcionalidad muy chula ya que nos permite repetir acciones. [Aquí](https://vim.fandom.com/wiki/Macros) está bastante bien explicado. `qa` en modo normal empieza a grabar una acción de nombre "a". Ejecutamos la acción: copiar, pegar, reemnplazar... y pulsamos `q`. Acaba el grabado y podemos ejecutar la macro una vez con `@1`. A continuación `20@@` para ejecutarla 20 veces 
 
@@ -106,7 +111,7 @@ Para ejecutar macros desde una línea hasta el final o entre dos líneas se pued
 - En el modo visual se puede copiar. Estando en el modo visual y con texto seleccionado: pulsamos `y` y luego `p`.
 Para meter una última comilla haríamos lo mismo pero esta vez el comando sería `norm $a"`.
 
-## Abreviaciones
+### Abreviaciones
 
 si pulsamos lo siguiente `:ab FCB Fútbol Club Barcelona`, cada vez que pulsemos `FCB ` se escribirá el nombre completo. Para detener puntualmente la abreviación, si quisieramos escribir "FCB" haríamos "FCB CTRL + v".
 
@@ -114,9 +119,9 @@ si pulsamos lo siguiente `:ab FCB Fútbol Club Barcelona`, cada vez que pulsemos
 
 Desde la versión 8 de Vim, no es necesario instalar un gestor de _plugins_. Basta con seguir [estos pasos](https://coolaj86.com/articles/vim-8-plugins/) para activar el gestor de paquetes por defecto de Vim. El primer paso no ha sido necesario hacerlo en Ubuntu 20. Una vez hecho esto podemos instalar paquetes:
 
-- [vim-colorscheme](https://github.com/flazz/vim-colorschemes): En el fichero `.vimrc` dentro de HOME. configuro `molokai` como el esquema de color por defecto así `colorscheme molokai`. Podría meter esta configuración en `/etc/vim/.vimrc` pero prefiero que solo este activo para mi usuario.
-
 Sin embargo, es recomendable instalar un gestor de _plugins_. Uno de los [más recomendados](https://www.slant.co/topics/1224/~best-plugin-managers-for-vim) es [`vim-plug`](https://github.com/junegunn/vim-plug).
+
+- [vim-colorscheme](https://github.com/flazz/vim-colorschemes): En el fichero `.vimrc` dentro de HOME. configuro `molokai` como el esquema de color por defecto así `colorscheme molokai`. Podría meter esta configuración en `/etc/vim/.vimrc` pero prefiero que solo este activo para mi usuario.
 
 ### Instalando el gestor de _plugins_ `vim-plug`
 
@@ -132,7 +137,7 @@ Con el atajo `espacio + s` podemos buscar dos caracteres y desplazarnos mediante
 
 #### Nerdtree
 
-Lo tengo configurado para que se abra con la combinación `Espacio nt`. Esto ejecuta `:NERDTreeFind`. Lo tengo confiurado para que al abrir un fichero, se ciere.
+Lo tengo configurado para que se abra con la combinación `Espacio nt`. Esto ejecuta `:NERDTreeFind`. Lo tengo configurado para que al abrir un fichero, se cierre.
 
 Estando sobre el nombre del fichero, pulsamos `s` para abrirlo paralelamente.
 
