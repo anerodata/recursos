@@ -113,6 +113,12 @@ Para ejecutar macros desde una línea hasta el final o entre dos líneas se pued
 
 si pulsamos lo siguiente `:ab FCB Fútbol Club Barcelona`, cada vez que pulsemos `FCB ` se escribirá el nombre completo. Para detener puntualmente la abreviación, si quisieramos escribir "FCB" haríamos "FCB CTRL + v".
 
+### Copiar, cortar y pegar
+
+Vim usa un _clipboard_ interno y otro externo. `XA_PRIMARY` se corresponde con el interno de Vim (`*`), es en donde se almacena lo copiagdo o pegado al hacer `dd` en una línea. `XA_SECONDARY` es el del sistema, es decir, en donde se almacena lo copiado o pegado al hacer `CTRL + c`. Se activa  al ejecutar el comando con `+`. Más información [aquí](https://vim.fandom.com/wiki/Accessing_the_system_clipboard). Entonces para hacer "yank" o copiar en Vim al sistema tendríamos que hacer en el modo normal `"+y`. 
+
+En Mac esta manera de acceder al _clipboard_ `XA_PRIMARY` está activada por defecto. En Ubuntu la he activado instalando con `apt`: `vim-gtk3`. El acceso al _clipboard_ secundario lo tengo remapeado en el modo normal para ejecutarlo con los atajos `CTRL + c`, `CTRL + x` y `CTRL + v` respectivamente. Más información sobre remapear comandos [aquí](https://stackoverflow.com/questions/3776117/what-is-the-difference-between-the-remap-noremap-nnoremap-and-vnoremap-mapping).
+
 ## Instalando _plugins_
 
 Desde la versión 8 de Vim, no es necesario instalar un gestor de _plugins_. Basta con seguir [estos pasos](https://coolaj86.com/articles/vim-8-plugins/) para activar el gestor de paquetes por defecto de Vim. El primer paso no ha sido necesario hacerlo en Ubuntu 20. Una vez hecho esto podemos instalar paquetes:
