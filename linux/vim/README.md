@@ -30,7 +30,10 @@ Puedes navegar con las teclas de cursor, copiar, pegar, marcar comandos. Con los
 - `b` es el contrario, nos desplaza al primer caracter de la palabra anterior. `3 + b`, igual pero con tres palabras
 - Tanto la `b` como la `w`, o la `e` tienen su versión `SHIFT + b/w` para no tomar caracteres como , o paréntesis como si fueran palabras
 - `SHIFT + g`: Vas a la última línea. `gg`: vas a la primera línea. `2 + SHIFT + g` te lleva a la segunda línea.
-- `f` es como _for to..._: avanza hasta el caracter introducido después de la `f` en una misma línea. `SHIFT + f` hace lo mismo, pero para atrás.
+- `f` es como _for to..._: avanza hasta el caracter introducido después de la `f` en una misma línea. `SHIFT + f` hace lo mismo, pero para atrás. Funciona a la inversa con `SHIFT`.
+- `t` es igual que el anterior pero te sitúa en el caracter previo al introducido. Funciona a la inversa con `SHIFT`.
+- `;` Repite el comando anterior una y otra vez
+
 ### Borrar, copiar y pegar
 
 - `d + w` borra la palabra
@@ -81,6 +84,9 @@ Si quisieramos volver a la posición anterior una vez nos desplazamos con `n` po
 - Podemos utilizar el operador de búsqueda para mover líneas `:/secondtextline/m$` movería el texto de la segunda línea al final del documento. `/juan/+1m-1`: buscaría una línea más abajo de juan, y cogería esa línea y restaría su posición en 1. Es decir, la subiría 3 líneas.
 
 En Nerd Tree podemos buscar sí un texto está en cualquier fichero dentro de una estructura de directorios [así](https://stackoverflow.com/a/13321520/17320847). Estando en la raíz del proyecto: `:vim foo **/*.js | copen`, busca "foo" en todos los ficheros `.js`. `**` implica recursividad.
+
+- `*` estando sobre una palabra, va a la siguiente coincidencia
+- `#` estando sobre una palabra, va la coincidencia previa
 
 ## Reemplazar
 Para reemplazar: 
