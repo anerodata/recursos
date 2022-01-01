@@ -29,3 +29,4 @@ Videos, articles, tutorials that I read.
 | [Como planificar tareas con Cron y Anacron en Linux](https://geekland.eu/planificar-tareas-con-cron-y-anacron-en-linux/) | Linux | Article | 22/01/2022 | geekland.eu | |
 | [Vim, aumenta tu velocidad de desarrollo](https://www.udemy.com/course/vim-aumenta-tu-velocidad-de-desarrollo/learn/lecture/15495998#overview) | Vim | Video | | Nicolas Schurmann |[vim](https://github.com/anerodata/formacion/tree/master/linux/vim) |
 | [Uso del menú completo integrado de Vim para autocompletar palabras](https://www.youtube.com/watch?v=2f8h45YR494&ab_channel=NickJanetakis) | Vim | Video | 21/04/2021 | Nick Janetakis | |
+| [Vim as your editor](https://www.youtube.com/watch?v=gSHf_b6AWKc) | Vim | Video | 13/06/2021 | ThePrimeagen | [Vim](https://github.com/anerodata/recursos/tree/master/linux/vim) |
