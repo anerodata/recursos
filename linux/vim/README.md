@@ -96,6 +96,18 @@ Para reemplazar:
 - `:%s/oldstring/newstring/g`: en el documento entero.
 - `:%s/oldstring/newstring/gc`: en el documento entero, pero con un prompt. 
 
+## _Splits_
+Sirven para dividir la pabtalla:
+- `split` hace uno horizontal. `sp` abreviado. `10sp filename` abre el fichero en un split horizontal de 10 líneas.
+- `vsplit` hace uno vertical, `vs` abreviado. 
+- `CTRL +w` dos veces nos desplaza por los _splits_.
+- Teniendo un _split_ horizontal abierto, si quisieramos hacer más grande en el que estamos: `CTRL + w + _`.
+- `CTRL +w =` las hace iguales de nuevo en un 50/50.
+- En _splits_ verticales. `CTRL + w + |` la hace totalmente grande
+- `CTRL + w + R` cambia los _splits_ de lugar.
+
+Tengo configurado el atajo `CTRL + k` para desplazarme para el _split_ de arriba, lo mismo con el resto de teclas de dirección. 
+
 ## Vim avanzado
 
 ### Identaciones en masa:
@@ -162,18 +174,6 @@ Lo instalamos y ahora podemos navegar entre las diferentes partes del terminal, 
 En la Terminal, abre el tutor del editor. Una de las primeras recomendaciones es desactivar la tecla "Bloq Mayus". [Aquí](https://superuser.com/questions/775785/how-to-disable-a-keyboard-key-in-linux-ubuntu) te dicen cómo se hace en Linux.
 
 Ubico este comando en `~/.bashrc` para que corra cada vez que abra Terminal. Lo suyo sería que corriese [_on startup_](https://linuxconfig.org/how-to-run-script-on-startup-on-ubuntu-20-04-focal-fossa-server-desktop). De momento no está así.
-
-## _Splits_
-Sirven para dividir la pabtalla:
-- `split` hace uno horizontal. `sp` abreviado. `10sp filename` abre el fichero en un split horizontal de 10 líneas.
-- `vsplit` hace uno vertical, `vs` abreviado. 
-- `CTRL +w` dos veces nos desplaza por los _splits_.
-- Teniendo un _split_ horizontal abierto, si quisieramos hacer más grande en el que estamos: `CTRL + w + _`.
-- `CTRL +w =` las hace iguales de nuevo en un 50/50.
-- En _splits_ verticales. `CTRL + w + |` la hace totalmente grande
-- `CTRL + w + R` cambia los _splits_ de lugar.
-
-Tengo configurado el atajo `CTRL + k` para desplazarme para el _split_ de arriba, lo mismo con el resto de teclas de dirección. 
 
 ## Recursos extra
 
