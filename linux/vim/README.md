@@ -143,11 +143,11 @@ El resto de comandos están en el README, pero destacan `PlugUpgrade` para actua
 
 A continuación describo algunos _plugins_ que tengo, aunque no están todos.
 
-#### Easymotion
+### Easymotion
 
 Con el atajo `espacio + s` podemos buscar dos caracteres y desplazarnos mediante distintas letras por las distintas ocurrencias.
 
-#### Nerdtree
+### Nerdtree
 
 Lo tengo configurado para que se abra con la combinación `Espacio nt`. Esto ejecuta `:NERDTreeFind`. Lo tengo configurado para que al abrir un fichero, se cierre.
 
@@ -175,3 +175,6 @@ Sirven para dividir la pabtalla:
 
 Tengo configurado el atajo `CTRL + k` para desplazarme para el _split_ de arriba, lo mismo con el resto de teclas de dirección. 
 
+## Recursos extra
+
+- [Vim Cheat Sheet](https://vim.rtorr.com/)
