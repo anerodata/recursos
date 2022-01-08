@@ -33,6 +33,12 @@ Puedes navegar con las teclas de cursor, copiar, pegar, marcar comandos. Con los
 - `f` es como _for to..._: avanza hasta el caracter introducido después de la `f` en una misma línea. `SHIFT + f` hace lo mismo, pero para atrás. Funciona a la inversa con `SHIFT`.
 - `t` es igual que el anterior pero te sitúa en el caracter previo al introducido. Funciona a la inversa con `SHIFT`.
 - `;` Repite el comando anterior una y otra vez
+- `15G` Desplaza el cursor a la línea 15.
+- `12j` Bajamos 12 líneas
+- `{` Desplaza el cursor un párrafo arriba.
+- `}` Desplaza el cursor un párrafo abajo.
+- `CTRL + u` Desplaza el cursor a la línea anterior a la que limita la pantalla por la parte de arriba.
+- `CTRL + d` Desplaza el cursor a la línea posterior a la que limita la pantalla por la parte de abajo.
 
 ### Borrar, copiar y pegar
 
@@ -47,6 +53,12 @@ Puedes navegar con las teclas de cursor, copiar, pegar, marcar comandos. Con los
 - `y + w` copia la palabra y la pegamos con `p`.
 - `y + y` copia una línea entera. Es como hacer `SHIFT + y`.
 - `y + $` copia desde el cursor hasta el final de la línea.
+- `c + i + p` Borra el parrafo y te coloca en el modo insertar
+- `y + i + p` Copia todo un párrafo
+- `y + i + (` Copia todo lo que hay dentro de los parentesis, estando dentro de ellos
+- `d + i + (` Borra todo lo que hay dentro de los parentesis, estando dentro de ellos
+Estos últimos también funcionan con `v`, en modo visual
+
 ### Borrar + insertar
 
 - `s` borra el caracter del cursor y te mete en el modo insertar.
@@ -61,6 +73,7 @@ Puedes navegar con las teclas de cursor, copiar, pegar, marcar comandos. Con los
 ### _undo_ y _redo_
 - `u` es _undo_. `3 + u` hace 3 _undos_ seguidos.
 - `CTRL + r`, _redo_.
+- `U` deshace o rehace el último cambio.
 - `g + d` estando sobre una función, nos lleva a su definición.
 - `g + f` estandp sobre un _string_ de importación, nos lleva al fichero en donde se encuentra esa dependencia. Retrocedemos en el _buffer_ con `CTRL + o`. Avanzamos en el _buffer_ con `CTRL + i`.
 
@@ -68,7 +81,9 @@ Puedes navegar con las teclas de cursor, copiar, pegar, marcar comandos. Con los
 - `>` inserta tabulaciones. Más [aquí](https://stackoverflow.com/questions/235839/indent-multiple-lines-quickly-in-vi/235841).
 
 ## Modo visual
-- `CTRL + v` nos sitúa en el modo visual en el primer caracter. podemos seleccionar todos los primeros caracteres de cada línea y borrarlos con `d`.
+- `v` ejecuta el modo visual simple.
+- `V` ejecuta el modo visual linear.
+- `CTRL + v` nos sitúa en el modo visual en bloque en el caracter donde estemos. podemos seleccionar todos los primeros caracteres de cada línea y borrarlos con `d`.
 - Estando en el modo visual podemos seleccionar 20 líneas asi `20j`
 - `%` Encuentra los parénteisis en una línea. Cualquier elemento de cierre: corchete, llave... Combinado con el modo visual es muy potente ya que por ejemplo permite borrar toda una función y escribirla de nuevo. 
 
