@@ -77,6 +77,16 @@ Estos últimos también funcionan con `v`, en modo visual
 - `g + d` estando sobre una función, nos lleva a su definición.
 - `g + f` estandp sobre un _string_ de importación, nos lleva al fichero en donde se encuentra esa dependencia. Retrocedemos en el _buffer_ con `CTRL + o`. Avanzamos en el _buffer_ con `CTRL + i`.
 
+### Movimientos entre archivos, buffers y _splits_
+- `CTRL + 6` alterna el fichero abierto previamente y el actual.
+- `CTRL + o` Anda para atrás en el historial de movimientos
+- `CTRL + i` Anda para adelante en el historial de movimientos
+- `:jumps` Muestra el historial de movimientos
+Para todo lo demas `<leader>f` o `:Files`. Aunque hay una tercera opción
+#### Marcas
+
+
+
 ### Otros
 - `>` inserta tabulaciones. Más [aquí](https://stackoverflow.com/questions/235839/indent-multiple-lines-quickly-in-vi/235841).
 
