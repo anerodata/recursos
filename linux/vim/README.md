@@ -84,8 +84,9 @@ Estos últimos también funcionan con `v`, en modo visual
 - `:jumps` Muestra el historial de movimientos
 Para todo lo demas `<leader>f` o `:Files`. Aunque hay una tercera opción
 #### Marcas
-
-
+Las hay *locales* y *globales*
+Las locales afectan solo al fichero en el que estás. Si pulsas `mh` sobre una línea. Luego, al pulsar `'h` te irás a donde dejaste la marca
+Las globales afectan solo Cualquier fichero en el que estés. Si pulsas `mH` sobre una línea. Luego, al pulsar `'H` te irás a donde dejaste la marca. Da igual en que fichero estés.
 
 ### Otros
 - `>` inserta tabulaciones. Más [aquí](https://stackoverflow.com/questions/235839/indent-multiple-lines-quickly-in-vi/235841).
