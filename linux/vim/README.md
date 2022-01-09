@@ -83,10 +83,29 @@ Estos últimos también funcionan con `v`, en modo visual
 - `CTRL + i` Anda para adelante en el historial de movimientos
 - `:jumps` Muestra el historial de movimientos
 Para todo lo demas `<leader>f` o `:Files`. Aunque hay una tercera opción
+
+#### _Splits_
+Sirven para dividir la pabtalla:
+- `split` hace uno horizontal. `sp` abreviado. `10sp filename` abre el fichero en un split horizontal de 10 líneas.
+- `vsplit` hace uno vertical, `vs` abreviado. 
+- `CTRL w v` Abre un _split_ vertical a la derecha.
+- `CTRL w s` Abre un _split_ horizontal debajo
+- `CTRL w [hjkl]` Permite desplazarnos por los _splits_
+- `CTRL w` dos veces nos desplaza por los _splits_.
+- Teniendo un _split_ horizontal abierto, si quisieramos hacer más grande en el que estamos: `CTRL + w + _`.
+- `:resize 5` disminuye al 5% de la pantalla horizontalmente el _buffer_ en el que estás.
+- `:vertical resize 5` disminuye al 5% de la pantalla verticalmente el _buffer_ en el que estás.
+- `CTRL +w =` las hace iguales de nuevo en un 50/50.
+- En _splits_ verticales. `CTRL + w + |` la hace totalmente grande
+- `CTRL + w + r` cambia los _splits_ de lugar.
+- `CTRL + w + o` cierra todos los _buffer_ menos en el que estamos
+- `CTRL + w + H` Estando en un _split_ horizontal lo convierte en vertical.
+
 #### Marcas
 Las hay *locales* y *globales*
 Las locales afectan solo al fichero en el que estás. Si pulsas `mh` sobre una línea. Luego, al pulsar `'h` te irás a donde dejaste la marca
 Las globales afectan solo Cualquier fichero en el que estés. Si pulsas `mH` sobre una línea. Luego, al pulsar `'H` te irás a donde dejaste la marca. Da igual en que fichero estés.
+Para mostrar las marcas guardadas podemos hacer `:marks`
 
 ### Otros
 - `>` inserta tabulaciones. Más [aquí](https://stackoverflow.com/questions/235839/indent-multiple-lines-quickly-in-vi/235841).
@@ -121,16 +140,6 @@ Para reemplazar:
 - `:s/oldstring/newstring/g`: reemplaza todas las ocurrencias en la línea. 
 - `:%s/oldstring/newstring/g`: en el documento entero.
 - `:%s/oldstring/newstring/gc`: en el documento entero, pero con un prompt. 
-
-## _Splits_
-Sirven para dividir la pabtalla:
-- `split` hace uno horizontal. `sp` abreviado. `10sp filename` abre el fichero en un split horizontal de 10 líneas.
-- `vsplit` hace uno vertical, `vs` abreviado. 
-- `CTRL +w` dos veces nos desplaza por los _splits_.
-- Teniendo un _split_ horizontal abierto, si quisieramos hacer más grande en el que estamos: `CTRL + w + _`.
-- `CTRL +w =` las hace iguales de nuevo en un 50/50.
-- En _splits_ verticales. `CTRL + w + |` la hace totalmente grande
-- `CTRL + w + R` cambia los _splits_ de lugar.
 
 Tengo configurado el atajo `CTRL + k` para desplazarme para el _split_ de arriba, lo mismo con el resto de teclas de dirección. 
 
