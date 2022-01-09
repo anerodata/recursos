@@ -4,6 +4,8 @@ Un sistema operativo instalado en casi todas las distribuciones de tipo UNIX. A 
 Un recurso chulo para aprender Vim es [este](https://vim-adventures.com).
 En el Terminal introduciendo `vimtutor` vamos al tutorial de vim.
 
+La información de cada comando, atajo, u orden puede ser buscada así: `:help g`, te daría toda la información relativa a `g`
+
 Las teclas para mover el cursor tradicionalmente son h(izquierda)j(abajo)k(arriba)l(derecha). Estas teclas mueven el cursor a través de las líneas lógicas que existen, que a veces ocupan más de dos renglones. Si quisieramos desplazarnos a través de las líneas visuales tendríamos que hacer `g + j` (para abajo), y así sucesivamente.
 
 Para salir pulsamos `:` para llevarnos al modo comando e introducimos `quit` o `q` para salir. Si hemos hecho cambios `:wq` para salir y guardar o `:q!` para salir sin guardar. Una manera chula de hacer un `:wq` es el atajo `ZZ`
@@ -39,6 +41,7 @@ Puedes navegar con las teclas de cursor, copiar, pegar, marcar comandos. Con los
 - `}` Desplaza el cursor un párrafo abajo.
 - `CTRL + u` Desplaza el cursor a la línea anterior a la que limita la pantalla por la parte de arriba.
 - `CTRL + d` Desplaza el cursor a la línea posterior a la que limita la pantalla por la parte de abajo.
+- `gm` En una línea te lleva a la columna justo del medio
 
 ### Borrar, copiar y pegar
 
@@ -62,6 +65,7 @@ Estos últimos también funcionan con `v`, en modo visual
 ### Borrar + insertar
 
 - `s` borra el caracter del cursor y te mete en el modo insertar.
+- `S` borra toda la línea y te mete en el modo insertar.
 - `c` es _change_. `c + e` borra todos los caracteres desde el cursor hasta el final de la palabra y nos mete en el modo insertar para reemplazar la palabra
 - `c + $` para cambiar toda la línea. Es como hacer `SHIFT + c` o `cc`.
 - `c + w` borra el texto a partir de donde tengas el cursor y te introude en el modo insertar es igual que `c + e`.
