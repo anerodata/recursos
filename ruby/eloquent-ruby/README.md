@@ -456,7 +456,7 @@ word_set = Set.new( words )
 
 ## 4. _Strings_ inteligentes
 
-En ruby tenemos los **_single quotes_** que solo muestran texto, hay que utilizar _backslash_ para escapar la comilla. (`pp` imprimiría el _baclslash_ no así `puts`).
+En ruby tenemos los **_single quotes_** que solo muestran texto, hay que utilizar _backslash_ para escapar la comilla. (`pp` imprimiría el _backslash_ no así `puts`).
 
 `single_quote = 'Say it ain\'t so!'`
 
