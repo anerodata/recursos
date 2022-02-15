@@ -590,3 +590,6 @@ the first character. Instead, it matches the unseen leading edge of the string_.
 Tendríamos problemas con `/\AOnce upon a time/` si lo primero en el _string_ fuese el título del cuento. Aquí es donde aparece el acento circunflejo `/^Once upon a time/`, que busca el _string_ al principio del texto o de cualquier línea dentro de él. El opuesto a esto, es el dolar: `/and they all lived happily ever after$/`, que busca la coincidencia al final del texto o de cualquier línea dentro de él.
 
 Si quisieramos econtrar la apertura y el cierre del cuento nos encontraríamos con un _handicap_ ya que `/^Once upon a time.*happily ever after\.$/` no funcionaría porque `.*` encuentra todos los caracteres menos el salto de línea. Salvamos esto añadiendo `/m` al final de la expresión: `/^Once upon a time.*happily ever after\.$/m`.
+
+Una cuestión importante: para probar expresiones regulares debemos
+utilizar el operador `=~` no `==`.
