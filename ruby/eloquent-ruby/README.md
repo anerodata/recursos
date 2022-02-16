@@ -593,3 +593,14 @@ Si quisieramos econtrar la apertura y el cierre del cuento nos encontraríamos c
 
 Una cuestión importante: para probar expresiones regulares debemos
 utilizar el operador `=~` no `==`.
+
+## 6. Symbols
+
+> Symbols are really just strings. This
+is not as far fetched as it sounds: Think about the string "dog" and its closest symbolic
+cousin, :dog . The thing that hits you in the face about these two objects is that they
+both are essentially three characters: a “d”, an “o”, and a “g”.
+
+> Ruby String class is optimized for the
+data processing side of strings while symbols are meant to take over the “stands for”
+role—hence the name
