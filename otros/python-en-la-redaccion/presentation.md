@@ -20,7 +20,7 @@ img {
 - Graduado en periodismo y especialización en análisis de datos
 - Después, un intruso en desarrollo web
 - Desarrollador web en
-  - Unidad de datos de El Confidencial
+  - Unidad de datos de [El Confidencial](https://elconfidencial.com)
   - [Fundación Ciudadana Civio](https://civio.es/)
 
 ---
