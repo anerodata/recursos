@@ -3,11 +3,11 @@ marp: true
 theme: uncover
 ---
 
-# Programación Extrema (PX) / Metodología ágil
+# Buceando en las cloacas con Python
 
 ---
 
-<!-- backgroundColor: #ffb3b3 -->
+<!-- backgroundColor: #d5ffea -->
 
 <style type="text/css" rel="stylesheet">
 img {
@@ -15,27 +15,38 @@ img {
 }
 </style>
 
-## 1. ¿Qué es?
+### Sobre mi _background__
 
-Una **metodología de trabajo** para equipos de desarrollo **medianos o pequeños** que operan en entornos en los que existen **nuevos requerimientos** o incluso cambios de rumbo rápidos y **constantes**. Es una ídea que lleva al "extremo" -al día a día del programador- estas técnicas :
-
----
-
-### 1. Las iteraciones cortas
-
-- La iteración es el acto de repetir un proceso, para generar una secuencia de resultados con el objetivo de acercarse a un propósito o resultado deseado.
-
-- _Incremental change_: La estrategia de diseño se mueve poco a poco pero constantemente. Mediante **iteraciones cortas** el proyecto adquiere nuevas funcionalidades o modifica las ya existentes.
-
---- 
-
-- De esta manera el sistema nunca está "del todo" diseñado. 
-
-- Siempre habrá algo que sea necesario de cambiar, aunque haya partes que permanezcan inalterables durante mucho tiempo.
+- Graduado en periodismo y especialización en análisis de datos
+- Intruso en desarrollo web
+- Desarrollo web en
+  - Unidad de datos de El Confidencial
+  - Fundación Ciudadana [Civio](https://civio.es/)
 
 ---
 
-### 2. El diseño simple
+### Python  en un medio de comunicación
+
+Scripts sencillos normalmente basados en programación funcional
+
+- Rascar data de PDF y HTML
+- Análisis de grandes _datasets_
+
+Habitualmente en investigaciones elaborados con tiempo 🕵️, aunque también en artículos del día a día o piezas SEO 📈 y aplicaciones internas de apoyo a periodistas 🤓
+
+---
+
+[Metro inaccesible](https://www.elconfidencial.com/espana/madrid/2019-09-06/metro-accesible-paradas-ascensor-escaleras_2209007/)
+[De qué año es tu casa](https://www.elconfidencial.com/vivienda/2019-11-26/mapa-espana-urbanismo-edificios-historia_2348415/)
+[Más público que Netflix y miles de reseñas de puteros: así es el gran barrio rojo 'online'](https://www.elconfidencial.com/tecnologia/2018-09-25/prostitucion-anuncios-portales-pasion-mileroticos_1620413/)
+[Así abusa de los microcontratos a dedo la Comunidad de Madrid: 1 millón en dos años](https://www.elconfidencial.com/espana/madrid/2018-06-04/comunidad-de-madrid-contratos-menores_1572865/)
+[El 80% de las ofertas de trabajo oculta el salario: "Es otra forma de explotación"](https://www.elconfidencial.com/empresas/2018-09-24/salario-sueldo-ofertas-de-trabajo-empleo-paro_1618954/)
+[Paracetamol o Ventolin: consulta aquí los 1.200 medicamentos que bajan de precio](https://www.elconfidencial.com/alma-corazon-vida/2019-10-31/bajan-precios-medicamentos-paracetamol-ventolin_2308239/)
+[Estos son los candidatos de los partidos políticos a las elecciones generales del 10N](https://www.elconfidencial.com/espana/2019-11-10/candidaturas-elecciones-generales-0_2275855/)
+
+Aplicación de mail con las preguntas del congreso
+
+### Investigaciones
 
 - _Travel ligth_: En el diseño, se trabajará en **las funcionalidades imprescindibles** para que el sistema funcione pero no se avanzará en ideas que puedan surgir después o en otras posibles funcionalidades por dos razones:
 
