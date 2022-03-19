@@ -18,8 +18,8 @@ img {
 ### Sobre mi _background__
 
 - Graduado en periodismo y especialización en análisis de datos
-- Intruso en desarrollo web
-- Desarrollo web en
+- Después, un intruso en desarrollo web
+- Desarrollador web en
   - Unidad de datos de El Confidencial
   - Fundación Ciudadana [Civio](https://civio.es/)
 
