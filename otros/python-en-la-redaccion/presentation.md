@@ -27,7 +27,7 @@ img {
 
 ### Python  en un medio de comunicación
 
-Scripts sencillos normalmente basados en programación funcional
+_Scripts_ sencillos normalmente basados en programación funcional
 
 - Rascar data de PDF y HTML
 - Análisis de grandes _datasets_
