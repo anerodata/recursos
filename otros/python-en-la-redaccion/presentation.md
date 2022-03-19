@@ -21,7 +21,7 @@ img {
 - Después, un intruso en desarrollo web
 - Desarrollador web en
   - Unidad de datos de El Confidencial
-  - Fundación Ciudadana [Civio](https://civio.es/)
+  - [Fundación Ciudadana Civio](https://civio.es/)
 
 ---
 
@@ -29,7 +29,7 @@ img {
 
 _Scripts_ sencillos normalmente basados en programación funcional
 
-- Rascar data de PDF y HTML
+- Rascar data de HTML y PDF
 - Análisis de grandes _datasets_
 
 Habitualmente en investigaciones elaborados con tiempo 🕵️, aunque también en artículos del día a día o piezas SEO 📈 y aplicaciones internas de apoyo a periodistas 🤓
