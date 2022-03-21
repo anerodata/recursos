@@ -32,7 +32,7 @@ _Scripts_ sencillos normalmente basados en programación funcional
 - Rascar data de HTML y PDF
 - Análisis de grandes _datasets_
 
-Habitualmente, en investigaciones elaboradas con tiempo 🕵️, aunque también en artículos del día a día o piezas SEO 📈 y aplicaciones internas de apoyo a periodistas 🤓
+Habitualmente, en investigaciones elaboradas con tiempo 🕵️, aunque también en artículos del día a día o piezas de servicio público 📈 y aplicaciones internas de apoyo a periodistas 🤓
 
 ---
 
