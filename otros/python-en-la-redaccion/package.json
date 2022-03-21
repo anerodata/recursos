@@ -1,0 +1,14 @@
+{
+  "name": "python-en-la-redaccion",
+  "version": "1.0.0",
+  "description": "Diapositivas sobre python en la redacción: web scraping y análisis de datos",
+  "main": "presentation.md",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "anerodata",
+  "license": "ISC",
+  "devDependencies": {
+    "@marp-team/marp-cli": "^1.7.0"
+  }
+}
