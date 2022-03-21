@@ -29,8 +29,8 @@ img {
 
 _Scripts_ sencillos normalmente basados en programación funcional
 
-- Rascar data de HTML y PDF
-- Análisis de grandes _datasets_
+- Rascar data de HTML y PDF ([requests](https://docs.python-requests.org/en/latest/), [bs4](https://pypi.org/project/bs4/), [selenium](https://www.selenium.dev/)).
+- Análisis de grandes _datasets_ ([pandas](https://pandas.pydata.org/))
 
 Habitualmente, en **investigaciones elaboradas con tiempo** 🔎 , aunque también en artículos del día a día o piezas de **servicio público** 📈 y **aplicaciones internas** de apoyo a periodistas 🤓
 
