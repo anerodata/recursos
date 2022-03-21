@@ -15,7 +15,7 @@ img {
 }
 </style>
 
-### Sobre mi _background__
+### Sobre mi _background
 
 - Graduado en periodismo y especialización en análisis de datos
 - Después, un intruso en desarrollo web
