@@ -105,10 +105,12 @@ Aplicación de rascado de preguntas de parlamentarios que consultaba cada día s
 ## Algunos ejemplos de código
 
 - [Scraper de TomTom](https://github.com/civio/scraper-tomtom/blob/master/fetch.py) y [parseador](https://github.com/civio/scraper-tomtom/blob/master/parse.py)
-- Scraper de Carteles de la Guerra (Portal de Archivos Españoles)
-  - [`fetch-pages.py`](https://github.com/anerodata/carteles-pares/blob/master/1-fetch-pages-html/fetch.py)
-  - [`fetch-posters.py`](https://github.com/anerodata/carteles-pares/blob/master/2-fetch-posters-html/fetch.py)
-  - [`create-dataset.py`](https://github.com/anerodata/carteles-pares/blob/master/3-create-dataset/script.py)
+- Scraper de [Carteles de la Guerra (Portal de Archivos Españoles)](http://pares.mcu.es/cartelesGC/AdminControlServlet?COP=3)
+  - [Descargando las páginas](https://github.com/anerodata/carteles-pares/blob/master/1-fetch-pages-html/fetch.py)
+  - [Descargando los posters](https://github.com/anerodata/carteles-pares/blob/master/2-fetch-posters-html/fetch.py)
+  - [Estructurando en CSV](https://github.com/anerodata/carteles-pares/blob/master/3-create-dataset/script.py)
+
+---
 
 ## ¡Muchas gracias!
 
