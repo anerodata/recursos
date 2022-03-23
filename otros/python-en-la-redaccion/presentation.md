@@ -4,7 +4,6 @@ theme: gaia
 paginate: true
 backgroundColor: #fff
 backgroundImage: url('https://marp.app/assets/hero-background.svg')
-footer: '![image](./img/footer.jpg)'
 ---
 
 # Buceando en las cloacas con Python
@@ -30,30 +29,19 @@ img[alt=respuestas-grupos] { width: 1000px; }
 
 ## Programación _back-end_ en un medio de comunicación
 
-_Scripts_ sencillos ejecutados en el terminal, normalmente basados en programación funcional, para temas rápidos. Y programas más complejos para temas de más recorrido. Por ejemplo, los [temas de contratación](https://civio.es/area/contratacion/).
+_Scripts_ sencillos ejecutados en el terminal para temas rápidos. Programas más complejos para temas de más recorrido como los [temas de contratación](https://civio.es/area/contratacion/).
 
-- Rascar data de HTML y PDF ([requests.py](https://docs.python-requests.org/en/latest/), [bs4.py](https://pypi.org/project/bs4/), [selenium.py](https://www.selenium.dev/)) una sola vez, o durante un período de tiempo concreto.
+- Rascar data de HTML y PDF ([requests.py](https://docs.python-requests.org/en/latest/), [bs4.py](https://pypi.org/project/bs4/), [selenium.py](https://www.selenium.dev/), PyPDF) una sola vez, o durante un período de tiempo concreto.
 
 - Análisis de grandes _datasets_ ([pandas.py](https://pandas.pydata.org/))
+
+- Aplicaciones de apoyo a periodistas
 
 ---
 
 ## Web scraping en investigaciones largas en Civio 🔎
 
----
-
-### [La invasión de los contratos menores de 14.999,99€](https://civio.es/quien-cobra-la-obra/2020/01/29/la-invasion-de-los-contratos-menores-de-14-dot-999-99eu)
-
-- Datos de la [Plataforma de contratación](https://www.hacienda.gob.es/es-ES/GobiernoAbierto/Datos%20Abiertos/Paginas/licitaciones_plataforma_contratacion.aspx)
-
-- Rascado de todos los contratos menores desde el 1 de enero de 2018, hasta el 31 de julio de 2019.
-
-- El 10% de las adjudicaciones de suministros y servicios se amontonan entre 14.900 y 14.999,99 euros, el límite legal 
-
----
-
-### [De 25 céntimos a 8 euros por una mascarilla, la guerra de precios que se saldó con millones de euros para los intermediarios](https://civio.es/quien-cobra-la-obra/2021/03/24/precios-unitarios-mascarillas/)
-
+[De 25 céntimos a 8 euros por una mascarilla, la guerra de precios que se saldó con millones de euros para los intermediarios](https://civio.es/quien-cobra-la-obra/2021/03/24/precios-unitarios-mascarillas/). Datos de la [Plataforma de contratación](https://www.hacienda.gob.es/es-ES/GobiernoAbierto/Datos%20Abiertos/Paginas/licitaciones_plataforma_contratacion.aspx)
 
 - 16.589 contratos firmados por todas las administraciones públicas (6.445 millones de euros) 
 
@@ -68,8 +56,8 @@ _Scripts_ sencillos ejecutados en el terminal, normalmente basados en programaci
 _Scraping_ recurrente de tres fuentes de datos:
 
 - Cámaras de tráfico
-- Informes de movilidad de Apple (Diario)
-- Tomtom (Cada hora)
+- Informes de movilidad de Apple (diario)
+- Tomtom (cada hora)
 
 ---
 
@@ -91,7 +79,7 @@ Datos obtenidos gracias a un rascado de los portales [Slumi](https://www.slumi.c
 
 ---
 
-[¿De qué año es tu casa? El mapa que muestra cómo se ha construido España](https://www.elconfidencial.com/vivienda/2019-11-26/mapa-espana-urbanismo-edificios-historia_2348415/). Datos obtenidos del catastro y fusionados en una capa GEOJSON mediante `pandas.py`
+[¿De qué año es tu casa? El mapa que muestra cómo se ha construido España](https://www.elconfidencial.com/vivienda/2019-11-26/mapa-espana-urbanismo-edificios-historia_2348415/). Datos obtenidos del catastro y fusionados en una capa GEOJSON mediante `geopandas.py`
 
 - El 17% de construcciones de todas las capitales de provincia data de la década del desarrollismo (años 60)
 
@@ -111,3 +99,17 @@ Aplicación de rascado de preguntas de parlamentarios que consultaba cada día s
 
 ![respuestas-parlamentarios](img/respuestas-parlamentarios.png)
 ![respuestas-grupos](img/respuestas-grupos.png)
+
+---
+
+## Algunos ejemplos de código
+
+- [Scraper de TomTom](https://github.com/civio/scraper-tomtom/blob/master/fetch.py) y [parseador](https://github.com/civio/scraper-tomtom/blob/master/parse.py)
+- Scraper de Carteles de la Guerra (Portal de Archivos Españoles)
+  - [`fetch-pages.py`](https://github.com/anerodata/carteles-pares/blob/master/1-fetch-pages-html/fetch.py)
+  - [`fetch-posters.py`](https://github.com/anerodata/carteles-pares/blob/master/2-fetch-posters-html/fetch.py)
+  - [`create-dataset.py`](https://github.com/anerodata/carteles-pares/blob/master/3-create-dataset/script.py)
+
+## ¡Muchas gracias!
+
+Más temas e investigaciones basadas en datos en [civio.es](https://civio.es)
