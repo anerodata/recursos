@@ -61,7 +61,7 @@ _Scraping_ recurrente de tres fuentes de datos:
 
 ---
 
-## Investigaciones a corto plazo en El Confidencial (Python)
+## Investigaciones a largo plazo en El Confidencial (Python)
 
 [Metro inaccesible](https://www.elconfidencial.com/espana/madrid/2019-09-06/metro-accesible-paradas-ascensor-escaleras_2209007/). Datos obtenidos gracias a un rascado diario de la web de [incidencias del metro](https://www.metromadrid.es/es/linea/) 
 
