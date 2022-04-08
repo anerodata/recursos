@@ -62,3 +62,62 @@ by the contents of /etc/passwd.
 by the contents of /etc/passwd.
 
 `mv tailing.txt tmp.txt ; cat /etc/passwd tmp.txt > tailing.txt `
+
+## 11 - File System Tree
+
+1. Does the file /bin/cat exist ? What about /bin/dd and /bin/echo. What is the type of these
+files ?
+
+Yes, these files are the binaries. Programs executables in the command line
+
+```
+ls /bin/cat ; file /bin/cat
+ls /bin/dd ; file /bin/dd
+ls /bin/echo ; file /bin/echo
+```
+
+2. What is the size of the Linux kernel file(s) (vmlinu\*) in /boot ?
+
+```
+ls -h /boot/vm*
+```
+
+9.8MB
+
+3. Create a directory ~/test. Then issue the following commands:
+
+```
+cd ~/test
+dd if=/dev/zero of=zeroes.txt count=1 bs=100
+od zeroes.txt
+```
+
+dd will copy one times (count=1) a block of size 100 bytes (bs=100) from the file /dev/zero
+to ~/test/zeroes.txt. Can you describe the functionality of /dev/zero ?
+
+Is a programm that offers as many zeros as request. [More information](https://es.wikipedia.org/wiki//dev/zero).
+
+> /dev/zero is a Linux special device. It can be considered a source of zeroes. You cannot send something to /dev/zero, but you can read zeroes from it.
+
+4. Now issue the following command:
+```
+dd if=/dev/random of=random.txt count=1 bs=100 ; od random.txt
+```
+
+dd will copy one times (count=1) a block of size 100 bytes (bs=100) from the file /dev/ random to ~/test/random.txt. Can you describe the functionality of /dev/random ?
+
+
+5. Issue the following two commands, and look at the first character of each output line.
+```
+ls -l /dev/sd* /dev/hd*
+ls -l /dev/tty* /dev/input/mou*
+```
+The first ls will show block(b) devices, the second ls shows character(c) devices. Can you
+tell the difference between block and character devices ?
+
+The first ones represent hardware devices, the second one, consoles or command line interface
+
+> Block devices are always written to (or read from) in blocks. For hard disks, blocks of 512 bytes are common. Character devices act as a stream of characters (or bytes). Mouse and keyboard are typical character devices.
+
+6. Use cat to display /etc/hosts and /etc/resolv.conf. What is your idea about the purpose
+of these files ?
