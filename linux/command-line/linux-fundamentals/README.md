@@ -162,9 +162,31 @@ With sudo you have these hidden files:
 
 11. Are ifconfig, fdisk, parted, shutdown and grub-install present in /sbin ? Why are these
 binaries in /sbin and not in /bin ?
+
+Because they are system binaries.
+> Because those files are only meant for system administrators.
+
 12. Is /var/log a file or a directory ? What about /var/spool ?
+
+Both are directories
+
+`/var/log` contains the different logs of the system
+
+`/var/spool/` contains the cronjobs
+
 13. Open two command prompts (Ctrl-Shift-T in gnome-terminal) or terminals (Ctrl-Alt-F1,
 Ctrl-Alt-F2, ...) and issue the who am i in both. Then try to echo a word from one terminal
 to the other.
+
 14. Read the man page of random and explain the difference between /dev/random and /
 dev/urandom.
+
+```
+echo Hello from the first > /dev/pts2
+echo Hello from the second > /dev/pts1
+```
+
+Both provides an interface to the kernel's random number generator. `/dev/random` has major device number 1 and minor device number 8.
+`/dev/urandom` has major device number 1 and minor device number 9
+
+`/dev/urandom` is slower
