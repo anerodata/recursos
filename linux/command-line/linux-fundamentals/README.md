@@ -106,6 +106,7 @@ dd if=/dev/random of=random.txt count=1 bs=100 ; od random.txt
 
 dd will copy one times (count=1) a block of size 100 bytes (bs=100) from the file /dev/ random to ~/test/random.txt. Can you describe the functionality of /dev/random ?
 
+Generate a random number of bytes
 
 5. Issue the following two commands, and look at the first character of each output line.
 ```
@@ -121,3 +122,49 @@ The first ones represent hardware devices, the second one, consoles or command l
 
 6. Use cat to display /etc/hosts and /etc/resolv.conf. What is your idea about the purpose
 of these files ?
+
+```
+/etc/hosts contains hostnames with their ip address
+```
+
+```
+/etc/resolv.conf should contain the ip address of a DNS name server.
+```
+
+7. Are there any files in /etc/skel/ ? Check also for hidden files.
+
+There are `.bash_logout`, `.bashrc` and `.profile`
+
+8. Display /proc/cpuinfo. On what architecture is your Linux running ?
+
+```
+Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
+```
+
+9. Display /proc/interrupts. What is the size of this file ? Where is this file stored ?
+
+The size is 0
+
+> The size is zero, yet the file contains data. It is not stored anywhere because /proc is a
+virtual file system that allows you to talk with the kernel. (If you answered "stored in RAM-
+memory, that is also correct...).
+
+10. Can you enter the /root directory ? Are there (hidden) files ?
+
+No, you need sudo credentials
+
+With sudo you have these hidden files:
+
+
+```
+.bash_history  .bashrc  .cache  .config	.dbus  .fnmt  .local  .profile snap  .viminfo
+```
+
+11. Are ifconfig, fdisk, parted, shutdown and grub-install present in /sbin ? Why are these
+binaries in /sbin and not in /bin ?
+12. Is /var/log a file or a directory ? What about /var/spool ?
+13. Open two command prompts (Ctrl-Shift-T in gnome-terminal) or terminals (Ctrl-Alt-F1,
+Ctrl-Alt-F2, ...) and issue the who am i in both. Then try to echo a word from one terminal
+to the other.
+14. Read the man page of random and explain the difference between /dev/random and /
+dev/urandom.
