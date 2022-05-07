@@ -28,18 +28,17 @@ export default {
   },
   data() {
     return {
-      comments: this.$store.state.comments,
-      newComment: this.$store.state.newComment
+      newComment: ""
+    }
+  },
+  computed: {
+    comments() {
+      return this.$store.state.comments
     }
   },
   methods: {
     addComment() {
-      const newCommentObj = {
-        text: this.newComment,
-        author: 'Magoo',
-        authorImg: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/v-skull.jpg'
-      };
-      this.comments.push(newCommentObj);
+      this.$store.commit("addComment", this.newComment)
       this.newComment = '';
     }
   }
