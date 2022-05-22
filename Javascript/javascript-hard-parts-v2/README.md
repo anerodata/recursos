@@ -10,7 +10,7 @@ Algunos conceptos básicos sobre Javascript:
 - Value: valor del _identifier_. _Anything stored_.
 - Parameter: _placeholder_ que representará el nombre del valor que se le pasa a una función.
 - Argument: valor que se le pasa a una función y que se le asigna en memoria local al _parameter_ dentro de un contexto de ejecución dado. Su alteriación implica una alteración de ella (funciona como un link) en el contexto global (_side efect_).
-- Command: _any line with parenthesis_. Ej: `const name = getName()`. No se almacena en memoria y `name` permanece _unassigned_ hasta que el hilo de ejecución pasa por ella y se crea el contexto de ejecucion `getName`. Cuando termina la ejecución de `getName`, se asigna el valor en memoria a `name` entendiendo que `getName()` tiene un `return`. Se retornaría el valor asignado al identificador en la sentencia `return`.
+- Command: _any line with parenthesis_. Ej: `const name = getName()`. No se almacena en memoria y `name` permanece _uninitialized_ hasta que el hilo de ejecución pasa por ella y se crea el contexto de ejecucion `getName`. Cuando termina la ejecución de `getName`, se asigna el valor en memoria a `name` entendiendo que `getName()` tiene un `return`. Se retornaría el valor asignado al identificador en la sentencia `return`.
 Lo que si queda almacenado en memoria es la función y su contenido que después se utilizara en la invocación.
 
 `const output = multyplyBy2(10)`
