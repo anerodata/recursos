@@ -34,6 +34,8 @@ Git es una herramienta de control de versiones. Se utiliza para documentar proce
 
 Este [video](https://www.youtube.com/watch?v=HiXLkL42tMUde) de youtube está bastante bien para iniciarse
 
+5. Estando fuera de `master`, `git push --set-upstream origin branc-name` crea y establece en el repositorio remoto el nombre de la rama como destino y "empuja" los cambios hacia ella
+
 ## 3 - Rama gh-pages 
 
 Como documenta [flowsta](https://github.com/flowsta/github#rama-gh-pages), si nuestro repositorio es un proyecto web, podemos mostrarlo gracias a la rama gh-pages de github:
