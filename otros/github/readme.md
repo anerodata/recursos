@@ -36,6 +36,8 @@ Este [video](https://www.youtube.com/watch?v=HiXLkL42tMUde) de youtube está bas
 
 5. Estando fuera de `master`, y tras comitear, `git push --set-upstream origin branch-name` crea y establece en el repositorio remoto el nombre de la rama como destino y "empuja" los cambios hacia ella.
 
+6. Como comentan en [Freecodecamp](https://www.freecodecamp.org/news/git-checkout-remote-branch-tutorial/#3pullchangesfromaremotebranch) `git checkout -b fix-failing-tests origin/fix-failing-tests` Crea la rama `fix-failing-tests`, tira de los cambios en la rama remota `fix-failing-tests` y nos cambia a ella
+
 ## 3 - Rama gh-pages 
 
 Como documenta [flowsta](https://github.com/flowsta/github#rama-gh-pages), si nuestro repositorio es un proyecto web, podemos mostrarlo gracias a la rama gh-pages de github:
