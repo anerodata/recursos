@@ -36,3 +36,4 @@ Videos, articles, tutorials that I read.
 | [Production grade Vue.js](https://frontendmasters.com/courses/production-vue/best-practices-exercise/) ([Documentation](https://github.com/bencodezen/production-grade-vue.git)) | Vue | Video | 18/02/2022 | Frontend Masters and Ben Hong | [production-grade-vue](https://github.com/anerodata/production-grade-vue.git) |
 | [BLAZINGLY FAST Vim \| Part 1](https://www.youtube.com/watch?v=qZO9A5F6BZs) | Vim | Video | 11/09/2021 | ThePrimeagen | |
 | [Up And Running With Neovim + LSP](https://www.youtube.com/watch?v=36o52-2_83M) | Vim | Video | 17/12/2021 | Jake Wiesler | |
+| [My workflow using Vim, 2021](https://www.youtube.com/watch?v=2WPC8rZQvQU&t) | Vim | Video | 18/10/2021 | ThePrimeagen | |
